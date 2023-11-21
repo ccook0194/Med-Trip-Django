@@ -1,1 +1,7 @@
 .env
+.DS_Store
+/static
+/staticfiles
+/medical_venv
+/requirement
+/__pycache__
