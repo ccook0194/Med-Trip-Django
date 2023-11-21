@@ -1,0 +1,60 @@
+:root {
+    --star-size: 3rem;
+    --star-color: #d1d1d1;
+    --star-background: #E91E63;
+  }
+  
+  .Stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    
+    display: inline-block;
+    font-size: var(--star-size);
+    font-family: Times; // make sure ★ appears correctly
+    line-height: 1;
+    
+    &::before {
+      content: '★★★★★';
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+ 
+  .star-container{
+      display: inline-flex;
+      flex-direction: row-reverse;
+      margin:0.25rem 0 1rem;
+
+      
+input{
+  display: none;
+}
+
+label{
+  display: inline-block;
+  padding-right: 1rem;
+  font-size: 2rem;
+  color: #949B93;
+  cursor: pointer;
+
+
+
+  i{
+    font-size: 2rem;
+   
+  }
+  
+  &:hover, &:hover ~ &{
+    color:$brand-purple;
+  }
+}
+
+input:checked ~ label{
+  color:$brand-purple;
+  svg{
+    fill: $brand-purple;
+  }
+  
+}
+  }

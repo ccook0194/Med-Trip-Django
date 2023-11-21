@@ -1,0 +1,30 @@
+.quote-top, .contact-top{
+        top: 0px;
+        left: 0px;
+        z-index: -30;
+        width: 100%;
+        position: absolute;
+        border-radius: 0px 0px 0px 120px;
+        background-image: linear-gradient(to right, $color-cream, transparent);
+}
+.quote-top {
+        height: 45rem;
+  
+}
+
+.card-green {
+        padding: 2rem;
+        background: $brand-green-light;
+        border: 1px solid #A1E8AF;
+        box-sizing: border-box;
+        border-radius: 6px;
+}
+
+.contact-top {
+        height: 41rem;  
+}
+
+.contact-icon {
+        width: 4.5rem;
+        height: 4.5rem;
+}

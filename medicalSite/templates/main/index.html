@@ -1,0 +1,278 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load custom_tags %}
+
+{% block title %}MyTripMed: {% trans "Treatment Abroad Price Comparison at Mytripmed" %}{% endblock title %} 
+{% block description %}{% trans "MyTripMed: free comparator that helps you easily find doctors and clinics abroad at the best price." %}{% endblock description %}
+
+{% block body %}
+
+  <section class="top-section hero-section">
+    <div class="container mt-md-1">
+      <div class="row">
+        <div class="col-md-5 hero-section-left">
+          <h1>{% trans "Find World's Top Doctors" %}</h1>
+          <div class="row">
+            <div class="col-10">
+              <p class="p-big">{% trans "Find the most attractive offers for the treatment you dream of and save up to 70% on prices." %}</p>
+              <ul class="custom-list d-none d-md-block">
+                <li>
+                  <img src="{% static 'img/tick.png' %}" alt="list item">
+                  <p>
+                    {% trans "Qualified and renowned doctors." %}
+                  </p>
+                </li>
+                <li>
+                  <img src="{% static 'img/tick.png' %}" alt="list item">
+                  <p>
+                    {% trans "Personalized support." %}
+                  </p>
+                </li>
+                <li>
+                  <img src="{% static 'img/tick.png' %}" alt="list item">
+                  <p>
+                    {% trans "Free consultation and quotation." %}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-md-7">
+          <img src="{% static 'img/top-section-image.jpg' %}" alt="#" class="d-none d-md-block">
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="card" id="home-page-search" style="padding: 2.4rem 3.6rem !important;">
+          {% comment %} <h5>
+            {% trans "Find and book a Doctor's appointment" %}
+          </h5> {% endcomment %}
+
+          <form action="{% url 'clinics:clinics_search' %}" onsubmit="event.preventDefault(); goToSearch(document.getElementById('query').value, document.getElementById('country').value)">
+            <input type="hidden" id="search" name="search" value="true">
+          <div class="row mt-3">
+            <div class="col-sm-9">
+              <div class="form-group mb-4 mb-sm-0">
+                <input type="text" class="form-input" id="query" name="query"
+                  placeholder="{% trans "What treatment are you looking for?" %}" required>
+                  
+                <input type="text" class="form-input" id="country" style="margin-top: 10px;" name="country"
+                placeholder="{% trans "Country" %}">
+              </div>
+
+            </div>
+            <div class="col-sm-3 mt-3 d-flex justify-content-end align-items-end">
+              <button type="submit" class="btn btn-secondary container-fluid">{% trans "Search" %}</button>
+            </div>
+            <p style="color: red; display: none;" id="search-error">{% trans "Please select from available options." %}</p>
+
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  {% include 'main/popular-treatments.html' %}
+  {% include 'main/popular-clinics.html' %}
+
+  <section class="section-details">
+    <div class="container">
+      <h2 class="text-center">{% trans "Why rely on MyTripMed?" %}</h2>
+      <div class="reasons-list">
+        <div class="row">
+
+          <div class="col-lg-4 col-sm-6 reason-box">
+            <div class="row no-gutters">
+              <div class="col-4">
+                <img src="{% static 'img/logo-service.png' %}" alt="logo-service" class="logo-icon">
+              </div>
+              <div class="col-8 pb-4">
+                <h4>{% trans "Economic offers" %}</h4>
+                <p> {% trans "Save up to 70% on fares and take advantage of packages and promotional offers." %}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-6 reason-box">
+            <div class="row no-gutters">
+              <div class="col-4">
+                <img src="{% static 'img/logo-clinic.png' %}" alt="logo-clinic" class="logo-icon">
+              </div>
+              <div class="col-8 pb-5">
+                <h4>{% trans "Free Service" %}</h4>
+                <p>{% trans "Take advantage of our free services to find the right doctor for your treatment. You pay on the spot without any hidden costs." %}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-6 reason-box">
+            <div class="row no-gutters">
+              <div class="col-4">
+                <img src="{% static 'img/logo-checklist.png' %}" alt="logo-checklist" class="logo-icon">
+              </div>
+              <div class="col-8">
+                <h4>{% trans "Patient support" %}</h4>
+                <p>{% trans "Ask all your questions by phone or e-mail. Our experienced coordinators are there to support you in a personalized way." %}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-6 reason-box">
+            <div class="row no-gutters">
+              <div class="col-4">
+                <img src="{% static 'img/logo-finance.png' %}" alt="logo-finance" class="logo-icon">
+              </div>
+              <div class="col-8">
+                <h4>{% trans "Complete Information" %}</h4>
+                <p>{% trans "Find all the useful data of doctors and clinics to make your selection easier: country, experience, specialties, guarantees, prices or packages, opinions and scores."%}
+            </div>
+          </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-6 reason-box">
+            <div class="row no-gutters">
+              <div class="col-4">
+                <img src="{% static 'img/logo-hotel.png' %}" alt="logo-hotel" class="logo-icon">
+              </div>
+              <div class="col-8">
+                <h4>{% trans "Rigorous selection" %}</h4>
+                <p>{% trans "We choose for you experienced and highly qualified doctors, but also internationally accredited clinics. " %}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-6 reason-box">
+            <div class="row no-gutters">
+              <div class="col-4">
+                <img src="{% static 'img/logo-booking.png' %}" alt="logo-booking" class="logo-icon">
+              </div>
+              <div class="col-8">
+                <h4>{% trans "Total satisfaction" %}</h4>
+                <p>{% trans "You benefit from a personalized follow-up before and after the treatment to ensure your total satisfaction with our services." %}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="register">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>
+            {% trans "How does it work ?" %}
+          </h2>
+          <p class="section-subheading">
+            {% trans "It's very simple ! You will find detailed information on the clinics and treatments that interest you. You just have to compare prices and scores in order to choose the optimal offer for your medical stay." %}
+          </p>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="{% static 'img/logo-guidance.jpg' %}" class="steps-img" />
+        </div>
+        <div class="col-md-6">
+
+          <div class="steps-wrapper">
+            <div class="single-step">
+              <h3 class="step-1">1</h3>
+              <div class="content">
+                <h4>{% trans "Choose your doctor" %}</h4>
+                <p>{% trans "Select the best clinic and destination for your treatment." %}</p>
+              </div>
+            </div>
+
+            <div class="single-step">
+              <h3 class="step-1">2</h3>
+              <div class="content">
+                <h4>{% trans "Fill out the contact form" %}</h4>
+                <p>{% trans "Add your contact details and indicate the date of your appointment." %}</p>
+              </div>
+            </div>
+
+            <div class="single-step">
+              <h3 class="step-1">3</h3>
+              <div class="content">
+                <h4>{% trans "Perform your treatment" %}</h4>
+                <p>{% trans "Book your flight and enjoy a discounted medical stay with no hidden costs." %}</p>
+              </div>
+            </div>
+          </div>
+          <div class="steps-bg">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+<script>
+  function slugify_query(query) {
+    $.post('/create-slug/', {
+      slug: query
+    }, function(data) {
+
+    })
+  }
+  async function goToSearch(query, country) {
+    let url;
+
+    $.get(`/exists-in-treatments/?term=${query}&country=${country}&language={{language}}`,
+      function(data) {
+        if (data === "True") {
+          $.post('/create-slug/', {
+            slug: query
+          }, function(data) {
+            if (country) {
+           url = '{% url "clinics:clinics_search" %}' + '/' + data + '/' + country
+          } else {
+           url = '{% url "clinics:clinics_search" %}' + '/' + data
+      
+          }
+          document.getElementById('search-error').style.display = 'none';
+          window.location.href = url
+          })
+
+        } else {
+          document.getElementById('search-error').style.display = 'block';
+        }
+      }
+    );
+
+
+    
+
+  }
+</script>
+<script>
+  $(document).ready(function(){ 
+      $("#query").autocomplete({
+          source: "/ajax_calls/search/?language={{language}}",
+          open: function(){
+              setTimeout(function () {
+                  $('.ui-autocomplete').css('z-index', 99000);
+              }, 0);
+          }
+        });
+  });
+
+  $(document).ready(function(){ 
+      $("#country").autocomplete({
+          source: "/ajax_calls/country/search/?language={{language}}",
+          open: function(){
+              setTimeout(function () {
+                  $('.ui-autocomplete').css('z-index', 99000);
+              }, 0);
+          }
+        });
+  });
+</script>
+{% endblock body %}

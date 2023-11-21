@@ -1,0 +1,540 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load mathfilters %}
+{% load custom_tags %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+
+
+{% block title %}{% if 'destinations' in request.get_full_path %}{% trans "Medical Tourism in " %}{% if search_city %}{{ search_city|capfirst }}{% else %}{% if search_country %}{{ search_country }}{% else %}{% trans "all countries" %}{% endif%}{% endif %}{% else %}{% trans "Best" %} {{ all_treatments|length }} {% trans "Clinics for" %} {{ search_treatment|convert_byte_to_string }} {% trans "in" %}{% if search_city %} {{ search_city|capfirst }}{% else %} {% if search_country %}{{ search_country }}{% else %}{% trans "world" %}{% endif %}{% endif %} 2023{% endif %}{% endblock title %}
+
+{% block description %}{% if 'destinations' in request.get_full_path %}{% trans "Compare prices for hair transplant, cosmetic surgery and dental care in" %} {% if search_city %}{{ search_city|capfirst }}{% else %}{% if search_country %}{{ search_country }}{% else %}{% trans "all countries" %}{% endif%}{% endif%}{% else %}{{ search_treatment|convert_byte_to_string }} {% trans "in" %}{% if search_city %} {{ search_city|capfirst }}{% else %} {% if search_country %}{{ search_country }}{% else %}{% trans "all countries" %}{% endif %}{% endif %} - {% trans "Compare prices of doctors and clinics, read real patient reviews and book an appointment online." %} {% endif %}{% endblock description %}
+
+{% block body %}
+<style>
+    @media screen and (max-width: 47.99em) {
+        .search-form {
+            width: 100%;
+        }
+    }
+</style>
+<section class="results-section top-section">
+    
+    <div class="container">
+        {% if 'destinations' in request.get_full_path %}
+        {% else %}
+        <h1 class="text-dark mb-2">
+            {{ search_treatment|convert_byte_to_string }} : {% if search_city %} {{ search_city|capfirst }}{% else %} {% if search_country %}{{ search_country }}{% else %}{% trans "all countries" %}{% endif %}{% endif %}
+        </h1>
+        <p class="p-big heading-border text-dark">
+        <strong>{{ all_treatments|length }}</strong> {% if language == 'fr' %}cliniques spécialisées en <b>{{ search_treatment|convert_byte_to_string }}</b> {% if search_country %} en <b>{{ search_country }}.</b> {% else %}trouvé.{% endif %} {% else %}{% if search_country %} {{ search_treatment|convert_byte_to_string }} {% trans "Clinics in" %} {{ search_country }} {% else %} {{ search_treatment|convert_byte_to_string }} {% trans "Clinics found." %} {% endif %}{% endif %}
+        </p> 
+        {% endif %}
+        <div class="row">
+            <div class="col-xl-3 container-border container-border-left py-0">
+                <div class="filter-box">
+                    <div class="d-flex justify-content-between mt-4 mb-4">
+                        <h5 class="subheading mb-0">
+                            {% trans "filters" %}
+                        </h5>
+
+                        <i data-feather="x" onclick="closeFilters()" class="d-lg-none" style="cursor: pointer;"></i>
+                    </div>
+
+                    <div class="card card-shadow-xl card-sm">
+                        <form method="GET" action="" class="form">
+                            <!-- {% csrf_token %} -->
+                            <div class="form-group mb-3">
+
+                                <label for="searchDestinationInput" class="form-label">{% trans "Destination" %}</label>
+                                <input type="text" style="display: none;" name="sort_by" value="{{sort_by}}">
+                                {% if 'destinations' in request.get_full_path %}
+                                <!-- DESTINATIONS PAGE -->
+                                {% if country %}
+                                <input type="hidden" name="country" value="{{country}}">
+                                <select name="city" class="form-select" id="searchDestinationInput">
+                                    <option value="">{% trans "Select Destination" %}</option>
+                                    {% for city in all_cities %}
+                                    <option value="{{city}}" {% if search_city|lower == city|lower %}selected{% endif %}>{{ city }}</option>
+                                    {% endfor %}
+                                </select>
+                                {% else %}
+                                <select name="country" class="form-select" id="searchDestinationInput">
+
+                                <option value="">{% trans "Select Destination" %}</option>
+                                    {% for country in all_countries %}
+                                        <option value="{{country.name}}" {% if search_country|lower == country.name|lower %} selected {% endif %} >{{ country.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                {% endif %}
+
+                                
+                                {% else %}
+                                <!-- SEARCH PAGE -->
+
+                                {% if search_country %}
+                              
+
+                                <input type="hidden" name="country" value="{{search_country}}">
+                                <select name="city" class="form-select" id="searchDestinationInput">
+                                    <option value="">{% trans "Select Destination" %}</option>
+                                    {% for city in all_cities %}
+                                    <option value="{{city}}" {% if search_city|lower == city|lower %}selected{% endif %}>{{ city }}</option>
+                                    {% endfor %}
+                                </select>
+                                
+                                {% else %}
+                                  <!-- GET COUNTRY -->
+                                  <select name="country" class="form-select" id="searchDestinationInput">
+                                    <option value="">{% trans "Select Destination" %}</option>
+                                    {% for country in all_countries %}
+                                        <option value="{{country.name}}" {% if search_country|lower == country.name|lower %} selected {% endif %} >{{ country.name }}</option>
+                                    {% endfor %}
+                                </select>
+
+                                {% endif %}
+                                {% endif %}
+
+                                </select>
+                            </div>
+                            <div class=" form-group mb-3">
+                                        <label for="priceFilterInput" class="form-label">{% trans "Rating" %}</label>
+                                        <div class="btn-check-group btn-group btn-radio-group" role="group"
+                                            aria-label="Basic radio toggle button group">
+                                            <input type="radio" class="btn-check" name="score" id="btnradio1"
+                                                autocomplete="off" value="1" {% if score == '1' %}checked{% endif %}>
+                                            <label class="btn-check-label" for="btnradio1">1</label>
+
+                                            <input type="radio" class="btn-check" name="score" id="btnradio2"
+                                                autocomplete="off" value="2" {% if score == '2' %}checked{% endif %}>
+                                            <label class="btn-check-label" for="btnradio2">2</label>
+
+                                            <input type="radio" class="btn-check" name="score" id="btnradio3"
+                                                autocomplete="off" value="3" {% if score == '3' %}checked{% endif %}>
+                                            <label class="btn-check-label" for="btnradio3">3</label>
+
+                                            <input type="radio" class="btn-check" name="score" id="btnradio4"
+                                                autocomplete="off" value="4" {% if score == '4' %}checked{% endif %}>
+                                            <label class="btn-check-label" for="btnradio4">4</label>
+
+                                            <input type="radio" class="btn-check" name="score" id="btnradio5"
+                                                autocomplete="off" value="5" {% if score == '5' %}checked{% endif %}>
+                                            <label class="btn-check-label" for="btnradio5">5</label>
+                                        </div>
+                            </div>
+                            {% comment %} {% if 'destinations' in request.get_full_path %}
+                            {% else %}
+                            <div class="form-group mb-3">
+                                <label for="filterPrice" class="form-label">{% trans "Price" %}</label>
+
+                                <select name="price" class="form-select" id="filterPrice">
+                                    <option value="">{% trans "Select Price" %}</option>
+                                    <option value="{{min_price}}-{{ max_price|sub:min_price|div:3|floatformat:0|add:min_price }}">{{min_price}}
+                                        {{current_symbol}} - {{ max_price|sub:min_price|div:3|floatformat:0|add:min_price }} {{current_symbol}}
+                                    </option>
+                                    <option
+                                        value="{{ max_price|sub:min_price|div:3|floatformat:0|add:min_price|add:1 }}-{{ max_price|sub:min_price|div:3|mul:2|floatformat:0|add:min_price }}">
+                                        {{ max_price|sub:min_price|div:3|floatformat:0|add:min_price|add:1 }} {{current_symbol}} - {{ max_price|sub:min_price|div:3|mul:2|floatformat:0|add:min_price }} {{current_symbol}}</option>
+                                    <option
+                                        value="{{ max_price|sub:min_price|div:3|mul:2|floatformat:0|add:min_price|add:1 }}-{{max_price}}">
+                                        {{ max_price|sub:min_price|div:3|mul:2|floatformat:0|add:min_price|add:1 }} {{current_symbol}}
+                                        - {{max_price}} {{current_symbol}}</option>
+
+                                </select>
+                            </div>
+                            {% endif %} {% endcomment %}
+
+                            {% if 'destinations' in request.get_full_path %}
+                            {% else %}
+                            <div class="form-group mb-3">
+                                <label for="filterPrice" class="form-label">{% trans "Price" %}</label>
+
+                                <select name="price" class="form-select" id="filterPrice">
+                                    <option value="">{% trans "Select Price" %}</option>
+                                    
+                                    {% for opt in min_max_price_options %}
+                                    <option value="{{ opt.min_price }}-{{ opt.max_price }}" {% if opt.min_price == min_price %}selected{% endif %}>
+                                        {{ opt.min_price }} {{current_symbol}} - {{ opt.max_price }} {{current_symbol}}
+                                    </option>
+                                    {% endfor %}
+
+                                </select>
+                            </div>
+                            {% endif %}
+
+                            <div class="text-center mt-5">
+
+                                <button type="submit" class="btn btn-primary">
+                                    {% trans "Apply" %}
+
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="col-xl-9 container-border container-border-right">
+                <div class="results-actions">
+                    <div class="dental-clinic-section">
+                        <div class="filters-countries">
+
+                      
+                            {% if not is_country %}
+                            
+                        {% for i in all_countries %}
+                        {% if 'destinations' in request.get_full_path %}
+                        <a href="{% url "clinics:clinic_destinations" i.name %}" style="display: hidden;"></a>
+                        {% else %}
+                        <a href="{% url "clinics:clinics_search" original_search_treatment i.name %}" style="display: hidden;"></a>
+                        {% endif %}
+                        <div class="flag-filter" onclick="
+                            if ('{{ is_country }}' == {% if 'destinations' in request.get_full_path %}'None'{% else %}'False'{% endif %}) {
+                                window.location.href=window.location.pathname+'/{{ i.name }}'+window.location.search;
+                            } else {
+                                window.location.href=window.location.pathname.replace('{{ search_country }}', '{{ i.name }}')+window.location.search;
+                            }
+                            // let url = window.location.href=window.location.href.replaceAll(window.location.search,''); 
+                            // window.location.href = url+= '?country={{ i.name }}';
+                        
+                        ">
+                            <input type="radio" hidden name="country" id="{{ i.name }}" class="radio-btn" style="cursor: pointer !important;" {% if i.name|lower == search_country|lower %}checked{% endif %}>
+                            <label for="{{ i.name }}" style="cursor: pointer !important;">
+                              {{ i.name }}
+                              <img src="https://flagicons.lipis.dev/flags/4x3/{{ i.iso_code }}.svg" alt="{{ i.name }}" class="flag">
+                            </label>
+                          </div> 
+
+                        {% endfor %}
+                    {% else %}
+                        {% for i in all_cities %}
+                        {% if 'destinations' in request.get_full_path %}
+                        <a href="{% url "clinics:clinic_destinations" search_country i %}" style="display: hidden;"></a>
+                        {% else %}
+                        <a href="{% url "clinics:clinics_search" original_search_treatment search_country i %}" style="display: hidden;"></a>
+                        {% endif %}
+                        <div class="flag-filter" onclick="
+                            if ('{{ is_city }}' === {% if 'destinations' in request.get_full_path %}'None'{% else %}'False'{% endif %}) {
+                                $.post('/create-slug/', {
+                                    slug: '{{ i }}',
+
+                                }, function(data) {
+                                    window.location.href=window.location.pathname+'/'+data+window.location.search;
+                                });
+                                // window.location.href=window.location.pathname+'/{{ i }}'+window.location.search;
+                            } else {
+                                $.post('/create-slug/', {
+                                    slug: '{{ i }}',
+
+                                }, function(data) {
+                                    $.post('/create-slug/', {
+                                        slug: '{{ search_city }}',
+                                    }, function(data2) {
+                                        window.location.href=window.location.pathname.replace(data2, data)+window.location.search;
+                                    });
+                                });
+                                
+                                // window.location.href=window.location.pathname.replace('{{ search_city }}', '{{ i }}')+window.location.search;
+                            }
+                            // let url = window.location.href=window.location.href.replaceAll(window.location.search,''); 
+                            // window.location.href = url+= '?country={{ i }}';
+                        
+                        ">
+                            <input type="radio" hidden name="city" id="{{ i }}" class="radio-btn" style="cursor: pointer !important;" {% if i|lower == search_city|lower %}checked{% endif %}>
+                            <label for="{{ i }}" style="cursor: pointer !important;">
+                              {{ i }}
+                            </label>
+                          </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    
+                      
+                        </div>
+                      </div>
+                    <div class="d-flex gap-1 justify-content-between">
+
+                    <button class="btn input-btn d-xl-none" onclick="showFilters()">
+                        <i data-feather="filter"></i>
+                        {% trans "Filters" %}
+                        <i data-feather="chevron-right"></i>
+                    </button>
+                    <div class="form-group form-icon filter-sortby">
+                        <img src="{% static 'img/sort.png' %}" alt="sort-icon">
+
+                        <select class="form-select form-select-icon" onchange="if (!window.location.search) {
+                            window.location.href+='?sort_by='+this.value;
+                        } else {
+                            if (window.location.search.includes('sort_by')) {
+                                window.location.href = window.location.href.replace('{{ sort_by }}', this.value);
+                            }
+                                 else {
+                                window.location.href += '&sort_by='+this.value;
+                            }
+                        }">
+                            <option value="" disabled {% if sort_by == '' %} selected {% endif %}>{% trans "Sort By" %}</option>
+                            <option value="rating"
+                                {% if sort_by == 'rating' %} selected {% endif %}>{% trans "Rating" %}</option>
+                                {% if 'destinations' in request.get_full_path %}
+                                {% else %}
+                            <option value="price"
+                                {% if sort_by == 'price' %} selected {% endif %}>{% trans "Price" %}</option>
+                                {% endif %}
+
+                        </select>
+                    </div>
+                    </div>
+
+                </div>
+                
+                {% if 'destinations' in request.get_full_path %}
+                {% if all_clinics|length == 0 %}
+                    <div class="results-list mt-4">
+                    <h2 style="text-align: center; padding: 30px;">{% trans "No Clinics found" %}</h1>
+                    </div>
+                    {% else %}
+                    <div class="results-list mt-4">
+                        {% for clinic in all_clinics %}
+                        <div class="result-card">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a href="{% url 'clinics:clinics_each_detail' clinic.slug %}">
+                                    <div class="result-card-img">
+                                            <img src="{{ clinic.get_cover_image.image.url }}" alt="#" class="clinic-img">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="result-card-body">
+                                        <div class="result-card-body-content">
+                                            <div class="result-card-body-content-top">
+                                                <div>
+                                                    <a
+                                                        href="{% url 'clinics:clinics_each_detail' clinic.slug %}">
+                                                        <h2 class="result-card-heading">
+                                                            {{ clinic.name }}
+                                                        </h2>
+                                                    </a>
+
+                                                    <div class="icon-text">
+                                                        <img src="{% static 'img/location-icon.png' %}"
+                                                            alt="clinic location">
+                                                        <span>{{ clinic.city }}, {{ clinic.country.name }}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="result-card-body-content-top-right">
+                                                    <div class="Stars"
+                                                        style="--rating: {{ clinic.get_avg_rating }};"
+                                                        aria-label="Rating of this product is {{ clinic.get_avg_rating }} out of 5.">
+
+                                                        <span class="text-purple text-right" style="font-size: 2rem;"> {{ clinic.get_avg_rating }} </span>
+
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+                                            <p class="p-sm text-grey mt-4">
+                                                {% if clinic.about %}
+                                                    {{ clinic.about|truncatewords_html:40|safe }}
+                                                {% endif %}<a href="{% url 'clinics:clinics_each_detail' clinic.slug %}">{% trans "read more" %}</a>
+											</p>
+
+                                        </div>
+                                        <div class="result-card-body-footer">
+
+                                            <div class="price-desktop align-items-center gap-3">
+                                            </div>
+                                            <form action="{% url 'clinics:free_quote_without_clinic' %}" method="post" class="search-form">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="from_search" value="yes">
+                                        <input type="hidden" name="clinic_slug", value="{{clinic.slug}}">
+
+                                                <button class="btn btn-primary btn-secondary">
+                                                    {% trans "Inquire" %}
+                                                </button>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                {% else %}
+                    {% if all_treatments|length == 0 %}
+                    <div class="results-list mt-4">
+                    <h2 style="text-align: center; padding: 30px;">{% trans "No Treatments found" %}</h1>
+                    </div>
+                    {% else %}
+                        <div class="results-list mt-4">
+                            {% for treatment in all_treatments %}
+                            <div class="result-card">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a href="{% url 'clinics:clinics_each_detail' treatment.clinic.slug %}">
+                                        <div class="result-card-img">
+                                                <img src="{{ treatment.clinic.get_cover_image.image.url }}" alt="#" class="clinic-img">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="result-card-body">
+                                            <div class="result-card-body-content">
+                                                <div class="result-card-body-content-top">
+                                                    <div>
+                                                        <a
+                                                            href="{% url 'clinics:clinics_each_detail' treatment.clinic.slug %}">
+                                                            <h2 class="result-card-heading">
+
+                                                                {{ treatment.clinic.name }}
+                                                            </h2>
+                                                        </a>
+
+                                                        <div class="icon-text">
+                                                            <img src="{% static 'img/location-icon.png' %}"
+                                                                alt="clinic location">
+                                                            <span>{{ treatment.clinic.city }}, {{ treatment.clinic.country.name }}</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="result-card-body-content-top-right">
+                                                        <div class="Stars"
+                                                            style="--rating: {{ treatment.clinic.get_avg_rating }};"
+                                                            aria-label="Rating of this product is {{ treatment.clinic.get_avg_rating }} out of 5.">
+                                                            <span class="text-purple text-right" style="font-size: 2rem;"> {{ treatment.clinic.get_avg_rating }} </span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="align-items-center gap-3 price-mobile">
+                                                  <span class="p-sm text-grey">
+                                                    {{ treatment.price_type }}
+                                                  </span>
+                                                  <span class="h2 d-inline-block text-dark mb-0">
+                                                    {{ treatment.price }} {{ current_symbol }}
+                                                    </span>
+
+                                                </div>
+
+
+                                                <p class="p-sm text-grey mt-4">
+                                                    {% if treatment.clinic.about %}
+                                                {{ treatment.clinic.about|truncatewords_html:30|safe }}
+                                                {% endif %}<a href="{% url 'clinics:clinics_each_detail' treatment.clinic.slug %}">{% trans "read more" %}</a>
+                                                </p>
+
+                                                <div class="package-container">
+                                                    <div class="row">
+                                                        {% if treatment.package_info_1 %}
+                                                        <div class="col-sm-6">
+                                                            <h6 class="package-name">
+                                                                {{ treatment.package_info_1 }}
+                                                            </h6>
+                                                        </div>
+                                                        {% endif %}
+                                                        {% if treatment.package_info_2 %}
+                                                        <div class="col-sm-6">
+                                                            <h6 class="package-name">
+                                                                {{ treatment.package_info_2 }}
+                                                            </h6>
+                                                        </div>
+                                                        {% endif %}
+                                                        {% if treatment.package_info_3 %}
+                                                        <div class="col-sm-6">
+                                                            <h6 class="package-name">
+                                                                {{ treatment.package_info_3 }}
+                                                            </h6>
+                                                        </div>
+                                                        {% endif %}
+                                                        {% if treatment.package_info_4 %}
+                                                        <div class="col-sm-6">
+                                                            <h6 class="package-name">
+                                                                {{ treatment.package_info_4 }}
+                                                            </h6>
+                                                        </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="result-card-body-footer">
+                                                <div class="price-desktop align-items-center gap-3">
+                                                    <span class="p-sm text-grey">
+                                                        {{ treatment.price_type }}
+                                                    </span>
+                                                    <span class="h2 d-inline-block text-dark mb-0">
+                                                        {{ treatment.price }} {{ current_symbol }}
+                                                    </span>
+
+                                                </div>
+                                                
+
+                                                    <form action="{% url 'clinics:free_quote_without_clinic' %}" method="post" class="search-form">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="from_search" value="yes">
+                                        <input type="hidden" name="clinic_slug", value="{{treatment.clinic.slug}}">
+                                        <input type="hidden" name="treatment_name" value="{{treatment.searched_treatment}}">
+
+                                                <button class="btn btn-primary btn-secondary">
+                                                    {% trans "Inquire" %}
+                                                </button>
+                                            </form>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                {% endif %}
+                {% endif %}
+                <style>
+                    @media (max-width: 767px) {
+                        #show-more-box {
+                            width: 41%;
+                            margin: auto;
+                        }
+                        
+                    }
+
+                    @media (min-width: 767px) {
+                        #show-more-box {
+                            width: 20%;
+                        }
+                        
+                    }
+                    
+                </style>
+                <div class="d-grid gap-1 col-sm-2 mx-sm-auto pt-5" id="show-more-box">
+                    {% if next_page_exist %}
+                    <!-- <a href="?page={{next_page}}" class="btn btn-primary" type="button">{% trans "Show More" %}</a> -->
+                    <button class="btn btn-primary" type="button" onclick="nextPage()" id="show-more">{% trans "Show More" %}</button>
+                    {% endif %}
+                  </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<script>
+    function nextPage() {
+        const button = document.querySelector('button')
+        button.disabled = true;
+      const url = window.location.pathname + "?page={{next_page}}";
+      // window.history.pushState({}, '', url);
+      $("#doc").load(url);
+    }
+  </script>
+
+{% endblock body %}

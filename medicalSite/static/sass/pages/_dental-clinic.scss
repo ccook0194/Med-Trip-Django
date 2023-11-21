@@ -1,0 +1,357 @@
+.dental-clinic-section{
+    overflow: hidden;
+    .card-body {
+        background-color: $color-white;
+    }
+    
+    .company{
+        height: 5.5rem;
+        width: auto;
+        margin: 0.3rem 0;
+    }
+    
+    .type-icon {
+        width: 3rem;
+    }
+    
+    .flag{
+        width: 2.4rem;
+    }
+
+    .card-header{
+        padding: 1rem 2rem 0;
+        border-bottom: 2px solid $brand-purple-light;
+        background-color: rgba($color-white,1) !important;
+    }
+
+    .filters-categories,.filters-countries, .card-body{
+       /* width */
+    &::-webkit-scrollbar {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 2rem;
+  }
+  
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgba(#fff,0.25);
+    border-radius: 2rem;
+  }
+  
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $brand-purple-light;
+    border-radius: 2rem;
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken($brand-purple-light, 0.25);
+  }
+    }
+
+    .filters-categories{
+        &::-webkit-scrollbar {
+            height: 0rem;
+          } 
+    }
+
+    
+    .filters-categories {
+        
+        display: flex;
+        border-bottom: 1px solid $brand-purple;
+        overflow-x: scroll;
+
+        .category{
+            &-filter{
+                padding: 0;
+
+                &:nth-child(:last-child){
+                    label{
+                        padding-right: 0;
+                    }
+                    
+                }
+                &:nth-child(:first-child){
+                    label{
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            &-label{
+                margin: 0;
+                font-size: 1.6rem;
+                padding: 1rem 2rem;
+                display: flex;
+                align-items: center;
+                gap:10px;
+                position: relative;
+
+                &::before{
+                    position: absolute;
+                    content: "";
+                    bottom: 0;
+                    width: 0%;
+                    transform-origin: center center;
+                    left: 0;
+                    height: 3px;
+                    border-top-left-radius: 1rem;
+                    border-top-right-radius: 1rem;
+                   
+                }
+            }
+
+            &-input{
+                display: none;
+
+                &:checked + label {
+                    
+                    font-weight: 700;
+
+                    &::before{
+                        background-color: $brand-purple;
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+
+    
+    .filters-countries {
+        //background-color: #e9e3e3;
+        padding: 1rem 2rem;
+        display: flex;
+        gap: 1rem;
+        overflow-x: scroll;
+
+        .flag-filter{
+           
+            label{
+              margin-bottom: 0;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                padding: 0.4rem 0.8rem;
+                transition-duration: 0.15s;
+                border-radius: 0.4rem;
+                border:1.2px solid rgba($brand-purple-light,0.2);
+                white-space:  nowrap;
+                background-color: #fcf7f3;
+            }
+
+            input:checked + label{
+                
+                background-color: $brand-purple;
+                color: $color-white;
+            }
+        }
+    }
+
+    table {
+    overflow-x: scroll;
+        td,th
+        {
+            vertical-align: middle;
+        }
+    }
+        //padding: 0.6rem 1.2rem !important;
+        //margin-right: 1rem !important;
+        //margin-left: 0.5rem !important;
+        //margin-top: 0.2rem;
+        //float: left;
+
+    .wrappper{
+        height: 5rem !important;
+        width: 3rem !important;
+        border-radius: 5px !important;
+        background: #fff !important;
+        display: flex !important;
+        padding: 1rem 1.5rem !important;
+        align-items: center !important;
+        border: 1px solid #0069d9 !important;
+        justify-content: space-evenly !important;
+    }
+
+    .wrappper .option{
+        background: #fff !important;
+        height: 50% !important;
+        width: 50% !important;
+        margin: 0rem 1rem !important;
+        border-radius: 5rem !important;
+        cursor: pointer !important;
+        border: 2px solid lightgrey !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-evenly !important;
+    }
+
+    #option-1:checked ~ .option-1,
+    #option-2:checked ~ .option-2,
+    #option-3:checked ~ .option-3,
+    #option-4:checked ~ .option-4{
+        border-color: #0069d9;
+        background-color: #0069d9;
+    }
+
+    .wrappper .option .dot{
+        height: 2rem;
+        width: 2rem;
+        background-color: #0069d9;
+        border-radius: 50%;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .wrappper .option .dot::before{
+        position: absolute;
+        content: "";
+        left: 0.4rem;
+        top: 0.4rem;
+        height: 1.2rem;
+        width: 1.2rem;
+        background: #0069d9;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    #option-1:checked ~ .option-1 .dot::before,
+    #option-2:checked ~ .option-2 .dot::before,
+    #option-3:checked ~ .option-3 .dot::before,
+    #option-4:checked ~ .option-4 .dot::before{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    .wrappper .option span {
+        color: #808080;
+        font-size: 2rem;
+    }
+
+    #option-1:checked ~ .option-1 span,
+    #option-2:checked ~ .option-2 span,
+    #option-3:checked ~ .option-3 span,
+    #option-4:checked ~ .option-4 span{
+        color: #fff;
+    }
+
+    .wrapper input[type="radio"]{
+        display: none;
+    }
+
+    .table-icon {
+        font-weight: 50rem;
+        font-size: 50rem;
+    }
+
+    .info-icon{
+        height: 2rem;
+        color: rgba($text-grey,0.4);
+        cursor: pointer;
+
+        & + .info-dialog{
+            top: 120%;
+            left:50%;
+            transform: translateX(-50%);
+            position: absolute;
+            transition:all 0.3s ease-in-out;
+            opacity: 0;
+            width: 100%;
+            visibility: hidden;
+            font-weight: 500;
+            color: $text-grey;
+            font-size: 1.2rem;
+            padding: 0.8rem 1.2rem;
+            text-align: left;
+            border-radius: 0.4rem;
+            background-color: $color-white;
+            box-shadow: $shadow-sm
+        }
+
+        &:hover{
+            & + .info-dialog{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    
+    thead{ 
+        height: 5rem;
+        tr{
+        border-bottom: 2px solid rgba($light-grey,0.6) ;
+            &:nth-child(:last-child) {
+                border-color: transparent !important;
+            }
+        th{
+            position: relative;
+            font-weight: 600;
+            font-size: 1.6rem;
+            font-style: italic;
+            color: $text-grey;
+
+            svg{
+                width: 2rem;
+            }
+        }
+    }
+}
+
+table{
+    padding: 0 2rem;
+    thead th, tbody td, tbody th{
+        padding: 0.5rem 1.2rem;
+    }
+
+    .first-col{
+        padding-left: 3rem;text-align: left;
+    }
+    .last-col{
+        padding-right: 3rem;text-align: right;
+    }
+}
+
+
+tbody{
+    tr td{
+    color: rgba($text-grey,0.7);
+    font-size:1.6rem;
+    font-weight: 500;
+
+    &.region-text{
+        font-weight: 400;
+        font-style: italic;
+        font-size: 1.4rem;
+
+        .region{
+            width: 2.4rem;
+        }
+    }
+}
+}
+.card{
+    overflow: hidden;
+}
+.card-body{
+    overflow-x: scroll;
+}
+
+    .ranking,
+    .pointer{
+        
+        font-size: 1.3rem;
+        height: 2.3rem;
+        vertical-align: middle;
+        width: 1.8rem;
+        margin-left: 0.2rem;
+    }
+
+    .ranking{
+        text-align: left;
+    }
+    
+}
+

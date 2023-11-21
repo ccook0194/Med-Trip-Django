@@ -1,0 +1,57 @@
+.bg-cream{
+    background-color: $color-cream !important;
+}
+.bg-dark{
+    background-color: $brand-dark !important;
+}
+.heading-border{
+    border-bottom: 1px solid $border-grey;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+}
+.bg-light-pink{
+    background-color: $brand-pink-light !important;
+}
+.bg-green{
+    background-color: #EBFAEE !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.bg-light{
+    background-color: $light-grey;
+}
+
+.pagination{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    nav{
+        width: 100%;
+    }
+    &-text{
+        margin: 0 3rem;
+        margin-bottom:0;
+        color: $brand-dark;
+    }
+}
+
+.owl-carousel .owl-stage{
+    padding-left: 0 !important;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.4;
+  }
+  
+  .text-left{
+    text-align: left !important;
+  }
+
+  .overflow-hidden{
+    overflow: hidden !important;
+  }

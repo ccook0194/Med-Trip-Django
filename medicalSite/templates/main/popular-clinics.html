@@ -1,0 +1,40 @@
+{% load i18n %}
+
+<section class="destination-section">
+    <div class="container">
+        <h2>
+           {% trans "Our best destinations" %}
+        </h2>
+        <div class="destination-list">
+            {% for i in countries %}
+                <div class="destination-card">
+                    <div class="destination-card-overlay"></div>
+                            {% if i.country.img %}
+                            <img
+                            src="{{ i.country.img.url }}"
+                            alt="#" class="destination-card-image">
+                            {% endif %}
+
+                    <div class="destination-card-content">
+                        <h4 class="destination-card-title">
+                            {{i}}
+                        </h4>
+                        <div class="text-right">
+                            {% comment %} <a href="/clinic/search?country={{country}}&query=" class="btn btn-sm btn-outline-white"> {% endcomment %}
+                            <a href="{% url 'clinics:clinic_destinations' %}?country={{i}}" class="btn btn-sm btn-outline-white">
+                                {% trans "See Clinics" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+  
+        {% comment %} <div class="text-center">
+        <a href="#" class="btn btn-primary">
+            View all Destinations
+        </a>
+        </div> {% endcomment %}
+  
+    </div>
+</section>

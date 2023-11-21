@@ -1,0 +1,184 @@
+.btn{
+    font-size: 1.6rem;
+    padding: 1rem 1.6rem;
+    border-radius: 0.4rem;
+    outline: none;
+    border:none;
+    padding: 1rem 4rem;
+    font-size: 1.8rem;
+
+    @include res(sm){
+        font-size: 2rem;
+    }
+
+    transition: $transition-primary;
+    transition-duration: 100ms;
+    &:hover{
+        transform: translateY(-2px);
+    }
+    &:active{
+        transform: translateY(0);
+        box-shadow: 0px 4px 4px 0px hsla(253, 51%, 39%, 0.2) !important;
+    }
+    &:focus{
+        box-shadow: 0 0 0 0.25rem rgba(114, 49, 253, 0.217);
+    }
+    &-primary,&-secondary{
+        color: $color-white;
+        border: none;
+    }
+    &-primary{
+        background-color: $brand-purple;
+        color: $color-white;
+        border: none;
+        box-shadow: 0px 4px 4px 0px hsla(253, 51%, 39%, 0.2);
+
+        &:hover{
+            background-color: darken($brand-purple,10%);
+        }
+        &:active{
+            background-color: darken($brand-purple,15%);
+        }
+         &:focus{
+            background-color: $brand-purple;
+        }
+    }
+    &-secondary{
+        background-color: $brand-pink;
+        box-shadow: 0px 4px 4px 0px hsla(288, 51%, 39%, 0.2);
+        &:hover{
+            background-color: darken($brand-pink,10%);
+        }
+        &:active{
+            background-color: darken($brand-pink,15%);
+            box-shadow: 0px 4px 4px 0px hsla(290, 51%, 39%, 0.2) !important;
+        }
+         &:focus{
+            background-color: $brand-pink;
+            box-shadow: 0 0 0 0.25rem rgba(195, 49, 253, 0.217);
+        }
+    }
+    &-outline{
+        border: 1.5px solid $brand-purple ;
+        background-color: transparent;
+        color: $brand-purple;
+        font-weight:500;
+        &:hover {
+            color: $color-white;
+            background-color: $brand-purple;
+            border-color: $brand-purple;
+
+        }
+        &:active{
+            transform: translateY(0);
+            background-color: darken($brand-purple,15%);
+            box-shadow: 0px 4px 4px 0px hsla(253, 51%, 39%, 0.2) !important;
+        }
+         &:focus{
+            background-color: $brand-purple;
+            box-shadow: 0 0 0 0.25rem rgba(114, 49, 253, 0.217);
+        }
+
+        &-white{
+            border: 1.5px solid $color-white !important;
+            color: $color-white;
+
+            &:hover {
+                color: $brand-purple;
+                background-color: $color-white !important;
+            }
+        }
+
+        &-purple{
+            border: 1.5px solid $brand-purple !important;
+            color: $color-white !important;
+
+
+            &:hover {
+                background-color: $brand-purple !important;
+            }
+        }
+    }
+
+    &-sm {
+        padding: 0.4rem 1rem;
+        font-size: 1.6rem;
+
+        @include res(sm){
+            padding: 0.7rem 1.4rem;
+            font-size: 1.8rem
+        }
+        
+    }
+    &-md {
+        padding: 0.6rem 1.6rem;
+        font-size: 1.7rem;
+    }
+    &-icon{
+       @include circle(5rem);
+       @include flex-center;
+        box-shadow: $shadow-sm;
+        border: 1px solid $border-grey;
+        background-color: $color-white;
+        img,svg{
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+    &-white{
+        background-color: $color-white;
+        color: $brand-purple;
+
+        &:hover{
+            background-color: darken( $brand-purple,20%);
+            color: $color-white;
+        }
+    }
+    &-text-icon{
+        img,svg{
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+}
+
+.input-btn{
+    font-size: 1.6rem;
+    border: 1.4px solid $light-grey;
+    background-color: transparent;
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    svg{
+        height: 2.4rem;
+        width: 2.4rem;
+    }
+
+    @include res(sm){
+        font-size: 1.8rem;
+    }
+}
+
+.owl-carousel{
+    .btn-icon{
+        position: absolute;
+        top: 40%;
+        &.prev{
+            left: 0;
+            transform: translateX(-40%);
+
+            @include res(sm){
+                transform: translateX(0%);
+            }
+        }
+        &.next{
+            right: 0;
+            transform: translateX(40%);
+            @include res(sm){
+                transform: translateX(0%);
+            }
+        }
+    }
+}

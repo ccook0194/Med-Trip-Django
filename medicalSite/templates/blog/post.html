@@ -1,0 +1,173 @@
+{% extends 'main/base.html' %} {% load static %}
+{% load i18n %}
+ {% block title %}{{ post.title }} - MyTripMed{% endblock title %} {% block body %}
+ {% block description %}{{ post.meta_description }}{% endblock description %}
+
+ <style>
+  @media screen and (max-width: 768px) {
+    #blog-title-container {
+      width: 100% !important;
+    }
+    #blog-title-container h1 {
+      text-align: center !important;
+    }
+
+    #blog-img {
+      padding: 8px 10px !important; 
+    }
+  }
+  td {
+    border-width: 0.5px !important;
+    font-size: 1.6rem !important;
+  }
+    
+ </style>
+<section class="top-section hero-section">
+  <div class="container">
+    <div class="col-8" id="blog-title-container">
+      <h1>{{ post.title }}</h1>
+    </div>
+    <div class="blog-bg"></div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="blog-section">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 container-border container-border-left">
+        <section class="blog-top pb-0">
+          <div class="d-flex justify-content-between heading-border">
+            <div class="icon-text icon-text-big">
+              <img src="{% static "img/pencil-icon.png" %}" alt="pencil-icon" >
+              <span>{{ post.author }}</span>
+            </div>
+            <p class="p-big">{{ post.timestamp|date:"j F o" }}</p>
+          </div>
+        </section>
+        <div style="padding: 40px 50px" id="blog-img">
+          <img
+            src="{{ post.cover_img.url }}"
+            style="
+              border-radius: 20px;
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            "
+            class="w-100"
+          />
+        </div>
+
+        <section class="blog-content-text pt-0">
+          {{ post.content|safe }}
+        </section>
+      </div>
+      <div class="col-lg-4 container-border container-border-right">
+        <div class="card card-sm card-border mb-5">
+          <h5>{% trans "Get a free quote" %}</h5>
+
+          <form method="POST" action="">
+            {% csrf_token %}
+          <div class="pt-4">
+            <div class="form-group mb-4">
+              <label for="request-name" class="form-label">{% trans "Name" %}*</label>
+              <input type="text" class="form-input" id="request-name"
+              placeholder="{% trans "Name" %}" aria-label="Your name" name="name" required>
+            </div>
+            <div class="form-group mb-4">
+              <label for="request-email" class="form-label">{% trans "Email Address" %}*</label>
+              <input type="email" class="form-input" id="request-email"
+              placeholder="{% trans "Email" %}" aria-label="Your name" name="email" required>
+            </div>
+            <div class="form-group mb-4">
+              <label for="request-email" class="form-label">{% trans "Phone Number" %} <b>({% trans "optional" %})</b></label>
+              <div class="row">
+
+                <div class="col-4">
+                  <select class="form-select" id="code1" name="phone_code">
+                    {% for country in all_countries %}
+                    <option data-countryCode={{country.name}} value={{country.phone_code}}>{{country.name}} ({{country.phone_code}})</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="col-8">
+                <input type="number" class="form-input" id="request-email"
+                placeholder="{% trans "Phone number" %}" aria-label="Your Phone" name="phone_no">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="request-comments" class="form-label"><b>{% trans "Message to doctor" %}</b></label>
+              <textarea class="form-input" placeholder="{% trans "Type of treatment, desired destination" %}" name="comment" id="request-comments" cols="30" rows="5"></textarea>
+            </div>
+
+            <div class="pt-3">
+              <div class="text-center">
+                  <button type="submit" class="btn btn-primary" type="submit">{% trans "SEND MY INQUIRY" %}</button>
+                </div>
+            </div>
+          </div>
+        </form>
+        </div>
+
+        <div class="card-green mt-5 mt-md-0">
+          <h5>{% trans "Find a Doctor" %}</h5>
+          <form action="{% url 'clinics:clinics_search' %}" onsubmit="event.preventDefault(); goToSearch(document.getElementById('treatment_search').value)">
+
+
+          <div class="form-box">
+
+            <input type="text" class="form-input" id="treatment_search"
+            placeholder="{% trans "Enter treatment, destinations, procedure" %}.." aria-label="Search">
+            <p style="color: red; display: none;" id="search-error">{% trans "Please select from available options." %}</p>
+
+          </div>
+
+          <div class="pt-5">
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">{% trans "Search" %}</button>
+              </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function goToSearch(query) {
+    let url;
+
+    $.get(`/exists-in-treatments/?term=${query}&language={{language}}`,
+      function(data) {
+        if (data === "True") {
+          $.post('/create-slug/', {
+            slug: query
+          }, function(data) {
+           url = '{% url "clinics:clinics_search" %}' + '/' + data
+      
+          
+          document.getElementById('search-error').style.display = 'none';
+          window.location.href = url
+          })
+
+        } else {
+          document.getElementById('search-error').style.display = 'block';
+        }
+      }
+    );
+
+  }
+</script>
+<script>
+  $(document).ready(function(){ 
+      $("#treatment_search").autocomplete({
+          source: "/ajax_calls/search/?language={{language}}",
+          open: function(){
+              setTimeout(function () {
+                  $('.ui-autocomplete').css('z-index', 99000);
+              }, 0);
+          }
+        });
+  });
+</script>
+{% endblock body %}

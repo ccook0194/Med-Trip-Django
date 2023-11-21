@@ -1,0 +1,134 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}MyTripMed - {% trans "Add your Clinic" %}{% endblock title %} 
+{% block description %}{% trans "Add your clinic for international visibility." %}{% endblock description %}  
+{% block body %}
+
+    <section class="top-section">
+        <div class="container heading-border">
+            <h1 class="mb-3">{% trans "Add your Clinic" %}</h1>
+            <h5 class="text-dark">{% trans "Add your clinic by filling the form." %}
+                <br> 
+                {% trans "We will review the details and add your clinic" %}
+            </h5>
+        </div>
+    </section>
+
+    <div class="contact-top">
+    </div>
+
+    <div class="container mb-5 pb-5">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="form-left card card-sm">
+                    <form method="post" action="">
+                      {% csrf_token %}
+                        <div class="form-section">
+                            <h5 class="text-dark mb-2">{% trans "Clinic Details" %}</h5>
+                            <div class="row">
+
+                                <div class="col-md-12 mt-4">
+                                    <label for="clinicInput" class="form-label">{% trans "Clinic Name" %}*</label>
+                                    <input type="text" class="form-input" placeholder="{% trans "Clinic Name" %}"
+                                         id="clinicInput" name="clinic_name" required>
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <label for="address11" class="form-label">{% trans "Address 1" %}*</label>
+                                    <input type="text" class="form-input" placeholder="{% trans "Primary address" %}"
+                                         id="address11" name="clinic_address1" required>
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <label for="address21" class="form-label">{% trans "Address 2" %}</label>
+                                    <input type="text" class="form-input" placeholder="{% trans "Secondary address" %}"
+                                         id="address21" name="clinic_address2">
+                                </div>
+
+                                <div class="col-md-3 mt-4">
+                                    <label for="city1" class="form-label">{% trans "City" %}*</label>
+                                    <input type="text" class="form-input" placeholder="{% trans "City" %}"
+                                        aria-label="City" id="city1" name="clinic_city" required>
+                                </div>
+                                <div class="col-md-3 mt-4">
+                                    <label for="State1" class="form-label">{% trans "State" %}*</label>
+                                    <input type="text" class="form-input" placeholder="{% trans "State" %}"
+                                        aria-label="State" id="State1" name="clinic_state" required>
+                                </div>
+                                <div class="col-md-3 mt-4">
+                                    <label for="Country1" class="form-label">{% trans "Country" %}*</label>
+
+                                    <select class="form-select" id="Country1" name="clinic_country" required>
+                                      {% for country in all_countries %}
+                                      <option value={{country.name}}>{{country.name}}</option>
+                                      {% endfor %}
+                                     </select>
+                                </div>
+                                <div class="col-md-3 mt-4">
+                                    <label for="Zipcode1" class="form-label">{% trans "Zip Code" %}*</label>
+                                    <input type="number" class="form-input" placeholder="{% trans "Zipcode" %}"
+                                        aria-label="Zipcode" id="Zipcode1" name="clinic_zipcode" required>
+                                </div>
+
+                                <div class="col-md-12 mt-4">
+                                    <label for="WebsiteInput" class="form-label">{% trans "Website" %}</label>
+                                    <input type="text" class="form-input" placeholder="{% trans "Website url" %}"
+                                        aria-label="Website" id="WebsiteInput" name="clinic_website">
+                                </div>
+
+                                <div class="col-xl-4 mt-4">
+                                    <label for="email1" class="form-label">{% trans "Email" %}*</label>
+                                    <input type="email" class="form-input" placeholder="{% trans "Email" %}" aria-label="Email"
+                                        id="email1" name="clinic_email" required>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 mt-4">
+                                    <label for="code1" class="form-label">{% trans "Phone Number" %}*</label>
+                                    <div class="row">
+
+                                        <div class="col-4">
+                                            <select class="form-select" id="code1" name="clinic_phone_code">
+                                              {% for country in all_countries %}
+                                              <option data-countryCode={{country.name}} value={{country.phone_code}}>{{country.name}} ({{country.phone_code}})</option>
+                                              {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-8">
+                                            <input type="tel" class="form-input" placeholder="{% trans "Phone number" %}"
+                                                aria-label="Phone number" name="clinic_phone_number">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6 mt-4">
+                                    <label for="year" class="form-label">{% trans "Year of Establishment" %}*</label>
+                                    <input type="number" class="form-input" placeholder="{% trans "Year of establishment of your clinic" %}" aria-label="year"
+                                        id="year" name="clinic_est_year" required>
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                  <label for="comments">{% trans "Message" %}*</label>
+                                    <textarea class="form-input" 
+                                    rows="4"
+                                    placeholder="{% trans "Message" %}" id="comments" required name="clinic_comments"></textarea>
+                                </div>
+
+                                <div class="col-12 mt-5">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button class="btn btn-primary" type="submit">{% trans "Submit" %}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
+{% endblock body %}

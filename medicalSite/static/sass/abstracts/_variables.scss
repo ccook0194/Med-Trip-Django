@@ -1,0 +1,24 @@
+$brand-green: #A1E8AF;
+$brand-green-light: #EBFAEE;
+$brand-dark: #14080E;
+$brand-purple: #473198;
+$brand-pink:#E91E63;
+$brand-pink-light: #eeaec3;
+$light-grey: #D6D6D6;
+$brand-purple-light: #d1c9ee;
+$text-grey: #404040;
+$color-white: #ffffff;
+$border-grey: #EDEDED;
+$color-cream: #FCF7F3;
+
+$default-font-size: 10px;
+
+//transitions
+$transition-primary: all 300ms cubic-bezier(0.48, 0.01, 0.61, 0.99);
+$transition-secondary:all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+//shadows
+
+$shadow-sm: 0px 4px 16px 0px hsla(0, 0%, 0%, 0.08);
+$shadow-md: 0px 18px 30px 2px hsla(0, 0%, 0%, 0.08);
+$shadow-xl:  0px 35px 50px 2px rgba(0, 0, 0, 0.12);

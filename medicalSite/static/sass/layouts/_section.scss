@@ -1,0 +1,22 @@
+section{
+    padding: 4.5rem 0; //30px 
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+   
+}
+.section{
+    &-subheading{
+        margin-bottom: 1.6rem;
+        @extend .text-grey;
+        @extend .p-big;
+        width: 75rem;
+        max-width: 100%;
+        
+    }
+}
+.top-section{
+    padding-top: 12rem;
+}
+

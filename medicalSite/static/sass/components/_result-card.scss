@@ -1,0 +1,91 @@
+.result-card{
+    @extend .card;
+    @extend .card-sm;
+    box-shadow: $shadow-md;
+    margin-bottom: 2.4rem;
+
+    &-img{
+        display: flex;
+        height: 100%;
+        width: auto;
+        overflow: hidden;
+       
+        object-fit: cover;
+        border-radius: 0.8rem;
+    }
+    &-heading{
+        color: $brand-dark;
+    }
+    &-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        &-content{
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            &-top{
+                // margin-bottom: 2rem;
+                display: flex;
+                justify-content: space-between;
+                &-right{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        
+        &-footer{
+            border-top: 1px solid $border-grey;
+            padding-top: 1rem;
+            margin-top:1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .btn{
+                @include res(sm){
+                    width: 100%
+                  
+                }
+            }
+           
+        }
+
+        @include res(sm){
+            margin-top: 1rem;
+          
+        }
+
+        .price-desktop{
+            display: flex;
+            @include res(sm){
+                display: none !important;
+            }
+        }
+        .price-mobile{
+            display: none;
+            @include res(sm){
+                display: flex;
+            }
+        }
+    }
+    
+}
+
+.package{
+    &-container{
+        margin-top: 2rem;
+        //border-top:1px solid $border-grey;
+    }
+    &-name{
+        color: $brand-purple;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+    }
+}

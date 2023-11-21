@@ -1,0 +1,1033 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-10 17:36+0530\n"
+"PO-Revision-Date: 2022-07-27 19:41+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: templates/blog/index.html:4
+msgid "Blog on medical tourism: Dental, hair transplant and plastic surgery"
+msgstr "مدونة عن السياحة الطبية: طب الأسنان وزراعة الشعر والجراحة التجميلية"
+
+#: templates/blog/index.html:5
+msgid "Find the best deals for your medical abroad journey and the Top destinations."
+msgstr "تعرف على أفضل العروض وأفضل الوجهات لرحلتك التجميلية في الخارج."
+
+#: templates/blog/index.html:10
+msgid "The latest news on medical tourism and our advice for your next treatment."
+msgstr "آخر أخبار السياحة العلاجية ونصائحنا بخصوص علاجك التجميلي."
+
+#: templates/blog/index.html:15
+msgid "Recent Posts"
+msgstr "منشورات حديثة"
+
+#: templates/blog/index.html:27
+msgid "See More"
+msgstr "إكتشف المزيد"
+
+#: templates/blog/index.html:53 templates/clinic/search.html:345
+msgid "Page"
+msgstr "صفحة"
+
+#: templates/clinic/search.html:9
+msgid "Best"
+msgstr "أفضل"
+
+#: templates/clinic/search.html:9
+msgid "Clinics for"
+msgstr "عيادة في"
+
+#: templates/clinic/search.html:9
+msgid "(from"
+msgstr "(من"
+
+#: templates/blog/index.html:53 templates/clinic/search.html:9
+msgid "of"
+msgstr "من"
+
+#: templates/blog/index.html:62 templates/clinic/search.html:188
+msgid "read more"
+msgstr "اقرأ المزيد"
+
+#: templates/clinic/add-review.html:134 templates/clinic/free-quote.html:41 templates/main/contact.html:39
+msgid "Enter your name"
+msgstr "الإسم"
+
+#: templates/blog/post.html:55
+msgid "Email Address"
+msgstr "البريد الإلكتروني"
+
+#: templates/main/contact.html:83
+msgid "Enter your email"
+msgstr "البريدك الإلكتروني"
+
+#: templates/blog/post.html:60 templates/clinic/add-clinic.html:89 templates/clinic/add-clinic.html:100 templates/clinic/free-quote.html:50 templates/main/contact.html:87 templates/main/contact.html:89
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#: templates/clinic/add-clinic.html:100 templates/main/contact.html:89 templates/blog/post.html:72
+msgid "Phone number"
+msgstr "رقم الهاتف"
+
+#: templates/blog/post.html:60
+msgid "optional"
+msgstr "اختياري"
+
+#: templates/blog/post.html:78
+msgid "Message to doctor"
+msgstr "رسالة إلى الطبيب"
+
+#: templates/blog/post.html:79
+msgid "Type of treatment, desired destination"
+msgstr "نوع العلاج، الوجهة المطلوبة"
+
+#: templates/clinic/add-clinic.html:121 templates/clinic/add-review.html:153
+msgid "Submit"
+msgstr "إرسال"
+
+#: templates/blog/post.html:84
+msgid "SEND MY INQUIRY"
+msgstr "إرسال استفسار"
+
+#: templates/blog/post.html:99
+msgid "Enter treatment, destinations, procedure"
+msgstr "نوع العلاج، الوجهة"
+
+#: templates/blog/post.html:92
+msgid "Find a Doctor"
+msgstr "ابحث عن طبيب"
+
+#: templates/blog/post.html:104 templates/main/index.html:48
+msgid "Search"
+msgstr "بحث"
+
+#: templates/clinic/add-clinic.html:6 templates/clinic/add-clinic.html:12
+msgid "Add your Clinic"
+msgstr "أضف عيادتك"
+
+#: templates/clinic/add-clinic.html:13
+msgid "Add your clinic by filling the form."
+msgstr "املأ الاستمارة التالية لإضافة عيادتك."
+
+#: templates/clinic/add-clinic.html:7
+msgid "Add your clinic for international visibility."
+msgstr "أضف عيادتك لاستقبال الحرفاء الدوليين."
+
+#: templates/clinic/add-clinic.html:15
+msgid "We will review the details and add your clinic"
+msgstr "سنراجع بياناتك و نقوم بإضافة عيادتك."
+
+#: templates/clinic/add-clinic.html:30
+msgid "Clinic Details"
+msgstr "بيانات العيادة"
+
+#: templates/clinic/add-clinic.html:34
+msgid "Clinic Name"
+msgstr "اسم العيادة"
+
+#: templates/clinic/add-clinic.html:35
+msgid "Enter Clinic Name"
+msgstr "اسم العيادة"
+
+#: templates/clinic/add-clinic.html:40 templates/main/contact.html:45
+msgid "Address 1"
+msgstr "عنوان 1"
+
+#: templates/clinic/add-clinic.html:41
+msgid "Primary address"
+msgstr "العنوان الرئيسي"
+
+#: templates/clinic/add-clinic.html:46 templates/main/contact.html:51
+msgid "Address 2"
+msgstr "عنوان 2"
+
+#: templates/clinic/add-clinic.html:47
+msgid "Secondary address"
+msgstr "العنوان الثانوي"
+
+#: templates/clinic/add-clinic.html:52 templates/main/contact.html:57
+msgid "City"
+msgstr "المدينة"
+
+#: templates/clinic/add-clinic.html:53
+msgid "Enter your clinic city"
+msgstr "مدينة العيادة"
+
+#: templates/clinic/add-clinic.html:57 templates/main/contact.html:62
+msgid "State"
+msgstr "الولاية"
+
+#: templates/clinic/add-clinic.html:58
+msgid "Enter your clinic state"
+msgstr "ولاية العيادة"
+
+#: templates/clinic/add-clinic.html:62 templates/main/contact.html:67 templates/main/index.html:43
+msgid "Country"
+msgstr "البلد"
+
+#: templates/clinic/add-clinic.html:71
+msgid "Zip Code"
+msgstr "الرمز البريدي"
+
+#: templates/clinic/add-clinic.html:72
+msgid "Zipcode"
+msgstr "الرمز البريدي"
+
+#: templates/clinic/add-clinic.html:77
+msgid "Website"
+msgstr "الموقع الإلكتروني"
+
+#: templates/clinic/add-clinic.html:78
+msgid "Website url"
+msgstr "عنوان الموقع الإلكتروني"
+
+#: templates/clinic/add-clinic.html:83 templates/clinic/add-review.html:140 templates/main/base.html:523 templates/clinic/add-review.html:141 templates/blog/post.html:57 templates/clinic/free-quote.html:45
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: templates/clinic/add-clinic.html:84
+msgid "Enter your clinic's email"
+msgstr "البريد الإلكتروني"
+
+#: templates/clinic/free-quote.html:63 templates/main/contact.html:89
+msgid "Enter your phone number"
+msgstr "رقم الهاتف"
+
+#: templates/clinic/add-clinic.html:107
+msgid "Year of Establishment"
+msgstr "سنة التأسيس"
+
+#: templates/clinic/add-clinic.html:108
+msgid "Year of establishment of your clinic"
+msgstr "تاريخ إنشاء العيادة"
+
+#: templates/clinic/add-clinic.html:113
+msgid "Comment Box"
+msgstr "التعليقات"
+
+#: templates/clinic/add-clinic.html:116
+msgid "Enter your questions/comments"
+msgstr "أدخل أسئلتك / تعليقاتك"
+
+#: templates/clinic/add-review.html:11
+msgid "Submit Review"
+msgstr "أرسل لنا رأيك"
+
+#: templates/clinic/add-review.html:12
+msgid "Add a review for a doctor or clinic to help other users make the right decision."
+msgstr "أرسل لنا رأيك حول الطبيب أو العيادة لمساعدة المستخدمين الآخرين على اتخاذ القرار المناسب."
+
+#: templates/clinic/add-review.html:12
+msgid "Submit the review for the"
+msgstr "أرسل رأيك إلى"
+
+#: templates/clinic/add-review.html:25
+msgid "Fill this form to submit your review"
+msgstr "املأ هذه الاستمارة لإبداء رأيك"
+
+#: templates/clinic/clinic-page.html:369
+msgid "Give your review:"
+msgstr "أرسل لنا رأيك :"
+
+#: templates/clinic/add-review.html:36
+msgid "For Quality"
+msgstr "الجودة"
+
+#: templates/clinic/add-review.html:55
+msgid "For Service"
+msgstr "الخدمات"
+
+#: templates/clinic/add-review.html:74
+msgid "For Cleanliness"
+msgstr "النظافة"
+
+#: templates/clinic/add-review.html:93
+msgid "For Comfort"
+msgstr "الرفاهيّة"
+
+#: templates/clinic/add-review.html:112
+msgid "For Communication"
+msgstr "التواصل "
+
+#: templates/clinic/add-review.html:133 templates/clinic/free-quote.html:39 templates/main/contact.html:37 templates/blog/post.html:50 templates/blog/post.html:52
+msgid "Name"
+msgstr "الاسم"
+
+#: templates/clinic/add-review.html:146 templates/clinic/add-review.html:6
+msgid "Review"
+msgstr "الآراء"
+
+#: templates/clinic/clinic-page.html:603
+msgid "Enter your review"
+msgstr "الرجاء إرسال رأيك "
+
+#: templates/clinic/clinic-page.html:6 templates/clinic/clinic-page.html:8 templates/clinic/clinic-page.html:236 templates/clinic/search.html:8 templates/clinic/search.html:10 templates/clinic/search.html:19
+msgid "in"
+msgstr "في"
+
+#: templates/clinic/clinic-page.html:8
+msgid "offers a wide range of medical treatments"
+msgstr "يقدم مجموعة واسعة من العلاجات الطبية"
+
+#: templates/clinic/clinic-page.html:177
+msgid "Spoken languages"
+msgstr "اللغات المستعملة"
+
+#: templates/clinic/clinic-page.html:26 templates/blog/post.html:44
+msgid "Get a free quote"
+msgstr "احصل على عرض أسعار مجاني"
+
+#: templates/clinic/clinic-page.html:35
+msgid "Average Rating"
+msgstr "معدل التقييم"
+
+#: templates/clinic/clinic-page.html:41
+msgid "Review(s)"
+msgstr "آراء "
+
+#: templates/clinic/clinic-page.html:42
+msgid "Given"
+msgstr "مقدمة"
+
+#: templates/clinic/clinic-page.html:48
+msgid "Doctor(s)"
+msgstr "أطباء"
+
+#: templates/clinic/clinic-page.html:49
+msgid "Available"
+msgstr "متوفرة"
+
+#: templates/clinic/clinic-page.html:68
+msgid "About"
+msgstr "معلومات"
+
+#: templates/clinic/clinic-page.html:87
+msgid "Photos"
+msgstr "الصور"
+
+#: templates/clinic/clinic-page.html:94
+msgid "facilities photos"
+msgstr "صور العيادة"
+
+#: templates/clinic/clinic-page.html:107
+msgid "before/after photos"
+msgstr "صور قبل / بعد"
+
+#: templates/clinic/clinic-page.html:143
+msgid "Doctors Available"
+msgstr "الأطباء المتوفرين"
+
+#: templates/clinic/clinic-page.html:176
+msgid "Certifications"
+msgstr "الشهادات "
+
+#: templates/clinic/clinic-page.html:198
+msgid "Reviews"
+msgstr "الآراء"
+
+#: templates/clinic/clinic-page.html:218
+msgid "stars"
+msgstr "نجوم"
+
+#: templates/clinic/clinic-page.html:236
+msgid "Read real reviews from real patients of"
+msgstr "اقرأ آراء المرضى الذين كانت لهم تجارِب حقيقية في"
+
+#: templates/clinic/clinic-page.html:237
+msgid "has achieved a star rating of"
+msgstr "حصل على تصنيف"
+
+#: templates/clinic/clinic-page.html:237
+msgid "based on"
+msgstr "استنادا إلى"
+
+#: templates/main/base.html:142
+msgid "Ranking"
+msgstr "الترتيب"
+
+#: templates/ranking/index.html:80
+msgid "Rank"
+msgstr "الرتبة"
+
+#: templates/ranking/index.html:7 templates/ranking/index.html:8 templates/ranking/index.html:16
+msgid "at"
+msgstr "في"
+
+#: templates/ranking/index.html:16
+msgid "hair transplant specialists"
+msgstr "أخصائيي زراعة الشعر"
+
+#: templates/ranking/index.html:8
+msgid "List of the best"
+msgstr "قائمة أفضل"
+
+#: templates/ranking/index.html:8
+msgid "aesthetic surgeons"
+msgstr "طبيب في الجراحة التجميلية"
+
+#: templates/ranking/index.html:8
+msgid "classified by customer reviews and quality of services"
+msgstr "مصنفة حسب آراء العملاء وجودة الخدمات"
+
+#: templates/ranking/index.html:7
+msgid "The top 20"
+msgstr "أفضل 20"
+
+#: templates/ranking/index.html:7
+msgid "abroad - Mytripmed"
+msgstr "في الخارج - Mytripmed"
+
+#: templates/ranking/index.html:7
+msgid "hair transplant clinics"
+msgstr "عيادة زراعة شعر"
+
+#: templates/ranking/index.html:16 templates/ranking/index.html:8 templates/ranking/index.html:7
+msgid "dentists"
+msgstr "أطباء الأسنان"
+
+#: templates/ranking/index.html:16 templates/ranking/index.html:7
+msgid "aesthetic surgery specialists"
+msgstr "أخصائيي الجراحة التجميلية"
+
+#: templates/ranking/index.html:16
+msgid "Ranking of top"
+msgstr "ترتيب  أفضل"
+
+#: templates/ranking/index.html:83
+msgid "Doctors & Clinic"
+msgstr "الأطباء و العيادات"
+
+#: templates/ranking/index.html:85
+msgid "Regions"
+msgstr "البلد"
+
+#: templates/ranking/index.html:87
+msgid "Review score"
+msgstr "نقاط التقييم"
+
+#: templates/ranking/index.html:92
+msgid "<b>The average score of reviews</b> on Google and other platforms recalculate to get more accurate value."
+msgstr "يتم إعادة حساب معدل التقييمات المتوفرة على Google والمنصات الأخرى للحصول على تقييم أكثر دقة."
+
+#: templates/ranking/index.html:95
+msgid "Quality score"
+msgstr "نقاط الجودة"
+
+#: templates/ranking/index.html:99
+msgid "<b>Quality score:</b> refers to the quality of the services offered and the transparency of the clinic. In order to calculate the score, different factors are collected such as: accreditations, certifications, price transparency, expertise in the domain, years of experience, quality of the clinic, languages spoken, etc."
+msgstr "نقاط الجودة: تعني جودة الخدمات المقدمة وشفافية العيادة. لاحتساب النتيجة ، يتم جمع عناصر مختلفة مثل: الاعتمادات ، والشهادات ، والشفافية في الأسعار ، والخبرة في الميدان ، وسنوات التجربة ، وجودة العيادة ، واللغات المنطوقة ، وما إلى ذلك."
+
+#: templates/ranking/index.html:102
+msgid "Points"
+msgstr "مجموع النقاط"
+
+#: templates/ranking/index.html:106
+msgid "The sum of reviews score plus quality score."
+msgstr "مجموع نقاط التقييم بالإضافة إلى نقاط الجودة."
+
+#: templates/ranking/index.html:176
+msgid "Show More"
+msgstr "أظهر المزيد"
+
+#: templates/ranking/index.html:27
+msgid "Dentals"
+msgstr "الأسنان"
+
+#: templates/ranking/index.html:35
+msgid "Aesthetic"
+msgstr "عمليات التجميل"
+
+#: templates/ranking/index.html:43
+msgid "Hair Transplant"
+msgstr "زراعة الشعر"
+
+#: templates/clinic/clinic-page.html:237
+msgid "reviews"
+msgstr "تقييمات"
+
+#: templates/clinic/clinic-page.html:240
+msgid "If you are a past patient of"
+msgstr "إذا كنت ترغب أيضا في إبداء رأيك في"
+
+#: templates/clinic/clinic-page.html:240
+msgid "please click the 'write review' button to provide your review for others to read. Writing a review will only take 2 minutes to complete"
+msgstr "اضغط على \"كتابة رأي\" ليستفيد المرضى الآخرون من تجربتك.  لن يستغرق ذلك أكثر من دقيقتين"
+
+#: templates/clinic/clinic-page.html:245
+msgid "If you have any other questions, you can"
+msgstr "إذا كان لديك أي أسئلة أخرى ، يمكنك"
+
+#: templates/clinic/clinic-page.html:245 templates/main/base.html:154
+msgid "contact us"
+msgstr "اتصل بنا"
+
+#: templates/clinic/clinic-page.html:491
+msgid "free of charge."
+msgstr "مجانا."
+
+#: templates/clinic/clinic-page.html:253
+msgid "Write a Review"
+msgstr "كتابة رأي"
+
+#: templates/clinic/free-quote.html:6
+msgid "Request a Free Quote"
+msgstr "احصل على عرض أسعار مجاني"
+
+#: templates/clinic/free-quote.html:12
+msgid "To find your doctor at the best price, request your free quote now and compare all the offers in a few clicks."
+msgstr "للعثور على طبيب بأفضل الأسعار ، اطلب الآن عرض أسعار مجاني وقارن جميع العروض ببضع النقرات."
+
+#: templates/clinic/free-quote.html:14
+msgid "Request your free quote"
+msgstr "احصل على عرض أسعار مجاني"
+
+#: templates/clinic/free-quote.html:18
+msgid "Without any fees"
+msgstr "بدون تكاليف إضافية"
+
+#: templates/clinic/free-quote.html:22
+#, python-format
+msgid "Save up to 70%% on the treatment prices you wish to carry out. Our renowned doctors and clinics guarantee quality and unbeatable prices."
+msgstr "وفر حتى 70 %% على سعر العلاج التي ترغب في إجرائه. يضمن أطبائنا وعياداتنا جودة وأسعار لا تقبل المنافسة."
+
+#: templates/clinic/free-quote.html:36
+msgid "Free Quote"
+msgstr "عرض أسعار مجاني"
+
+#: templates/clinic/free-quote.html:46
+msgid "Email address"
+msgstr "البريد الإلكتروني"
+
+#: templates/clinic/free-quote.html:55
+msgid "Select phone code"
+msgstr "رمز الهاتف الدولي"
+
+#: templates/clinic/free-quote.html:69 templates/main/contact.html:94
+msgid "Message"
+msgstr "وصف مختصر"
+
+#: templates/clinic/free-quote.html:72
+msgid "Type of processing, desired destination"
+msgstr "نوع العلاج ، البلد"
+
+#: templates/clinic/free-quote.html:77 templates/main/contact.html:102
+msgid "Send"
+msgstr "إرسال"
+
+#: templates/clinic/search.html:9
+msgid "world"
+msgstr "الخارج"
+
+#: templates/clinic/search.html:8 templates/clinic/search.html:10 templates/clinic/search.html:19
+msgid "all countries"
+msgstr "في جميع البلدان"
+
+#: templates/clinic/search.html:8
+msgid "compare prices"
+msgstr "قارن الأسعار"
+
+#: templates/clinic/search.html:8
+msgid "Medical Tourism in "
+msgstr "السياحة التجميلية في "
+
+#: templates/clinic/search.html:10
+msgid "Compare prices for hair transplant, cosmetic surgery and dental care in"
+msgstr "قارن أسعار زراعة الشعر وعمليات التجميل وطب الأسنان في"
+
+#: templates/clinic/search.html:10
+msgid "Compare prices of doctors and clinics, read real patient reviews and book an appointment online for your"
+msgstr "قارن أسعار الأطباء والعيادات، واكتشف آراء المرضى واحجز موعدًا عبر الإنترنت"
+
+#: templates/clinic/search.html:22
+msgid "All"
+msgstr "كل"
+
+#: templates/clinic/search.html:22
+msgid "Clinics in"
+msgstr "عيادات في"
+
+#: templates/clinic/search.html:22
+msgid "Clinics found."
+msgstr "العيادات المتوفرة"
+
+#: templates/clinic/search.html:431
+msgid "No Treatments found"
+msgstr "لم يتم العثور على العلاج"
+
+#: templates/clinic/search.html:30
+msgid "filters"
+msgstr "المرشحات"
+
+#: templates/clinic/search.html:41
+msgid "Destination"
+msgstr "الوجهة"
+
+#: templates/clinic/search.html:44
+msgid "Select Destination"
+msgstr "حدد وجهتك"
+
+#: templates/clinic/search.html:55 templates/clinic/search.html:128
+msgid "Rating"
+msgstr "معدل التقييم"
+
+#: templates/clinic/search.html:83 templates/clinic/search.html:132
+msgid "Price"
+msgstr "السعر"
+
+#: templates/clinic/search.html:86
+msgid "Select Price"
+msgstr "حدد السعر"
+
+#: templates/clinic/search.html:105
+msgid "Apply"
+msgstr "تطبيق"
+
+#: templates/clinic/search.html:119
+msgid "Filters"
+msgstr "المرشحات"
+
+#: templates/clinic/search.html:126
+msgid "Sort By"
+msgstr "صنف حسب"
+
+#: templates/clinic/search.html:199 templates/clinic/search.html:312
+msgid "Inquire"
+msgstr "استفسر"
+
+#: templates/main/about.html:6 templates/main/about.html:12 templates/main/base.html:267
+msgid "About Us"
+msgstr "من نحن؟"
+
+#: templates/clinic/treatment.html:6
+msgid "All treatments: cosmetic surgery, dental, hair transplant"
+msgstr "جميع العلاجات: عمليات التجميل ، الأسنان ، زراعة الشعر"
+
+#: templates/clinic/treatment.html:7
+msgid "Mytripmed: Find and compare prices for dental care, cosmetic surgery or hair transplantation."
+msgstr "MyTripMed  أفضل الأسعار لطب الأسنان وجراحات التجميل وزراعة الشعر."
+
+#: templates/clinic/treatment.html:12
+msgid "All Treatments"
+msgstr "كل العلاجات"
+
+#: templates/main/about.html:12
+msgid "Compare in one click the most economical offers for your aesthetic treatment in the best clinics in the world."
+msgstr "قارن أفضل العروض لعلاجك التجميلي في أحسن العيادات في العالم."
+
+#: templates/main/about.html:24
+msgid ""
+"MyTripMed is the online comparator that allows you to book your treatment directly in the best clinics in the world. Our tool puts you in touch with doctors handpicked for their experience and quality of service.  Thus, we give you all the information you need to better compare the offers. You will therefore find the country of the practitioner, an overview of his professional career, his specialties and in particular his prices. We also provide you with before/after photos and real testimonials from other patients. This will allow "
+"you to choose more transparently. "
+msgstr "MyTripMed هو موقع يتيح لك مقارنة الأسعار و حجز علاجك في أفضل العيادات في العالم. يضعك على اتصال مع  أطباء مختارين بعناية لخبرتهم وجودة خدماتهم. وبالتالي، نقدم لك جميع المعلومات التي تحتاجها لمقارنة العروض بشكل أفضل. لذلك، سوف تجد بلد المصحة/العيادة/الطبيب، لمحة عامة عن حياته المهنية و كفاءته و خاصة أسعاره. نوفر لك أيضًا صور ما قبل / بعد التدخل وآراء المرضى بعد العلاج. هكذا يمكنك الاختيار بسرعة و فاعلية. "
+
+#: templates/main/about.html:27
+#, python-format
+msgid "So, by booking your treatment on MyTripMed, you have the assurance of being treated by a renowned medical expert. In addition, you benefit from the most attractive offers on the market. Thanks to our portal, you can save up to 70%% on the prices of dental care, hair transplant or cosmetic surgery. With MyTripMed, you benefit from the most optimal quality-price ratio."
+msgstr "لذا ، عندما تقوم بحجز علاجك عبر MyTripMed ، ستضمن تلقي علاج من قبل طبيب معتمد و معروف بخبرته. زيادة على ذلك ، يمكنك الاستفادة من أكثر العروض اقتصادية في السوق. بفضل بوابتنا ، يمكنك توفير ما يصل إلى 70٪ على أسعار طب الأسنان أو زراعة الشعر أو الجراحة التجميلية. مع MyTripMed ، يمكنك الاستفادة من أفضل نسبة سعر/جودة."
+
+#: templates/main/about.html:30
+msgid "Our expert advisors guarantee you full assistance in making a treatment appointment. They answer all your questions and make things easier for you. Likewise, they send you a free, non-binding quote on the type of operation you want to perform. This allows you to leave for your medical stay without surprises or hidden costs. In addition, we have selected for you the most famous destinations in the world for the quality of their services and their reduced rates: Turkey, Tunisia, Hungary, Romania, Mexico..."
+msgstr "يضمن لك مستشارونا الخبراء المساعدة الكاملة في تحديد موعد العلاج. يجيبون على جميع أسئلتك ويجعلون الأمور أسهل بالنسبة لك. كما ، يرسلون لك عرض أسعار مجاني وغير ملزم حول نوع العملية التي تريد القيام بها. هذا يسمح لك بالسفر من أجل إقامتك الطبية دون مفاجآت أو تكاليف خفية. إضافة إلى ذلك ، اخترنا لك أشهر الوجهات في العالم لجودة خدماتها وأسعارها المخفضة: تركيا ، تونس ، المجر ، رومانيا و المكسيك ..."
+
+#: templates/main/about.html:33
+msgid "In short, our mission is to give you access to a wide range of treatments. We help you get the look you dream of by letting you choose your own doctor. Also, we make sure you have a great medical trip without hurting your budget! "
+msgstr "باختصار، تكمن مهمتنا في تمكينك من التعرف على مجموعة واسعة من العلاجات في دول عدّة من العالم. نحن نساعدك في الحصول على المظهر الذي تحلم به لأننا نختار بعناية الأطباء الذين نتعامل معهم. أيضًا ، نرافقك طوال رحلتك الطبية حتى تكون ممتعة و بأسعار معقولة!"
+
+#: templates/main/base.html:85 templates/main/base.html:216
+msgid "Your medical stay at the best price"
+msgstr "إقامتك الطبية بأفضل الأسعار"
+
+#: templates/main/base.html:90
+msgid "Search by clinic, treatment or a location"
+msgstr "البحث عن عيادة أو علاج أو بلد"
+
+#: templates/main/base.html:105 templates/main/base.html:251
+msgid "Destinations"
+msgstr "البلدان"
+
+#: templates/main/base.html:108 templates/main/base.html:250
+msgid "Treatments"
+msgstr "العلاجات"
+
+#: templates/main/base.html:111
+msgid "Blogs"
+msgstr "المدونة"
+
+#: templates/main/base.html:115 templates/main/base.html:254
+msgid "Add Clinic"
+msgstr "اضافة عيادة"
+
+#: templates/main/base.html:129
+msgid "language"
+msgstr "اللغة"
+
+#: templates/main/base.html:278
+msgid "LANGUAGES"
+msgstr "اللغات"
+
+#: templates/main/base.html:301
+msgid "French"
+msgstr "فرنسية"
+
+#: templates/main/base.html:305
+msgid "English"
+msgstr "إنجليزية"
+
+#: templates/main/base.html:309
+msgid "Arabic"
+msgstr "عربية"
+
+#: templates/main/base.html:139
+msgid "currency"
+msgstr "العملة"
+
+#: templates/main/base.html:180
+msgid "Start your medical experience now!"
+msgstr "ابدأ تجربتك الطبية الآن!"
+
+#: templates/main/base.html:187
+msgid "Find a clinic"
+msgstr "ابحث عن عيادة"
+
+#: templates/main/base.html:192
+msgid "Ask for a quote"
+msgstr "احصل على عرض أسعار"
+
+#: templates/main/base.html:226
+msgid "MyTripMed offers the best prices for dental care, cosmetic surgeries and hair transplants thanks to its comparator."
+msgstr "توفر MyTripMed أفضل الأسعار لطب الأسنان وجراحات التجميل وزراعة الشعر."
+
+#: templates/main/base.html:224
+msgid "Request a Quote"
+msgstr "احصل على عرض أسعار مجاني"
+
+#: templates/main/base.html:231
+msgid "find us on"
+msgstr "تجدنا على"
+
+#: templates/main/base.html:245
+msgid "MENU"
+msgstr "القائمة"
+
+#: templates/main/base.html:252
+msgid "Blog"
+msgstr "المدونة"
+
+#: templates/main/base.html:253
+msgid "Contact"
+msgstr "اتصل بنا"
+
+#: templates/main/base.html:263
+msgid "ABOUT COMPANY"
+msgstr "تعرف علينا"
+
+#: templates/main/base.html:268 templates/main/terms-and-conditions.html:6 templates/main/terms-and-conditions.html:12
+msgid "Terms and Conditions"
+msgstr "شروط الإستخدام"
+
+#: templates/main/terms-and-conditions.html:7
+msgid "Our general conditions which organise our services between the user, Mytripmed and clinics or doctors."
+msgstr "شروطنا العامة التي تنظم خدماتنا بين المستخدم و MyTripMed والعيادات أو الأطباء."
+
+#: templates/main/base.html:293
+msgid "CONTACT US"
+msgstr "اتصل بنا"
+
+#: templates/main/base.html:291
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#: templates/main/base.html:320
+msgid "Mail ID"
+msgstr "البريد"
+
+#: templates/main/base.html:319
+msgid "Copyright"
+msgstr "كل الحقوق محفوظة"
+
+#: templates/main/contact.html:6
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+#: templates/main/contact.html:12
+msgid "Contact us at anytime!"
+msgstr "اتصل بنا في اي وقت!"
+
+#: templates/main/contact.html:13
+msgid "Send us your suggestions or questions and let us know your expectations. We are happy to answer you as soon as possible."
+msgstr "أرسل لنا الآن اقتراحاتك أو أسئلتك ودعنا نتعرف على إنتظارتك. يسعدنا الرد على طلبك في أقرب وقت ممكن."
+
+#: templates/main/contact.html:26
+msgid "Now fill out the form below to get in touch with our customer service."
+msgstr "املأ النموذج التالي للتواصل مع خدمة العملاء."
+
+#: templates/main/contact.html:12
+msgid "Do not hesitate to contact us to ask your questions, give your suggestions and discover more about our services."
+msgstr "لا تتردد في الاتصال بنا لطرح أسئلتك وتقديم اقتراحاتك  ومزيد التعرف على خدماتنا."
+
+#: templates/main/contact.html:29
+msgid "Title"
+msgstr "Title"
+
+#: templates/main/contact.html:31
+msgid "Choose"
+msgstr "اختر"
+
+#: templates/main/contact.html:47
+msgid "Enter your main address"
+msgstr "العنوان الرئيسي"
+
+#: templates/main/contact.html:53
+msgid "Enter your secondary address"
+msgstr "العنوان الثانوي"
+
+#: templates/main/contact.html:59
+msgid "Enter your city"
+msgstr "المدينة"
+
+#: templates/main/contact.html:70
+msgid "Choose your country"
+msgstr "البلد"
+
+#: templates/main/contact.html:77
+msgid "Postal Code"
+msgstr "الرمز البريدي"
+
+#: templates/main/contact.html:79
+msgid "Enter your postal code"
+msgstr "الرمز البريدي"
+
+#: templates/main/contact.html:82
+msgid "E-mail"
+msgstr "البريد الالكتروني"
+
+#: templates/main/contact.html:97
+msgid "Type your message"
+msgstr "اكتب رسالتك"
+
+#: templates/main/contact.html:115
+msgid "Call us"
+msgstr "اتصل بنا"
+
+#: templates/main/contact.html:125
+msgid "Chat on WhatsApp"
+msgstr "اتصل بنا على WhatsApp "
+
+#: templates/main/contact.html:135
+msgid "Like us on Facebook"
+msgstr "تابعنا على Facebook"
+
+#: templates/main/contact.html:136
+msgid "See what others are saying about us"
+msgstr "تعرف على ما يقوله العملاء عنا"
+
+#: templates/main/contact.html:145
+msgid "Follow us on Twitter"
+msgstr "تابعنا على Twitter"
+
+#: templates/main/contact.html:146
+msgid "Or send us a tweet"
+msgstr "أو أرسل لنا تغريدة على تويتر"
+
+#: templates/main/index.html:6
+msgid "Treatment Abroad Price Comparison at Mytripmed"
+msgstr "قارن أسعار العلاج في الخارج مع Mytripmed"
+
+#: templates/main/index.html:7
+msgid "MyTripMed: free comparator that helps you easily find doctors and clinics abroad at the best price."
+msgstr "MyTripMed: مقارن أسعار يساعدك في العثور على أطباء وعيادات في الخارج بأفضل الأسعار."
+
+#: templates/main/index.html:15
+msgid "Find World's Top Doctors"
+msgstr "اعثر على أفضل الأطباء في الخارج"
+
+#: templates/main/index.html:18
+#, python-format
+msgid "Find the most attractive offers for the treatment you dream of and save up to 70%% on prices."
+msgstr "اكتشف أفضل العروض للعلاج الذي لطالما حلمت به ووفر 70 %% على التكاليف. "
+
+#: templates/main/index.html:23
+msgid "Qualified and renowned doctors."
+msgstr "أطباء أكفاء ومشهورين."
+
+#: templates/main/index.html:29
+msgid "Personalized support."
+msgstr "مرافقة شخصية."
+
+#: templates/main/index.html:35
+msgid "Free consultation and quotation."
+msgstr "استشارة وعروض أسعار مجانية."
+
+#: templates/main/index.html:31
+msgid "Find and book a Doctor's appointment"
+msgstr "إبحث عن طبيب و إحجز موعدك"
+
+#: templates/main/index.html:40 templates/main/base.html:88
+msgid "What treatment are you looking for?"
+msgstr "ما هو العلاج الذي تبحث عنه؟"
+
+#: templates/main/index.html:63
+msgid "Why rely on MyTripMed?"
+msgstr "لماذا تعتمد على MyTripMed؟"
+
+#: templates/main/index.html:73
+msgid "Economic offers"
+msgstr "عروض اقتصادية"
+
+#: templates/main/index.html:74
+#, python-format
+msgid "Save up to 70%% on fares and take advantage of packages and promotional offers."
+msgstr "وفر حتى 70%% على الأسعار و تمتع بأهم العروض الترويجية."
+
+#: templates/main/index.html:85
+msgid "Free Service"
+msgstr "خدمات مجانية"
+
+#: templates/main/index.html:86
+msgid "Take advantage of our free services to find the right doctor for your treatment. You pay on the spot without any hidden costs."
+msgstr "استفد من خدماتنا المجانية للعثور على الطبيب المناسب لعلاجك. سوف تدفع في العيادة بدون أي تكاليف إضافية."
+
+#: templates/main/index.html:97
+msgid "Patient support"
+msgstr "مستشارونا الأكفاء"
+
+#: templates/main/index.html:98
+msgid "Ask all your questions by phone or e-mail. Our experienced coordinators are there to support you in a personalized way."
+msgstr "اطرح جميع أسئلتك عبر الهاتف أو البريد الإلكتروني و تمتع بمرافقة شخصية من قبل منسقونا الخبراء."
+
+#: templates/main/index.html:109
+msgid "Complete Information"
+msgstr "معلوماتنا الكاملة"
+
+#: templates/main/index.html:110
+msgid "Find all the useful data of doctors and clinics to make your selection easier: country, experience, specialties, guarantees, prices or packages, opinions and scores."
+msgstr "تحصل على البيانات الكاملة لأفضل العيادات والأطباء حول العالم : البلد، الخبرة، التخصصات، الضمانات، العروض والآراء."
+
+#: templates/main/index.html:121
+msgid "Rigorous selection"
+msgstr "اختياراتنا الدقيقة"
+
+#: templates/main/index.html:122
+msgid "We choose for you experienced and highly qualified doctors, but also internationally accredited clinics. "
+msgstr "نحن نختار لك فقط الأطباء ذوي الخبرة والكفاءة العالية، و كذلك المصحات و العيادات المعتمدة عالميا."
+
+#: templates/main/index.html:133
+msgid "Total satisfaction"
+msgstr "رضا حرفاؤنا"
+
+#: templates/main/index.html:134
+msgid "You benefit from a personalized follow-up before and after the treatment to ensure your total satisfaction with our services."
+msgstr "رضاؤك التام عن خدماتنا هو مقياس لنجاحنا ، لذا نضمن لك مرافقة شخصية قبل وبعد العلاج."
+
+#: templates/main/index.html:149
+msgid "How does it work ?"
+msgstr "كيف تتمتع بخدماتنا ؟"
+
+#: templates/main/index.html:152
+msgid "It's very simple ! You will find detailed information on the clinics and treatments that interest you. You just have to compare prices and scores in order to choose the optimal offer for your medical stay."
+msgstr "الأمر بسيط للغاية ! سنمدك بجميع المعلومات الهامة حول العيادات والعلاجات التجميلية التي تهمك. ما عليك سوى المقارنة بين الأسعار والآراء لاختيار العرض الأمثل لإقامتكم الطبية بالخارج."
+
+#: templates/main/index.html:167
+msgid "Choose your doctor"
+msgstr "اختر طبيبك"
+
+#: templates/main/index.html:168
+msgid "Select the best clinic and destination for your treatment."
+msgstr "حدد أفضل عيادة وبلد لعلاجك."
+
+#: templates/main/index.html:175
+msgid "Fill out the contact form"
+msgstr "املأ نموذج الاتصال"
+
+#: templates/main/index.html:176
+msgid "Add your contact details and indicate the date of your appointment."
+msgstr "أضف تفاصيل الاتصال الخاصة بك وحدد تاريخ موعدك."
+
+#: templates/main/index.html:183
+msgid "Perform your treatment"
+msgstr "تمتع بعلاجك"
+
+#: templates/main/index.html:184
+msgid "Book your flight and enjoy a discounted medical stay with no hidden costs."
+msgstr "احجز رحلتك و تمتع بإقامة طبية استثنائية بأقل التكاليف."
+
+#: templates/main/popular-clinics.html:6
+msgid "Our best destinations"
+msgstr "أفضل وجهاتنا"
+
+#: templates/main/popular-clinics.html:26
+msgid "See Clinics"
+msgstr "شاهد العيادات"
+
+#: templates/main/popular-treatments.html:7
+msgid "Our most popular treatments"
+msgstr "العلاجات الأكثر طلبًا"
+
+#: templates/main/popular-treatments.html:10
+msgid "Choose from a wide range of aesthetic, dental and hair treatments."
+msgstr "اختر من بين مجموعة كبيرة من العلاجات في الجراحة التجميلية و طب الأسنان وزراعة الشعر."
+
+#: templates/main/popular-treatments.html:23 templates/main/popular-treatments.html:114 templates/main/popular-treatments.html:158 templates/main/popular-treatments.html:202 templates/main/popular-treatments.html:245
+msgid "Lorem ipsum"
+msgstr ""
+
+#: templates/main/popular-treatments.html:29
+msgid "Breast Augmentation"
+msgstr ""
+
+#: templates/main/popular-treatments.html:34
+msgid "Breast Lift"
+msgstr ""
+
+#: templates/main/popular-treatments.html:39
+msgid "Breast Reduction"
+msgstr ""
+
+#: templates/main/popular-treatments.html:44
+msgid "Breast Revision"
+msgstr ""
+
+#: templates/main/popular-treatments.html:49
+msgid "Mastectomy"
+msgstr ""
+
+#: templates/main/popular-treatments.html:69
+msgid "Face"
+msgstr ""
+
+#: templates/main/base.html:120
+msgid "Request Free Quote"
+msgstr "احصل على عرض أسعار مجاني"
+
+#: templates/main/popular-treatments.html:75 templates/main/popular-treatments.html:119 templates/main/popular-treatments.html:163 templates/main/popular-treatments.html:207 templates/main/popular-treatments.html:250
+msgid "Facelift"
+msgstr ""
+
+#: templates/main/popular-treatments.html:80 templates/main/popular-treatments.html:124 templates/main/popular-treatments.html:168 templates/main/popular-treatments.html:212 templates/main/popular-treatments.html:255
+msgid "Eyebrow Lift"
+msgstr ""
+
+#: templates/main/popular-treatments.html:85 templates/main/popular-treatments.html:129 templates/main/popular-treatments.html:173 templates/main/popular-treatments.html:217 templates/main/popular-treatments.html:260
+msgid "Nose Job"
+msgstr ""
+
+#: templates/main/popular-treatments.html:90 templates/main/popular-treatments.html:134 templates/main/popular-treatments.html:178 templates/main/popular-treatments.html:222 templates/main/popular-treatments.html:265
+msgid "Lip Augmentation"
+msgstr ""
+
+#: templates/main/popular-treatments.html:95 templates/main/popular-treatments.html:139 templates/main/popular-treatments.html:183 templates/main/popular-treatments.html:227 templates/main/popular-treatments.html:270
+msgid "Eye Bag Removal"
+msgstr ""

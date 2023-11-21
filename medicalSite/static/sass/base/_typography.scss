@@ -1,0 +1,146 @@
+* {
+    font-family: 'Work Sans', sans-serif;
+}
+
+a,p,button,code{
+    font-size: 1.6rem;
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 0;
+    text-decoration: none !important;
+
+    @include res(sm){
+        font-size: 1.8rem;
+    }
+}
+p {
+    text-align: left;
+    color: $brand-dark;
+    line-height: 1.8;
+    line-height: 1.8;
+}
+.p{
+    &-sm{
+        font-size: 1.4rem;
+        line-height: 1.5;
+
+        @include res(sm){
+            font-size: 1.6rem;
+        }
+    }
+
+    &-xs{
+        font-size: 10px;
+        @include res(sm){
+            font-size: 11px;
+        }
+    }
+    &-big{
+        font-size: 1.8rem;
+        line-height: 1.35;
+        @include res(sm){
+            font-size: 2rem;
+        }
+    }
+}
+span{
+    font-family: inherit;
+    font-size: inherit;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    color: $brand-purple;
+}
+
+h1 {
+    font-size: 4.8rem;
+    line-height: 105%;
+    letter-spacing: -0.3rem;
+    margin-bottom: 2.4rem;
+}
+
+h2,.h2 {
+    font-size: 3.2rem;
+    line-height: 3.36rem;
+    letter-spacing: -0.15rem;
+    margin-bottom: 1.8rem;
+}
+h3,.h3
+ {
+    font-size: 2.8rem;
+    line-height: 1.5;
+    letter-spacing: -0.14rem;
+    margin-bottom: 1.8rem;
+}
+h4{
+    font-size: 2.4rem;
+    letter-spacing: -0.12rem;
+}
+
+h5,.h5{
+    font-size: 2rem;
+    letter-spacing: -0.1rem;
+    margin-bottom: 1rem;
+}
+
+h6,.h6{
+    font-size: 1.8rem;
+    letter-spacing: -0.08rem;
+    margin-bottom: 0.8rem;
+}
+
+
+.subheading{
+    font-weight:400 ;
+    color: $text-grey;
+    text-transform: uppercase;
+}
+.text-300{
+    font-weight: 300 !important;
+}
+.text-400{
+    font-weight: 400 !important;
+}
+.text-500{
+    font-weight: 500 !important;
+}
+
+.text-600{
+    font-weight: 600 !important;
+}
+.text-700{
+    font-weight: 700 !important;;
+}
+.text-800{
+    font-weight: 800 !important;
+}
+
+.text-dark{
+    color: $brand-dark !important;
+}
+.text-grey{
+    color: $text-grey !important;
+}
+.text-purple{
+    color: $brand-purple !important;
+}
+.text-purple-light{
+    color: $brand-purple-light !important;
+}
+.font-karla{
+    font-family: 'Karla', sans-serif;
+}
+
+.link{
+    text-decoration: underline;
+    font-weight: 500;
+
+    &-primary{
+        color: $brand-purple;
+
+        &:hover{
+            color: $brand-purple-light;
+        }
+    }
+}

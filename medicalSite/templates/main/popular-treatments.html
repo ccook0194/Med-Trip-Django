@@ -1,0 +1,46 @@
+{% load static %}
+{% load i18n %}
+
+<section class="treatment-section bg-cream">
+    <div class="container">
+      <h2>
+        {% trans "Our most popular treatments" %}
+      </h2>
+      <p class="section-subheading">
+        {% trans "Choose from a wide range of aesthetic, dental and hair treatments." %}
+      </p>
+
+      <div class="treatment-list my-5">
+        <div class="row">
+          {% for treatment in popular_treatments %}
+          <div class="col-lg-4 col-md-6">
+            <div class="treatment-card">
+              <div class="treatment-card-image">
+                {% if treatment.img %}
+                <img src="{{ treatment.img.url }}" alt="#">
+                {% endif %}
+              </div>
+              <div class="treatment-card-content">
+                <div>
+                  <h5 class="text-dark mb-2">
+                    {{ treatment.headline }}
+                  </h5>
+
+                  <ul class="treatment-card-list">
+                    {% for i in treatment.allpopularnames.all %}
+                    <li>
+                       <a class="p-sm text-grey" href="{% url "clinics:clinics_search" %}/{{ i.treatment_name.slug }}">{{ i.treatment_name }}</a> 
+                    </li>
+                    {% endfor %}
+
+                  </ul>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>

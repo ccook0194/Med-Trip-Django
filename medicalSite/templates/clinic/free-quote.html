@@ -1,0 +1,179 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% load i18n %}
+
+
+
+
+
+{% block title %}MyTripMed - {% trans "Request a Free Quote" %}{% endblock title %} 
+{% block description %}{% trans "To find your doctor at the best price, request your free quote now and compare all the offers in a few clicks." %}{% endblock description %}
+  
+
+{% block body %}
+
+  
+
+
+
+
+
+<section class="top-section">
+
+  <div class="container heading-border mb-0">
+
+          <h1>{% trans "Request your free quote" %}!</h1>
+
+     
+
+        <div class="icon-text icon-text-big">
+
+          <img src="{% static 'img/cross-icon.png' %}" alt="cross-icon">
+
+            <span class="text-dark">{% trans "Without any fees" %}</span>
+
+              </div>
+
+
+
+              <div class="icon-text pt-4">
+
+                  <h5 class="text-dark">{% trans "Save up to 70% on the treatment prices you wish to carry out. Our renowned doctors and clinics guarantee quality and unbeatable prices." %}</h5>
+
+                </div>
+
+          </div>
+
+  </section>
+
+
+
+  <div class="quote-top">
+
+  </div>
+
+
+
+<div class="container mb-5 pb-5">   
+
+  <div class="row">
+
+    <div class="col-md-8 container-border-left">
+
+      <div class="form-left card card-sm">
+
+        <form method= "POST" action= "" >
+
+          {% csrf_token %}
+
+        <h4 class="text-dark mb-4">{% trans "Free Quote" %}</h4>
+
+          <div class="row">
+
+            <div class="col-md-6 mt-4">
+
+              <label for="nameInput" class="form-label">{% trans "Name" %}*</label>
+
+            <input type="text" class="form-input"
+
+          placeholder="{% trans "Enter your name" %}" aria-label="First Name" id="nameInput" name="name" required>
+
+        </div>
+
+
+
+      <div class="col-md-6 mt-4">
+
+            <label for="emailInput" class="form-label">{% trans "Email" %}*</label>
+
+        <input type="email" class="form-input" placeholder="{% trans "Email address" %}" aria-label="Email" id="emailInput" name="email" required>
+
+    </div>
+
+ 
+
+      <div class="col-xl-12 col-lg-8 pt-3">
+
+        <label for="phoneInput" class="form-label">{% trans "Phone Number" %}*</label>
+
+        <div class="row">
+
+        
+
+          <div class="col-4">
+
+            <select class="form-select" id="phoneInput" name="phone_code" required>
+
+              <option value="" selected disabled>{% trans "Select phone code" %}</option>
+
+                {% for country in all_countries %}
+
+                <option data-countryCode={{country.name}} value={{country.phone_code}}>{{country.name}} ({{country.phone_code}})</option>
+
+                {% endfor %}
+
+              </select>
+
+          </div>
+
+          <div class="col-8">
+
+            <input type="number" class="form-input" 
+
+            placeholder="{% trans "Enter your phone number" %}" aria-label="Enter your phone number" name="phone_number" required>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="col-12 pt-3">
+
+        <label for="commentsInput">{% trans "Message" %}*</label>
+
+          <textarea class="form-input" 
+
+          rows="4"
+
+          placeholder="{% trans "Type of processing, desired destination" %}" id="commentsInput" name="comments" required></textarea>
+
+      </div>
+
+    
+
+          <div class="col-12 mt-5 pb-3">
+
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+            <button class="btn btn-primary" type="submit">{% trans "Send" %}</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </form>
+
+  </div>        
+
+  </div>
+
+</div>
+
+ 
+
+    </div>
+
+  </div>
+
+
+
+{% endblock body %}

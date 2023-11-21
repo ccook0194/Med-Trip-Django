@@ -1,0 +1,31 @@
+1. Home page:
+    add search option
+
+2/ Page results :  clinic lis:
+	make filter add button on click filter will work
+	sort by -> url
+
+3. clinic results:(review model)
+    add this Reviews and boutton to added review
+
+4/ request quote
+    leads should be send to admin
+    create model (request model)
+        phone optional
+        email required
+        name required
+        comment optional
+        add option of approvar
+
+5/ leave for now
+
+6 contact page
+    create model having:(contact user model)
+        name required
+        phone optional
+        email required
+        msg required
+
+7 blog
+    show all blog
+

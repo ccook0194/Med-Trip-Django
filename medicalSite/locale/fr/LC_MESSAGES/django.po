@@ -1,0 +1,1214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-10 17:36+0530\n"
+"PO-Revision-Date: 2023-04-08 15:41+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: templates/blog/index.html:4
+msgid "Blog on medical tourism: Dental, hair transplant and plastic surgery"
+msgstr "Blog sur le tourisme médical : Dentaire, greffe de cheveux et chirurgie esthétique"
+
+#: templates/blog/index.html:5
+msgid "Find the best deals for your medical abroad journey and the Top destinations."
+msgstr "Trouver les meilleurs plans pour votre voyage médical à l'étranger et les Top déstinations."
+
+#: templates/blog/index.html:10
+msgid "The latest news on medical tourism and our advice for your next treatment."
+msgstr "L'actualité du tourisme médical et nos conseils pour votre prochain traitement."
+
+#: templates/blog/index.html:15
+msgid "Recent Posts"
+msgstr "Articles récents"
+
+#: templates/blog/index.html:27
+msgid "See More"
+msgstr "Voir plus"
+
+#: templates/blog/index.html:53 templates/clinic/search.html:345
+msgid "Page"
+msgstr "Page"
+
+#: templates/clinic/search.html:9
+msgid "world"
+msgstr "différents pays"
+
+#: templates/blog/index.html:53 templates/clinic/search.html:9
+msgid "Best"
+msgstr "TOP"
+
+#: templates/blog/index.html:53 templates/clinic/search.html:9
+msgid "Clinics for"
+msgstr "cliniques pour"
+
+#: templates/blog/index.html:53 templates/clinic/search.html:9
+msgid "(from"
+msgstr "(dès"
+
+#: templates/blog/index.html:53 templates/clinic/search.html:345
+msgid "of"
+msgstr "sur"
+
+#: templates/blog/index.html:62 templates/clinic/search.html:188
+msgid "read more"
+msgstr "Plus"
+
+#: templates/clinic/add-review.html:134 templates/clinic/free-quote.html:41
+#: templates/main/contact.html:39
+msgid "Enter your name"
+msgstr "Entrer votre nom"
+
+#: templates/blog/post.html:55
+msgid "Email Address"
+msgstr "E-mail"
+
+#: templates/main/contact.html:83
+msgid "Enter your email"
+msgstr "Entrer votre e-mail"
+
+#: templates/blog/post.html:60 templates/clinic/add-clinic.html:89
+#: templates/clinic/add-clinic.html:100 templates/clinic/free-quote.html:50
+#: templates/main/contact.html:87 templates/main/contact.html:89
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#: templates/clinic/add-clinic.html:100 templates/main/contact.html:89
+#: templates/blog/post.html:72
+msgid "Phone number"
+msgstr "Numéro de téléphone"
+
+#: templates/blog/post.html:60
+msgid "optional"
+msgstr "facultatif"
+
+#: templates/blog/post.html:78
+msgid "Message to doctor"
+msgstr "Votre message"
+
+#: templates/blog/post.html:79
+msgid "Type of treatment, desired destination"
+msgstr "Type de traitement, destination souhaitée"
+
+#: templates/clinic/add-clinic.html:121 templates/clinic/add-review.html:153
+msgid "Submit"
+msgstr "Envoyer"
+
+#: templates/blog/post.html:84
+msgid "SEND MY INQUIRY"
+msgstr "ENVOYER MA DEMANDE"
+
+#: templates/blog/post.html:99
+msgid "Enter treatment, destinations, procedure"
+msgstr "Taper votre traitement, destination souhaitée"
+
+#: templates/blog/post.html:92
+msgid "Find a Doctor"
+msgstr "Trouver un docteur"
+
+#: templates/blog/post.html:104 templates/main/index.html:48
+msgid "Search"
+msgstr "Chercher"
+
+#: templates/clinic/add-clinic.html:6 templates/clinic/add-clinic.html:12
+msgid "Add your Clinic"
+msgstr "Ajouter votre clinique"
+
+#: templates/clinic/add-clinic.html:13
+msgid "Add your clinic by filling the form."
+msgstr "Vous devez juste remplir le formulaire suivant."
+
+#: templates/clinic/add-clinic.html:7
+msgid "Add your clinic for international visibility."
+msgstr "Ajouter votre clinique pour une visibilité à l'international."
+
+#: templates/clinic/add-clinic.html:15
+msgid "We will review the details and add your clinic"
+msgstr "Nous examinons l'authenticité de vos informations, puis, nous ajoutons votre clinique."
+
+#: templates/clinic/add-clinic.html:30
+msgid "Clinic Details"
+msgstr "Infos sur la clinique"
+
+#: templates/clinic/add-clinic.html:34
+msgid "Clinic Name"
+msgstr "Nom"
+
+#: templates/clinic/add-clinic.html:35
+msgid "Enter Clinic Name"
+msgstr "Entrer le nom de votre clinique"
+
+#: templates/clinic/add-clinic.html:40 templates/main/contact.html:45
+msgid "Address 1"
+msgstr "Adresse 1"
+
+#: templates/clinic/add-clinic.html:41
+msgid "Primary address"
+msgstr "Adresse principale"
+
+#: templates/clinic/add-clinic.html:46 templates/main/contact.html:51
+msgid "Address 2"
+msgstr "Adresse 2"
+
+#: templates/clinic/add-clinic.html:47
+msgid "Secondary address"
+msgstr "Adresse secondaire"
+
+#: templates/clinic/add-clinic.html:52 templates/main/contact.html:57
+msgid "City"
+msgstr "Ville"
+
+#: templates/clinic/add-clinic.html:53
+msgid "Enter your clinic city"
+msgstr "Entrer votre ville"
+
+#: templates/clinic/add-clinic.html:57 templates/main/contact.html:62
+msgid "State"
+msgstr "État"
+
+#: templates/clinic/add-clinic.html:58
+msgid "Enter your clinic state"
+msgstr "Entrer votre état"
+
+#: templates/clinic/add-clinic.html:62 templates/main/contact.html:67
+#: templates/main/index.html:43
+msgid "Country"
+msgstr "Pays"
+
+#: templates/clinic/add-clinic.html:71
+msgid "Zip Code"
+msgstr "Entrer votre code postal"
+
+#: templates/clinic/add-clinic.html:72
+msgid "Zipcode"
+msgstr "code postal"
+
+#: templates/clinic/add-clinic.html:77
+msgid "Website"
+msgstr "Site Web"
+
+#: templates/clinic/add-clinic.html:78
+msgid "Website url"
+msgstr "Url du site Web"
+
+#: templates/clinic/add-clinic.html:83 templates/clinic/add-review.html:140
+#: templates/clinic/add-review.html:141 templates/blog/post.html:57
+#: templates/clinic/free-quote.html:45
+msgid "Email"
+msgstr "E-mail"
+
+#: templates/clinic/add-clinic.html:84
+msgid "Enter your clinic's email"
+msgstr "Adresse e-mail"
+
+#: templates/clinic/free-quote.html:63 templates/main/contact.html:89
+msgid "Enter your phone number"
+msgstr "Numéro de téléphone"
+
+#: templates/clinic/add-clinic.html:107
+msgid "Year of Establishment"
+msgstr "Année de création"
+
+#: templates/clinic/add-clinic.html:108
+msgid "Year of establishment of your clinic"
+msgstr "Année de création de la clinique"
+
+#: templates/clinic/add-clinic.html:113
+msgid "Comment Box"
+msgstr "Message"
+
+#: templates/clinic/add-clinic.html:116
+msgid "Enter your questions/comments"
+msgstr "Taper vos questions, suggestions/commentaires"
+
+#: templates/clinic/add-review.html:6
+msgid "Clinic Review"
+msgstr "Avis sur la clinique"
+
+#: templates/clinic/add-review.html:11
+msgid "Submit Review"
+msgstr "Ajouter un avis"
+
+#: templates/clinic/add-review.html:12
+msgid "Add a review for a doctor or clinic to help other users make the right decision."
+msgstr "Ajouter un avis pour un docteur ou une clinique afin d'aider les autres patients à faire le bon choix."
+
+#: templates/clinic/add-review.html:12
+msgid "Submit the review for the"
+msgstr "Ajouter votre avis pour"
+
+#: templates/clinic/add-review.html:25
+msgid "Fill this form to submit your review"
+msgstr "Remplissez le formulaire suivant pour envoyer votre avis"
+
+#: templates/clinic/clinic-page.html:369
+msgid "Give your review:"
+msgstr "Donner votre avis :"
+
+#: templates/clinic/add-review.html:36
+msgid "For Quality"
+msgstr "Qualité"
+
+#: templates/clinic/add-review.html:55
+msgid "For Service"
+msgstr "Services"
+
+#: templates/clinic/add-review.html:74
+msgid "For Cleanliness"
+msgstr "Hygiène"
+
+#: templates/clinic/add-review.html:93
+msgid "For Comfort"
+msgstr "Confort"
+
+#: templates/clinic/add-review.html:112
+msgid "For Communication"
+msgstr "Communication"
+
+#: templates/clinic/add-review.html:133 templates/clinic/free-quote.html:39
+#: templates/main/contact.html:37 templates/blog/post.html:50
+#: templates/blog/post.html:52
+msgid "Name"
+msgstr "Nom"
+
+#: templates/clinic/add-review.html:146
+msgid "Review"
+msgstr "Avis"
+
+#: templates/clinic/clinic-page.html:603
+msgid "Enter your review"
+msgstr "Ajouter votre avis"
+
+#: templates/clinic/clinic-page.html:6 templates/clinic/clinic-page.html:8
+#: templates/clinic/clinic-page.html:236 templates/clinic/search.html:8
+#: templates/clinic/search.html:10 templates/clinic/search.html:19
+msgid "in"
+msgstr "en"
+
+#: templates/clinic/clinic-page.html:8
+msgid "offers a wide range of medical treatments"
+msgstr "propose une large palette de soins médicaux, entre autres,"
+
+#: templates/clinic/clinic-page.html:177
+msgid "Spoken languages"
+msgstr "Langues Parlées"
+
+#: templates/clinic/clinic-page.html:26 templates/blog/post.html:44
+msgid "Get a free quote"
+msgstr "Devis gratuit"
+
+#: templates/clinic/clinic-page.html:35
+msgid "Average Rating"
+msgstr "Score moyen"
+
+#: templates/clinic/clinic-page.html:41
+msgid "Review(s)"
+msgstr "Avis"
+
+#: templates/clinic/clinic-page.html:42
+msgid "Given"
+msgstr "Ajoutés"
+
+#: templates/clinic/clinic-page.html:48
+msgid "Doctor(s)"
+msgstr "Docteur(s)"
+
+#: templates/clinic/clinic-page.html:49
+msgid "Available"
+msgstr "Disponible"
+
+#: templates/clinic/clinic-page.html:68
+msgid "About"
+msgstr "À propos"
+
+#: templates/clinic/clinic-page.html:87
+msgid "Photos"
+msgstr "Galerie"
+
+#: templates/clinic/clinic-page.html:94
+msgid "facilities photos"
+msgstr "Photos de la clinique"
+
+#: templates/clinic/clinic-page.html:107
+msgid "before/after photos"
+msgstr "Avant/après"
+
+#: templates/clinic/clinic-page.html:143
+msgid "Doctors Available"
+msgstr "Docteurs disponibles"
+
+#: templates/clinic/clinic-page.html:176
+msgid "Certifications"
+msgstr "Certifications"
+
+#: templates/clinic/clinic-page.html:198
+msgid "Reviews"
+msgstr "Les Avis"
+
+#: templates/clinic/clinic-page.html:218
+msgid "stars"
+msgstr "étoiles"
+
+#: templates/clinic/clinic-page.html:236
+msgid "Read real reviews from real patients of"
+msgstr "Découvrez les avis réels de vrais patients de"
+
+#: templates/clinic/clinic-page.html:237
+msgid "has achieved a star rating of"
+msgstr "a obtenu un score de"
+
+#: templates/clinic/clinic-page.html:237
+msgid "based on"
+msgstr "Basé sur"
+
+#: templates/clinic/clinic-page.html:237
+msgid "reviews"
+msgstr "avis"
+
+#: templates/clinic/clinic-page.html:240
+msgid "If you are a past patient of"
+msgstr "Si vous êtes un ancien patient de"
+
+#: templates/clinic/clinic-page.html:240
+msgid "please click the 'write review' button to provide your review for others to read. Writing a review will only take 2 minutes to complete"
+msgstr "merci de cliquer sur \"écrire un avis\" afin de donner votre avis et aider les autres patients à mieux choisir. Cela ne prendra que 2 minutes."
+
+#: templates/clinic/clinic-page.html:245
+msgid "If you have any other questions, you can"
+msgstr "Si vous avez d'autres questions,"
+
+#: templates/clinic/clinic-page.html:245 templates/main/base.html:154
+msgid "contact us"
+msgstr "Contactez-nous"
+
+#: templates/ranking/index.html:7 templates/ranking/index.html:8
+#: templates/ranking/index.html:16
+msgid "at"
+msgstr "à"
+
+#: templates/ranking/index.html:16
+msgid "hair transplant specialists"
+msgstr "spécialistes de greffe de cheveux"
+
+#: templates/ranking/index.html:8
+msgid "List of the best"
+msgstr "La liste des meilleurs"
+
+#: templates/ranking/index.html:8
+msgid "aesthetic surgeons"
+msgstr "chirurgiens esthétiques"
+
+#: templates/ranking/index.html:8
+msgid "classified by customer reviews and quality of services"
+msgstr "classifier par avis clients et qualité des services"
+
+#: templates/ranking/index.html:7
+msgid "The top 20"
+msgstr "Les 20 meilleurs"
+
+#: templates/ranking/index.html:7
+msgid "abroad - Mytripmed"
+msgstr "à l'étranger - Mytripmed"
+
+#: templates/ranking/index.html:7
+msgid "hair transplant clinics"
+msgstr "cliniques de greffe de cheveux"
+
+#: templates/ranking/index.html:16 templates/ranking/index.html:7
+msgid "dentists"
+msgstr "dentistes"
+
+#: templates/ranking/index.html:16 templates/ranking/index.html:7
+msgid "aesthetic surgery specialists"
+msgstr "spécialistes en chirurgie esthétique"
+
+#: templates/ranking/index.html:16
+msgid "Ranking of top"
+msgstr "Classement des meilleurs"
+
+#: templates/main/base.html:142
+msgid "Ranking"
+msgstr "Classement"
+
+#: templates/ranking/index.html:80
+msgid "Rank"
+msgstr "Rang"
+
+#: templates/ranking/index.html:83
+msgid "Doctors & Clinic"
+msgstr "Docteurs et cliniques"
+
+#: templates/ranking/index.html:85
+msgid "Regions"
+msgstr "Pays"
+
+#: templates/ranking/index.html:87
+msgid "Review score"
+msgstr "Note d'avis"
+
+#: templates/ranking/index.html:92
+msgid "<b>The average score of reviews</b> on Google and other platforms recalculate to get more accurate value."
+msgstr "<b>Le score moyen des avis</b> sur Google et d'autres plateformes recalculer pour obtenir une valeur plus précise."
+
+#: templates/ranking/index.html:95
+msgid "Quality score"
+msgstr "Note de qualité"
+
+#: templates/ranking/index.html:99
+msgid "<b>Quality score:</b> refers to the quality of the services offered and the transparency of the clinic. In order to calculate the score, different factors are collected such as: accreditations, certifications, price transparency, expertise in the domain, years of experience, quality of the clinic, languages spoken, etc."
+msgstr "<b>Qualité score :</b> corresponds à la qualité des services proposés et la transparence de la clinique. Différents facteurs sont collectés pour calculer le score comme : les accréditations, les certifications, transparence sur les prix, la spécialisation dans le domaine, le nombre d'années d'expérience, la qualité de la clinique, les langues parlées.."
+
+#: templates/ranking/index.html:102
+msgid "Points"
+msgstr ""
+
+#: templates/ranking/index.html:106
+msgid "The sum of reviews score plus quality score."
+msgstr "La sommes de score des avis plus qualité score."
+
+#: templates/ranking/index.html:176
+msgid "Show More"
+msgstr "Afficher plus"
+
+#: templates/ranking/index.html:27
+msgid "Dentals"
+msgstr "Dentaire"
+
+#: templates/ranking/index.html:35
+msgid "Aesthetic"
+msgstr "Esthétique"
+
+#: templates/ranking/index.html:43
+msgid "Hair Transplant"
+msgstr "Greffe de cheveux"
+
+#: templates/clinic/clinic-page.html:491
+msgid "free of charge."
+msgstr "C'est entièrement gratuit."
+
+#: templates/clinic/clinic-page.html:253
+msgid "Write a Review"
+msgstr "Ecrire un avis"
+
+#: templates/clinic/free-quote.html:6
+msgid "Request a Free Quote"
+msgstr "Demandez votre devis gratuit"
+
+#: templates/clinic/free-quote.html:12
+msgid "To find your doctor at the best price, request your free quote now and compare all the offers in a few clicks."
+msgstr "Pour trouver votre docteur au meilleur prix, demandez maintenant votre devis gratuit et comparez toutes les offres en quelques clics."
+
+#: templates/clinic/free-quote.html:14
+msgid "Request your free quote"
+msgstr "Demandez votre devis gratuit"
+
+#: templates/clinic/free-quote.html:18
+msgid "Without any fees"
+msgstr "Sans aucun frais"
+
+#: templates/clinic/free-quote.html:22
+#, python-format
+msgid "Save up to 70%% on the treatment prices you wish to carry out. Our renowned doctors and clinics guarantee quality and unbeatable prices."
+msgstr "Économisez jusqu’à 70 %% sur les tarifs de soins que vous souhaitez réaliser. Nos docteurs et cliniques de renom vous garantissent qualité et prix imbattables."
+
+#: templates/clinic/free-quote.html:36
+msgid "Free Quote"
+msgstr "Devis gratuit"
+
+#: templates/clinic/free-quote.html:46
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+#: templates/clinic/free-quote.html:55
+msgid "Select phone code"
+msgstr "Indicatif téléphonique"
+
+#: templates/clinic/free-quote.html:69 templates/main/contact.html:94
+msgid "Message"
+msgstr "Message"
+
+#: templates/clinic/free-quote.html:72
+msgid "Type of processing, desired destination"
+msgstr "Type de traitement, destination souhaitée"
+
+#: templates/clinic/free-quote.html:77 templates/main/contact.html:102
+msgid "Send"
+msgstr "Envoyer"
+
+#: templates/clinic/search.html:8 templates/clinic/search.html:10
+#: templates/clinic/search.html:19
+msgid "all countries"
+msgstr "Tous les pays"
+
+#: templates/clinic/search.html:8
+msgid "compare prices"
+msgstr "comparez les prix"
+
+#: templates/clinic/search.html:8
+msgid "Medical Tourism in "
+msgstr "Tourisme médical en "
+
+#: templates/clinic/search.html:10
+msgid "Compare prices for hair transplant, cosmetic surgery and dental care in"
+msgstr "Comparer les prix pour greffe de cheveux, chirurgie esthétique et soins dentaires en"
+
+#: templates/clinic/search.html:10
+msgid "Compare prices of doctors and clinics, read real patient reviews and book an appointment online for your"
+msgstr "Comparez les prix des médecins et des cliniques, lisez les avis des patients et prenez rendez-vous en ligne pour votre"
+
+#: templates/clinic/search.html:22
+msgid "All"
+msgstr "Tous"
+
+#: templates/clinic/search.html:22
+msgid "Clinics in"
+msgstr "Clinics à"
+
+#: templates/clinic/search.html:22
+msgid "Clinics found."
+msgstr "Cliniques trouvées."
+
+#: templates/clinic/search.html:431
+msgid "No Treatments found"
+msgstr "Aucun traitement trouvé"
+
+#: templates/clinic/search.html:30
+msgid "filters"
+msgstr "Filtres"
+
+#: templates/clinic/search.html:41
+msgid "Destination"
+msgstr "Destination"
+
+#: templates/clinic/search.html:44
+msgid "Select Destination"
+msgstr "Choisir une destination"
+
+#: templates/clinic/search.html:55 templates/clinic/search.html:128
+msgid "Rating"
+msgstr "Score"
+
+#: templates/clinic/search.html:83 templates/clinic/search.html:132
+msgid "Price"
+msgstr "Prix"
+
+#: templates/clinic/search.html:86
+msgid "Select Price"
+msgstr "Choisir un prix"
+
+#: templates/clinic/search.html:105
+msgid "Apply"
+msgstr "Appliquer"
+
+#: templates/clinic/search.html:119
+msgid "Filters"
+msgstr "Filtres"
+
+#: templates/clinic/search.html:126
+msgid "Sort By"
+msgstr "Trier par"
+
+#: templates/clinic/search.html:199 templates/clinic/search.html:312
+msgid "Inquire"
+msgstr "Contacter"
+
+#: templates/main/about.html:6 templates/main/about.html:12
+#: templates/main/base.html:267
+msgid "About Us"
+msgstr "À propos de nous"
+
+#: templates/clinic/treatment.html:6
+msgid "All treatments: cosmetic surgery, dental, hair transplant"
+msgstr "Tous les traitements : chirurgie esthétique, dentaire, greffe de cheveux"
+
+#: templates/clinic/treatment.html:7
+msgid "Mytripmed: Find and compare prices for dental care, cosmetic surgery or hair transplantation."
+msgstr "Mytripmed : Trouvez et comparer les prix pour un soin dentaire, chirurgie esthétique ou greffe de cheveux."
+
+#: templates/clinic/treatment.html:12
+msgid "All Treatments"
+msgstr "Tous les traitements"
+
+#: templates/main/about.html:12
+msgid "Compare in one click the most economical offers for your aesthetic treatment in the best clinics in the world."
+msgstr "Comparez en un clic les offres les plus économiques pour votre traitement esthétique dans les meilleures cliniques du monde."
+
+#: templates/main/about.html:24
+msgid "MyTripMed is the online comparator that allows you to book your treatment directly in the best clinics in the world. Our tool puts you in touch with doctors handpicked for their experience and quality of service.  Thus, we give you all the information you need to better compare the offers. You will therefore find the country of the practitioner, an overview of his professional career, his specialties and in particular his prices. We also provide you with before/after photos and real testimonials from other patients. This will allow you to choose more transparently. "
+msgstr "MyTripMed est le comparateur en ligne qui vous permet de réserver directement votre traitement dans les meilleures cliniques du monde. Notre outil vous met en relation avec des docteurs triés sur le volet pour leur expérience et qualité de services. Ainsi, nous vous donnons toutes les informations nécessaires pour mieux comparer les offres. Vous trouvez donc le pays du praticien, un aperçu sur son parcours professionnel, ses spécialités et notamment ses tarifs. De même, nous mettons à votre disposition des photos avant/après et des témoignages réels d’autres patients. Cela vous permettra de mieux choisir en toute transparence. "
+
+#: templates/main/about.html:27
+#, python-format
+msgid "So, by booking your treatment on MyTripMed, you have the assurance of being treated by a renowned medical expert. In addition, you benefit from the most attractive offers on the market. Thanks to our portal, you can save up to 70%% on the prices of dental care, hair transplant or cosmetic surgery. With MyTripMed, you benefit from the most optimal quality-price ratio."
+msgstr "Du coup, en réservant votre traitement sur MyTripMed, vous avez l’assurance d’être traité par un expert médical de renom. De plus, vous bénéficiez des offres les plus attractives du marché. Grâce à notre portail, vous pouvez réaliser jusqu’à 70 %% d’économies sur les tarifs des soins dentaires, de la greffe capillaire ou de la chirurgie esthétique. Avec MyTripMed, vous profitez du rapport qualité-prix le plus optimal."
+
+#: templates/main/about.html:30
+msgid "Our expert advisors guarantee you full assistance in making a treatment appointment. They answer all your questions and make things easier for you. Likewise, they send you a free, non-binding quote on the type of operation you want to perform. This allows you to leave for your medical stay without surprises or hidden costs. In addition, we have selected for you the most famous destinations in the world for the quality of their services and their reduced rates: Turkey, Tunisia, Hungary, Romania, Mexico..."
+msgstr "Nos conseillers experts vous garantissent une assistance complète pour prendre un rendez-vous de traitement. Ils répondent à toutes vos questions et vous facilitent les démarches. De même, ils vous envoient un devis gratuit et sans engagement sur le type d’opération que vous souhaitez effectuer. Cela vous permet de partir pour votre séjour médical sans surprises ni frais cachés. De plus, nous avons sélectionné pour vous les destinations les plus réputées dans le monde pour la qualité de leurs prestations leurs tarifs réduits : Turquie, Tunisie, Hongrie, Roumanie, Mexique…"
+
+#: templates/main/about.html:33
+msgid "In short, our mission is to give you access to a wide range of treatments. We help you get the look you dream of by letting you choose your own doctor. Also, we make sure you have a great medical trip without hurting your budget! "
+msgstr "Bref, notre mission est de vous donner accès à un large éventail de traitements. Nous vous assistons pour avoir l’apparence dont vous rêvez en vous laissant choisir vous-même votre médecin. De plus, nous veillons à ce que vous passiez un excellent voyage médical sans nuire à votre budget! "
+
+#: templates/main/base.html:85 templates/main/base.html:216
+msgid "Your medical stay at the best price"
+msgstr "Le séjour médical au meilleur prix"
+
+#: templates/main/base.html:90
+msgid "Search by clinic, treatment or a location"
+msgstr "Chercher par clinique, traitement ou destination"
+
+#: templates/main/base.html:105 templates/main/base.html:251
+msgid "Destinations"
+msgstr "Destinations"
+
+#: templates/main/base.html:108 templates/main/base.html:250
+msgid "Treatments"
+msgstr "Traitements"
+
+#: templates/main/base.html:111
+msgid "Blogs"
+msgstr "Blog"
+
+#: templates/main/base.html:115 templates/main/base.html:254
+msgid "Add Clinic"
+msgstr "Ajouter votre clinique"
+
+#: templates/main/base.html:129
+msgid "language"
+msgstr "Langue"
+
+#: templates/main/base.html:278
+msgid "LANGUAGES"
+msgstr "Langues"
+
+#: templates/main/base.html:301
+msgid "French"
+msgstr "Français"
+
+#: templates/main/base.html:305
+msgid "English"
+msgstr "Anglais"
+
+#: templates/main/base.html:309
+msgid "Arabic"
+msgstr "Arabe"
+
+#: templates/main/base.html:139
+msgid "currency"
+msgstr "Devise"
+
+#: templates/main/base.html:180
+msgid "Start your medical experience now!"
+msgstr "Commencez maintenant votre expérience médicale !"
+
+#: templates/main/base.html:187
+msgid "Find a clinic"
+msgstr "Trouver une clinique"
+
+#: templates/main/base.html:192
+msgid "Ask for a quote"
+msgstr "Demander un devis"
+
+#: templates/main/base.html:226
+msgid "MyTripMed offers the best prices for dental care, cosmetic surgeries and hair transplants thanks to its comparator."
+msgstr "MyTripMed offre les meilleurs prix pour les soins dentaires, chirurgies esthétiques et greffes de cheveux grâce à son comparateur."
+
+#: templates/main/base.html:224
+msgid "Request a Quote"
+msgstr "Demander un devis"
+
+#: templates/main/base.html:231
+msgid "find us on"
+msgstr "Trouvez-nous sur"
+
+#: templates/main/base.html:245
+msgid "MENU"
+msgstr "Menu"
+
+#: templates/main/base.html:252
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/main/base.html:253
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/main/base.html:263
+msgid "ABOUT COMPANY"
+msgstr "Informations"
+
+#: templates/main/base.html:268 templates/main/terms-and-conditions.html:6
+#: templates/main/terms-and-conditions.html:12
+msgid "Terms and Conditions"
+msgstr "Conditions générales de vente"
+
+#: templates/main/terms-and-conditions.html:7
+msgid "Our general conditions which organise our services between the user, Mytripmed and clinics or doctors."
+msgstr "Nos conditions générales qui organisent nos services entre utilisateurs, Mytripmed et les cliniques ou docteurs."
+
+#: templates/main/base.html:293
+msgid "CONTACT US"
+msgstr "Contactez-nous"
+
+#: templates/main/base.html:291
+msgid "Phone"
+msgstr "Téléphone"
+
+#: templates/main/base.html:320
+msgid "Mail ID"
+msgstr "E-mail"
+
+#: templates/main/base.html:319
+msgid "Copyright"
+msgstr "Copyright"
+
+#: templates/main/contact.html:6
+msgid "Contact Us"
+msgstr "Contactez-nous"
+
+#: templates/main/contact.html:12
+msgid "Contact us at anytime!"
+msgstr "Contactez-nous à tout moment !"
+
+#: templates/main/contact.html:13
+msgid "Send us your suggestions or questions and let us know your expectations. We are happy to answer you as soon as possible."
+msgstr "Faites-nous part de vos suggestions ou questions et indiquez-nous vos attentes. Nous sommes ravis de vous répondre dans les plus brefs délais."
+
+#: templates/main/contact.html:26
+msgid "Now fill out the form below to get in touch with our customer service."
+msgstr "Remplissez maintenant le formulaire ci-dessous pour entrer en contact avec notre service client."
+
+#: templates/main/contact.html:12
+msgid "Do not hesitate to contact us to ask your questions, give your suggestions and discover more about our services."
+msgstr "N’hésitez pas à nous contacter pour poser vos questions, donner vos suggestions et découvrir davantage nos prestations."
+
+#: templates/main/contact.html:29
+msgid "Title"
+msgstr "Titre"
+
+#: templates/main/contact.html:31
+msgid "Choose"
+msgstr "Choisir"
+
+#: templates/main/contact.html:47
+msgid "Enter your main address"
+msgstr "Entrer votre adresse principale"
+
+#: templates/main/contact.html:53
+msgid "Enter your secondary address"
+msgstr "Entrer votre adresse secondaire"
+
+#: templates/main/contact.html:59
+msgid "Enter your city"
+msgstr "Entrer votre ville"
+
+#: templates/main/contact.html:70
+msgid "Choose your country"
+msgstr "Choisir votre pays"
+
+#: templates/main/contact.html:77
+msgid "Postal Code"
+msgstr "Code postal"
+
+#: templates/main/contact.html:79
+msgid "Enter your postal code"
+msgstr "Entrer votre code postal"
+
+#: templates/main/contact.html:82
+msgid "E-mail"
+msgstr "E-mail"
+
+#: templates/main/contact.html:97
+msgid "Type your message"
+msgstr "Taper votre message"
+
+#: templates/main/contact.html:115
+msgid "Call us"
+msgstr "Appelez-nous"
+
+#: templates/main/contact.html:125
+msgid "Chat on WhatsApp"
+msgstr "Chat sur WhatsApp"
+
+#: templates/main/contact.html:135
+msgid "Like us on Facebook"
+msgstr "Suivez-nous sur Facebook"
+
+#: templates/main/contact.html:136
+msgid "See what others are saying about us"
+msgstr "Voir les témoignages"
+
+#: templates/main/contact.html:145
+msgid "Follow us on Twitter"
+msgstr "Suivez-nous sur Twitter"
+
+#: templates/main/contact.html:146
+msgid "Or send us a tweet"
+msgstr "Ou envoyez-nous un Tweet"
+
+#: templates/main/index.html:6
+msgid "Treatment Abroad Price Comparison at Mytripmed"
+msgstr "Comparez les prix des soins à l'étranger avec Mytripmed"
+
+#: templates/main/index.html:7
+msgid "MyTripMed: free comparator that helps you easily find doctors and clinics abroad at the best price."
+msgstr "MyTripMed : comparateur gratuit qui vous aide à trouver facilement les docteurs et cliniques en Turquie, Tunisie ou en Hongrie au meilleur prix."
+
+#: templates/main/index.html:15
+msgid "Find World's Top Doctors"
+msgstr "Trouver les meilleurs médecins au monde"
+
+#: templates/main/index.html:18
+#, python-format
+msgid "Find the most attractive offers for the treatment you dream of and save up to 70%% on prices."
+msgstr "Trouvez les offres les plus attractives pour le traitement dont vous rêvez et économisez jusqu’à 70 %% sur les tarifs."
+
+#: templates/main/index.html:23
+msgid "Qualified and renowned doctors."
+msgstr "Docteurs qualifiés et renommés."
+
+#: templates/main/index.html:29
+msgid "Personalized support."
+msgstr "Accompagnement personnalisé."
+
+#: templates/main/index.html:35
+msgid "Free consultation and quotation."
+msgstr "Consultation et devis gratuits"
+
+#: templates/main/index.html:31
+msgid "Find and book a Doctor's appointment"
+msgstr "Trouvez un médecin et réservez"
+
+#: templates/main/index.html:40 templates/main/base.html:88
+msgid "What treatment are you looking for?"
+msgstr "Quel traitement cherchez-vous ?"
+
+#: templates/main/index.html:63
+msgid "Why rely on MyTripMed?"
+msgstr "Pourquoi compter sur MyTripMed ?"
+
+#: templates/main/index.html:73
+msgid "Economic offers"
+msgstr "Offres économiques"
+
+#: templates/main/index.html:74
+#, python-format
+msgid "Save up to 70%% on fares and take advantage of packages and promotional offers."
+msgstr "Réalisez jusqu’aux 70 %% d’économies sur les tarifs et profitez des packages et offres promotionnelles."
+
+#: templates/main/index.html:85
+msgid "Free Service"
+msgstr "Service gratuit"
+
+#: templates/main/index.html:86
+msgid "Take advantage of our free services to find the right doctor for your treatment. You pay on the spot without any hidden costs."
+msgstr "Bénéficiez de la gratuité de nos prestations pour trouver le docteur adéquat à votre traitement. Vous payez sur place sans aucuns frais cachés."
+
+#: templates/main/index.html:97
+msgid "Patient support"
+msgstr "Assistance patient"
+
+#: templates/main/index.html:98
+msgid "Ask all your questions by phone or e-mail. Our experienced coordinators are there to support you in a personalized way."
+msgstr "Posez-nous toutes vos questions par téléphone ou e-mail. Nos coordinateurs expérimentés sont là pour vous accompagner d’une manière personnalisée."
+
+#: templates/main/index.html:109
+msgid "Complete Information"
+msgstr "Information complète"
+
+#: templates/main/index.html:110
+msgid "Find all the useful data of doctors and clinics to make your selection easier: country, experience, specialties, guarantees, prices or packages, opinions and scores."
+msgstr "Trouvez toutes les données utiles des docteurs et des cliniques pour vous faciliter la sélection : pays, expérience, spécialités, garanties, prix ou packages, avis et score."
+
+#: templates/main/index.html:121
+msgid "Rigorous selection"
+msgstr "Sélection rigoureuse"
+
+#: templates/main/index.html:122
+msgid "We choose for you experienced and highly qualified doctors, but also internationally accredited clinics. "
+msgstr "Nous choisissons pour vous des docteurs expérimentés et hautement qualifiés, mais aussi, des cliniques accréditées à l’échelle internationale. "
+
+#: templates/main/index.html:133
+msgid "Total satisfaction"
+msgstr "Satisfaction totale"
+
+#: templates/main/index.html:134
+msgid "You benefit from a personalized follow-up before and after the treatment to ensure your total satisfaction with our services."
+msgstr "Vous bénéficiez d’un suivi personnalisé avant et après le traitement pour s’assurer de votre satisfaction totale vis-à-vis de nos services."
+
+#: templates/main/index.html:149
+msgid "How does it work ?"
+msgstr "Comment cela fonctionne ?"
+
+#: templates/main/index.html:152
+msgid "It's very simple ! You will find detailed information on the clinics and treatments that interest you. You just have to compare prices and scores in order to choose the optimal offer for your medical stay."
+msgstr "C’est très simple ! Vous allez trouver des informations détaillées sur les cliniques et les soins qui vous intéressent. Vous devez juste comparer les prix et les scores afin de choisir l’offre optimale pour votre séjour médical."
+
+#: templates/main/index.html:167
+msgid "Choose your doctor"
+msgstr "Choisissez votre docteur"
+
+#: templates/main/index.html:168
+msgid "Select the best clinic and destination for your treatment."
+msgstr "Sélectionnez la meilleure clinique et destination pour votre traitement."
+
+#: templates/main/index.html:175
+msgid "Fill out the contact form"
+msgstr "Remplissez le formulaire de contact"
+
+#: templates/main/index.html:176
+msgid "Add your contact details and indicate the date of your appointment."
+msgstr "Ajoutez vos coordonnées et indiquez la date de votre rendez-vous."
+
+#: templates/main/index.html:183
+msgid "Perform your treatment"
+msgstr "Réalisez votre traitement"
+
+#: templates/main/index.html:184
+msgid "Book your flight and enjoy a discounted medical stay with no hidden costs."
+msgstr "Réservez votre vol et profitez d’un séjour médical à tarifs réduits sans frais cachés."
+
+#: templates/main/popular-clinics.html:6
+msgid "Our best destinations"
+msgstr "Nos meilleures destinations"
+
+#: templates/main/popular-clinics.html:26
+msgid "See Clinics"
+msgstr "Voir les cliniques"
+
+#: templates/main/popular-treatments.html:7
+msgid "Our most popular treatments"
+msgstr "Nos traitements les plus populaires"
+
+#: templates/main/popular-treatments.html:10
+msgid "Choose from a wide range of aesthetic, dental and hair treatments."
+msgstr "Faites votre choix parmi une large palette de traitements esthétiques, dentaires et capillaires."
+
+#: templates/main/popular-treatments.html:23
+#: templates/main/popular-treatments.html:114
+#: templates/main/popular-treatments.html:158
+#: templates/main/popular-treatments.html:202
+#: templates/main/popular-treatments.html:245
+msgid "Lorem ipsum"
+msgstr ""
+
+#: templates/main/popular-treatments.html:29
+msgid "Breast Augmentation"
+msgstr "Augmentation mammaire"
+
+#: templates/main/popular-treatments.html:34
+msgid "Breast Lift"
+msgstr "Lifting mammaire"
+
+#: templates/main/popular-treatments.html:39
+msgid "Breast Reduction"
+msgstr "Réduction mammaire"
+
+#: templates/main/popular-treatments.html:44
+msgid "Breast Revision"
+msgstr "Révision d’implants mammaires"
+
+#: templates/main/popular-treatments.html:49
+msgid "Mastectomy"
+msgstr "Mastectomie"
+
+#: templates/main/popular-treatments.html:69
+msgid "Face"
+msgstr "Visage"
+
+#: templates/main/base.html:120
+msgid "Request Free Quote"
+msgstr "Obtenir un devis"
+
+#: templates/main/popular-treatments.html:75
+#: templates/main/popular-treatments.html:119
+#: templates/main/popular-treatments.html:163
+#: templates/main/popular-treatments.html:207
+#: templates/main/popular-treatments.html:250
+msgid "Facelift"
+msgstr "Lifting du visage"
+
+#: templates/main/popular-treatments.html:80
+#: templates/main/popular-treatments.html:124
+#: templates/main/popular-treatments.html:168
+#: templates/main/popular-treatments.html:212
+#: templates/main/popular-treatments.html:255
+msgid "Eyebrow Lift"
+msgstr "Lifting des sourcils"
+
+#: templates/main/popular-treatments.html:85
+#: templates/main/popular-treatments.html:129
+#: templates/main/popular-treatments.html:173
+#: templates/main/popular-treatments.html:217
+#: templates/main/popular-treatments.html:260
+msgid "Nose Job"
+msgstr "Rhinoplastie"
+
+#: templates/main/popular-treatments.html:90
+#: templates/main/popular-treatments.html:134
+#: templates/main/popular-treatments.html:178
+#: templates/main/popular-treatments.html:222
+#: templates/main/popular-treatments.html:265
+msgid "Lip Augmentation"
+msgstr "Augmentation des lèvres"
+
+#: templates/main/popular-treatments.html:95
+#: templates/main/popular-treatments.html:139
+#: templates/main/popular-treatments.html:183
+#: templates/main/popular-treatments.html:227
+#: templates/main/popular-treatments.html:270
+msgid "Eye Bag Removal"
+msgstr "Blépharoplastie"
+
+#: templates/main/terms-and-conditions.html:12
+msgid "Terms and conditions"
+msgstr "Conditions générales"
+
+#: templates/main/terms-and-conditions.html:24
+msgid "1. Presentation"
+msgstr "1. Présentation"
+
+#: templates/main/terms-and-conditions.html:25
+msgid "These general conditions allow you to know the clauses that you must accept before using our online services. Once you use our contact or quote form, this implies your full acceptance of our conditions."
+msgstr "Les présentes conditions générales vous permettent de connaître les clauses que vous devez accepter avant d’utiliser nos services en ligne. Une fois que vous utilisez notre formulaire de contact ou de devis, cela implique votre entière adhésion à nos conditions."
+
+#: templates/main/terms-and-conditions.html:26
+msgid "MyTripMed is an intermediary site between patients and clinics and doctors around the world. It allows you to compare the different offers from a wide range of treatments in cosmetic, dental and hair surgery. So our tool facilitates the process of finding and booking appointments remotely. In addition, it allows you to quickly find the cheapest practitioners with savings of up to 70%% on prices."
+msgstr "MyTripMed est un site d’intermédiation entre les patients et les cliniques et docteurs du monde entier. Il permet de comparer les différentes offres parmi un large éventail de traitements en chirurgie esthétique, dentaire et capillaire. Donc, notre outil facilite le processus de recherche et de prise de rendez-vous à distance. De plus, il permet de trouver rapidement les praticiens les moins chers avec des économies qui peuvent aller jusqu’à 70 %% sur les tarifs."
+
+#: templates/main/terms-and-conditions.html:27
+msgid "2. Use of the site"
+msgstr "2. Utilisation du site"
+
+#: templates/main/terms-and-conditions.html:28
+msgid "Our platform allows patients from all countries to find the cheapest price of the desired treatment. This could be in hair transplant, cosmetic dentistry as well as cosmetic surgery. MyTripMed selects internationally renowned clinics and doctors and provides all the information needed to make the right choice. This includes, years of experience, specialties, real patient reviews and before-after pictures."
+msgstr "Notre plateforme permet aux patients de tous les pays de trouver le prix le moins cher du traitement souhaité. Cela pourrait être en greffe capillaire, dentisterie esthétique ainsi qu’en chirurgie esthétique. MyTripMed sélectionne des cliniques et des docteurs de renommée internationale et fournit toutes les informations nécessaires pour faire le bon choix. Cela inclut, les années d’expérience, les spécialités, les avis réels des patients et les images avant-après."
+
+#: templates/main/terms-and-conditions.html:29
+msgid "At the request of the Internet user who types in the type of treatment and the desired destination, several proposals with a wide price range are displayed. Once the selection of the healthcare provider is made, and upon request, we send the patient a free quote on the price and process of the treatment. Also, we accompany him to make an appointment or schedule a consultation directly on our site."
+msgstr "À la demande de l’internaute qui tape le type de traitement et la destination souhaitée, plusieurs propositions avec une large fourchette de prix s’affichent. Une fois la sélection du prestataire de santé est faite, et sous demande, nous envoyons au patient un devis gratuit sur le prix et le processus du traitement. Aussi, nous l’accompagnons pour prendre un rendez-vous ou programmer une consultation directement sur notre site."
+
+#: templates/main/terms-and-conditions.html:30
+msgid "Our services, as defined above, are intended for persons over the age of 18 and are completely free for the patient."
+msgstr "Nos services, tels que définis ci-dessus, sont destinés aux personnes âgées de plus de 18 ans et sont entièrement gratuits pour le patient."
+
+#: templates/main/terms-and-conditions.html:31
+msgid "3. Limitation of Liability"
+msgstr "3. Limitation de responsabilité"
+
+#: templates/main/terms-and-conditions.html:32
+msgid "MyTripMed does not perform any medical or surgical intervention and gives you no guarantee on the final result. Our role is essentially based on intermediation and the transfer of information between the patient and the clinic or the chosen doctor. Although we strive to present you the best health providers that we sort according to strict criteria and through a rigorous opinion barometer."
+msgstr "MyTripMed ne réalise aucune intervention médicale ou chirurgicale et ne vous donne aucune garantie sur le résultat du traitement esthétique, dentaire ou capillaire. Notre rôle est essentiellement basé sur l’intermédiation et le transfert d’informations entre le patient et la clinique ou le docteur choisi. Même si nous nous efforçons de vous présenter les meilleurs prestataires de santé que nous trions selon un baromètre d’avis rigoureux, nous ne sommes pas responsables du résultat ni des services apportés par la clinique ou le docteur. Cette limitation de responsabilité s’applique à toute l’équipe de MyTripMed (directeurs, employés et conseillers médicaux)."
+
+#: templates/main/terms-and-conditions.html:33
+msgid "4. User obligations"
+msgstr "4. Obligations de l’utilisateur"
+
+#: templates/main/terms-and-conditions.html:34
+msgid "As a user of our platform, you must agree to provide us with accurate and correct information that we will then pass on to our partner clinics and doctors. In the event that you have any changes in your medical situation or state of health, you must inform us by e-mail or telephone. This will allow us to update your data, for us and for the clinic or doctor concerned."
+msgstr "En tant qu’utilisateur de notre plateforme, vous devez vous engager à nous fournir des informations exactes et correctes que nous allons par la suite transmettre à nos cliniques et docteurs partenaires. Dans le cas où vous auriez des changements dans votre situation médicale ou état de santé, vous devez nous informer par e-mail ou par téléphone. Cela nous permettra de mettre à jour vos données, pour nous et pour la clinique ou le docteur concerné."
+
+#: templates/main/terms-and-conditions.html:35
+msgid "5. Terms and payment methods"
+msgstr "5. Conditions et modes de paiement"
+
+#: templates/main/terms-and-conditions.html:36
+msgid "After booking a treatment and confirming the appointment with a practitioner or clinic via our website, the following payment terms apply. These terms represent a legal contract between you (patient) and us (MyTripMed):"
+msgstr "Après la réservation d’un traitement et la confirmation du rendez-vous chez un praticien ou une clinique via notre site Web, les conditions de paiement suivantes s’appliquent. Ces présentes conditions représentent un contrat juridique entre vous (patient) et nous (MyTripMed) :"
+
+#: templates/main/terms-and-conditions.html:38
+msgid "Once you have accepted the date of the appointment with one of our partner clinics or doctors, you must pay a deposit of &euro;250 (two hundred and fifty euros). These costs are due immediately and payable within 48 hours (forty-eight hours) following the date of receipt of our confirmation."
+msgstr "Une fois que vous avez accepté la date du rendez-vous pris auprès de l’une de nos cliniques ou docteurs partenaires, vous devez payer un acompte indiqué par notre agent médical. De préférence, vous réglez ces frais dans les 48 h (quarante-huit heures) qui suivent la date de réception de notre devis pour maintenir la date de votre RDV."
+
+#: templates/main/terms-and-conditions.html:42
+msgid "These costs will be deducted by our clinics or doctors from the total price of your treatment, indicated in the quote and booking confirmation you receive from us."
+msgstr "La clinique ou le docteur que vous avez choisi déduira cet acompte du coût total du traitement. Ainsi, vous ne payer que le prix indiqué sur le devis, sans frais supplémentaires."
+
+#: templates/main/terms-and-conditions.html:43
+msgid "This first payment represents a booking guarantee recognized by our partner clinics and doctors. It is valid for a period of 12 (twelve) months, from the date of confirmation of the transfer."
+msgstr "Ce premier paiement représente une garantie de réservation reconnue par nos cliniques et docteurs partenaires. Il est valable pour une durée de 12 (douze) mois, à compter de la date de confirmation du règlement."
+
+#: templates/main/terms-and-conditions.html:44
+msgid "Payment is made by bank transfer, credit card or PayPal. The single payment currency is the euro."
+msgstr "Le paiement se fait par virement bancaire, carte bancaire ou PayPal. La devise de paiement est en euro et en dollars."
+
+#: templates/main/terms-and-conditions.html:45
+msgid "In order to maintain the appointment and treatment date booked through MyTipMed, you must absolutely comply with these payment conditions."
+msgstr "Afin de maintenir le rendez-vous et la date du traitement réservé par MyTipMed, vous devez absolument respecter les présentes conditions de paiement."
+
+#: templates/main/terms-and-conditions.html:46
+msgid "MyTripMed does not make any money transfers or transactions to the clinics and doctors with whom we operate."
+msgstr "MyTripMed n’effectue aucun virement ou transaction d’argent aux cliniques et docteurs avec lesquels nous opérons."
+
+#: templates/main/terms-and-conditions.html:48
+msgid "6. Right to reimbursement"
+msgstr "6. Droit au remboursement"
+
+#: templates/main/terms-and-conditions.html:49
+msgid "You will be entitled to reimbursement of the costs of our services in the sole case where your state of health no longer allows you to travel and carry out the planned treatment. You must prove this impediment by a written letter from a doctor, 7 (seven) days before the date of the planned treatment."
+msgstr "Vous aurez droit au remboursement des frais de nos services dans l’unique cas où votre état de santé ne vous permet plus de voyager et de réaliser le traitement prévu. Vous devez prouver cet empêchement par une lettre écrite de la part d’un médecin, 7 (sept) jours avant la date du traitement prévu."
+
+#: templates/main/terms-and-conditions.html:50
+msgid "7. Right of withdrawal"
+msgstr "7. Droit de rétraction"
+
+#: templates/main/terms-and-conditions.html:51
+msgid "You have the right to withdraw, 15 (fifteen) days from the date of conclusion of this legal contract, as indicated above. Termination within the stipulated period is made without giving reasons. You must send us a written declaration confirming your decision by post, e-mail or fax to the following address:"
+msgstr "Vous avez le droit de vous rétracter, 15 (quinze) jours à partir de la date de conclusion du présent contrat juridique, comme indiqué ci-dessus. La résiliation dans le délai prévu est faite sans indication de motifs. Vous devez nous envoyer une déclaration écrite pour nous confirmer votre décision par courrier postal, e-mail ou fax à l’adresse suivante :"
+
+#: templates/main/terms-and-conditions.html:53
+msgid "If you meet the notice period, we will refund any fees we have received from you. The refund period is 15 (fifteen) days from the date of receipt of your decision to withdraw."
+msgstr "Si vous respectez le délai de résiliation, nous vous remboursons tous les frais que nous avons reçus de votre part. Le délai de remboursement est de 15 (quinze) jours à compter de la date de réception de votre décision de rétraction."
+
+#: templates/main/terms-and-conditions.html:54
+msgid "We use the same payment method you chose to pay us the service fee."
+msgstr "Nous utilisons le même mode de paiement que vous avez choisi pour nous verser les frais de service."
+
+#: templates/main/terms-and-conditions.html:55
+msgid "Also, you have the right to cancel your appointment with a cancellation fee of 50%% of the amount of the treatment, and this, 14 days before the date of the appointment, without explanation of reasons."
+msgstr "Aussi, vous avez le droit d’annuler votre rendez-vous avec des frais d’annulation de 50 %% sur le montant du traitement, et ce, 14 jours avant la date du rendez-vous, sans explication de motifs."
+
+#: templates/main/terms-and-conditions.html:57
+msgid "8. Protection of personal data"
+msgstr "8. Protection des données personnelles"
+
+#: templates/main/terms-and-conditions.html:58
+msgid "MyTripMed may ask you for personal and medical information to develop your quote. Also, we will have access to your bank identifiers during the money transactions you carry out for us. We may also ask you for photos or information to better understand your needs. This data is not only collected by our platform, but also transmitted to the clinic or doctor you have chosen."
+msgstr "MyTripMed peut vous demander des informations personnelles et médicales pour élaborer votre devis. Aussi, nous aurons accès à vos identifiants bancaires pendant les transactions d’argent que vous réalisez pour nous. Nous pouvons également vous demander des photos ou des informations pour mieux connaître vos besoins. Ces données ne sont pas uniquement collectées par notre plateforme, mais aussi, transmises à la clinique ou au docteur que vous avez choisi."
+
+#: templates/main/terms-and-conditions.html:59
+msgid "For this, we are committed by a confidentiality charter to preserve the total discretion of this information. This means that we can never disclose them to unauthorized third parties."
+msgstr "Pour cela, nous nous engageons par une charte de confidentialité à préserver la discrétion totale de ces informations. Cela signifie que nous ne pouvons jamais les divulguer à de tierces parties non autorisées."
+
+#: templates/main/terms-and-conditions.html:60
+msgid "9. Intellectual property"
+msgstr "9. Propriété intellectuelle"
+
+#: templates/main/terms-and-conditions.html:61
+msgid "The content and all data appearing on mytripmed.com, including text, images, graphics and logos are the exclusive property of the site editor. That's why, you have no right to reproduce, represent or distribute this information without the prior consent of MyTripMed."
+msgstr "Le contenu et toutes les données qui figurent sur mytripmed.com, y compris les textes, images, graphiques et logos sont à la propriété exclusive de l’éditeur du site. Pour cela, vous n’avez aucun droit de reproduire, représenter ou diffuser ces informations sans l’accord préalable de MyTripMed."
+
+#: templates/main/terms-and-conditions.html:62
+msgid "10. Cookies and external links"
+msgstr "10. Cookies et liens externes"
+
+#: templates/main/terms-and-conditions.html:63
+msgid "During your browsing on our platform, the cookies we use are not automatically installed on your smartphone, tablet or computer. We first ask for your consent to use these small files. Then, you will have the free choice to accept or refuse our access to information concerning your navigation. Also, you can cancel your consent at any time by simply adjusting your browser settings."
+msgstr "Pendant votre navigation sur notre plateforme, les cookies que nous utilisons ne s’installent pas automatiquement sur votre Smartphone, tablette ou ordinateur. Nous vous demandons d’abord votre consentement à l’égard de l’utilisation de ces petits fichiers. Ensuite, vous aurez le libre choix d’accepter ou de refuser notre accès à des informations qui concernent votre navigation. Aussi, vous pouvez à tout moment annuler votre consentement par un simple réglage des paramètres de votre navigateur."
+
+#: templates/main/terms-and-conditions.html:64
+msgid "Our website includes links to external sites such as those of the clinics and doctors with whom we operate, their promotional offers and prices. This gives you easier access to additional information and products that you can use to choose the best provider. However, we are not responsible for the content of those websites or the information that may be displayed to you."
+msgstr "Notre site Web inclut des liens vers des sites externes comme ceux des cliniques et docteurs avec lesquels nous opérons, leurs offres promotionnelles et tarifs. Cela vous permet d’accéder plus facilement à des informations et des produits supplémentaires que vous pouvez utiliser pour choisir le meilleur prestataire. Toutefois, nous ne sommes pas responsables du contenu de ces sites Internet ou des informations qui peuvent s’afficher pour vous."

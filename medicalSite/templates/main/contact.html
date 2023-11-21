@@ -1,0 +1,157 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}MyTripMed - {% trans "Contact Us" %}{% endblock title %}
+{% block description %}{% trans "Do not hesitate to contact us to ask your questions, give your suggestions and discover more about our services." %}{% endblock description %}  
+{% block body %}
+
+  <section class="top-section pb-0">
+    <div class="container heading-border">
+            <h1 class="mb-3">{% trans "Contact us at anytime!" %}</h1>
+                <h5 class="text-dark">{% trans "Send us your suggestions or questions and let us know your expectations. We are happy to answer you as soon as possible." %}</h5>
+              </div>
+    </section>
+
+    <div class="contact-top">
+    </div>
+
+  <div class="container mb-5 pb-5">   
+    <div class="row">
+      <div class="col-md-8 container-border container-border-left">
+        <div class="form-left card card-sm">
+          <form method="POST" action="" >
+            {% csrf_token %}
+          <h4 class="text-dark mb-4">{% trans "Now fill out the form below to get in touch with our customer service." %}</h4>
+            <div class="row">
+              <div class="col-md-4 mt-4">
+                <label for="titleInput" class="form-label">{% trans "Title" %}*</label>
+                <select class="form-select" id="titleInput" name="title">
+                  <option value="" disabled selected>{% trans "Choose" %}</option>
+                  <option value="Mr">Mr</option>
+                  <option value="Mr">Mrs</option>
+                  </select>
+          </div>
+              <div class="col-md-8 mt-4">
+                <label for="nameInput" class="form-label">{% trans "Name" %}*</label>
+              <input type="text" class="form-input"
+            placeholder="{% trans "name" %}" aria-label="First Name" id="nameInput" name="name" required> 
+          </div>
+         
+     
+
+  <div class="col-md-12 mt-4">
+    <label for="address1" class="form-label">{% trans "Address 1" %}*</label>
+  <input type="text" class="form-input"
+placeholder="{% trans "Enter your main address" %}" aria-label="Address 1" name="address1" id="address1" required>
+</div>
+
+<div class="col-md-12 mt-4">
+  <label for="address2" class="form-label">{% trans "Address 2" %}</label>
+<input type="text" class="form-input"
+placeholder="{% trans "Enter your secondary address" %}" aria-label="Address 2" id="address2" name="address2">
+</div>
+
+<div class="col-md-3 mt-4">
+  <label for="city" class="form-label">{% trans "City" %}*</label>
+<input type="text" class="form-input"
+placeholder="{% trans "City" %}" aria-label="City" id="city" name="city" required>
+</div>
+<div class="col-md-3 mt-4">
+  <label for="State" class="form-label">{% trans "State" %}*</label>
+<input type="text" class="form-input"
+placeholder="{% trans "State" %}" aria-label="State" id="State" name="state" required>
+</div>
+<div class="col-md-3 mt-4">
+  <label for="Country" class="form-label">{% trans "Country" %}*</label>
+
+  <select class="form-select" id="Country" name="country" required>
+    <option value="" selected disabled>{% trans "Country" %}</option>
+    {% for country in all_countries %}
+    <option value={{country.name}}>{{country.name}}</option>
+    {% endfor %}
+ </select>
+</div>
+<div class="col-md-3 mt-4">
+  <label for="Zipcode" class="form-label">{% trans "Postal Code" %}*</label>
+<input type="number" class="form-input"
+placeholder="{% trans "Zipcode" %}" aria-label="Zipcode" id="Zipcode" name="zipcode" required>
+</div>
+        <div class="col-md-6 mt-4">
+              <label for="email" class="form-label">{% trans "E-mail" %}*</label>
+          <input type="email" class="form-input" placeholder="{% trans "Email" %}" aria-label="Email" id="email" name="email" required>
+      </div>
+   
+        <div class="col-md-6 mt-4">
+          <label for="code" class="form-label">{% trans "Phone Number" %}*</label>
+              <input type="tel" class="form-input" 
+              placeholder="{% trans "Phone number" %}" aria-label="Phone number" name="phone_number" required>
+            
+        </div>
+
+        <div class="col-12 mt-4">
+          <label for="message">{% trans "Message" %}*</label>
+            <textarea class="form-input" 
+            rows="4"
+            placeholder="{% trans "Type your message" %}" id="message" required name="message"></textarea>
+        </div>
+      
+            <div class="col-12 mt-5 pb-3">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-primary" type="submit">{% trans "Send" %}</button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>      
+    </div>
+
+    <div class="col-md-4 container-border container-border-right">
+        <a href="#" target="blank">
+            <div class="card-green d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h5 class="text-dark">{% trans "Call us" %}</h5>
+                    <p class="p-big text-decoration-none"> 33 (0)9 74 33 82 33</p>
+                        </div>
+                    <img src="{% static 'img/call-icon.png' %}" alt="call-icon" class="contact-icon">        
+                </div>
+            </a>
+        
+            <a href="#" target="blank">
+            <div class="card-green d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h5 class="text-dark">{% trans "Chat on WhatsApp" %}</h5>
+                    <p class="p-big text-decoration-none">45658-46565-51</p>
+                </div>
+                    <img src="{% static 'img/whatsapp-icon.png' %}" alt="call-icon" class="contact-icon">
+                </div>
+            </a>
+           
+            <a href="https://www.facebook.com/Mytripmed" target="blank">
+                <div class="card-green d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h5 class="text-dark">{% trans "Like us on Facebook" %}</h5>
+                        <p class="p-big text-decoration-none">{% trans "See what others are saying about us" %}</p>
+                    </div>
+                        <img src="{% static 'img/facebook-icon.png' %}" alt="call-icon" class="contact-icon">
+                    </div>
+                </a>
+           
+                <a href="#" target="blank">
+                    <div class="card-green d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                        <h5 class="text-dark">{% trans "Follow us on Twitter" %}</h5>
+                        <p class="p-big text-decoration-none">{% trans "Or send us a tweet" %}</p>
+                        </div>
+                        <img src="{% static 'img/twitter-icon.png' %}" alt="call-icon" class="contact-icon">
+                    </div>
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock body %}

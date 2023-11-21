@@ -1,0 +1,28 @@
+.badge{
+    padding: 0.8rem 1.4rem;
+    background-color: $brand-purple-light;
+    color: $brand-purple;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: inline-block;
+    border-radius: 10rem;
+    &:not(:last-child){
+        margin-right: 1.2rem;
+    }
+    
+
+    &-container{
+       display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+        margin-top: 2rem;
+        align-items: center;
+
+        span{
+            margin-top: 1.5rem;
+        }
+    }
+
+    @include res(sm){
+        font-size: 1.4rem;
+    }
+}

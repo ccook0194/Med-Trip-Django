@@ -1,0 +1,50 @@
+//google fonts
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+//bootstrap depedencies
+
+@import "../vendors/bootstrap/bootstrap.min.css";
+
+//custom css
+
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+@import './base/animations';
+@import  './base/reset';
+@import './base/typography';
+@import './base/utils';
+
+@import './components/badge';
+@import './components/button';
+@import "./components/select";
+@import './components/blog-card';
+@import './components/card';
+@import './components/forms';
+@import './components/containers';
+@import './components/result-card';
+@import './components/icons-and-imgs';
+@import "./components/treatment-card";
+@import "./components/destination-card";
+@import "./components/doctor-card";
+@import "./components/review-card";
+@import "./components/star-rating";
+
+@import './layouts/header';
+@import "./layouts/section";
+@import './layouts/footer';
+
+@import './pages/index';
+@import "./pages/results";
+@import './pages/blog';
+@import './pages/dental-clinic';
+@import './pages/free-quote';
+@import './pages/clinic-page';
+
+
+@include res(sm){
+        .search-img {
+          max-height: 100% !important;
+          width: 100% !important;
+        }
+}

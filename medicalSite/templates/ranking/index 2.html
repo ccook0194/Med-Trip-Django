@@ -1,0 +1,144 @@
+{% extends 'main/base.html' %} {% load static %}
+{% load i18n %}
+{% load mathfilters %}
+{% load custom_tags %}
+
+
+{% block title %}{% if not country %}{% trans "Top ranking clinics for" %} {{ category }}{% elif not city and country %}{% trans "Top ranking clinics for" %} {{ category }} {% trans "on" %} {{ country }}{% else %}{% trans "Top ranking clinics for" %} {{ category }} {% trans "at" %} {{ city }} {% trans "on" %} {{ country }}{% endif %}{% endblock title %}
+{% block description %}{% if not country %}{% trans "Top ranking clinics for" %} {{ category }}{% elif not city and country %}{% trans "Top ranking clinics for" %} {{ category }} {% trans "on" %} {{ country }}{% else %}{% trans "Top ranking clinics for" %} {{ category }} {% trans "at" %} {{ city }} {% trans "on" %} {{ country }}{% endif %}{% endblock description %}
+
+
+{% block body %}
+
+<section class="results-section top-section">
+    <div class="container">
+        <h2 class="text-dark mb-5 text-center pb-2">
+            {% trans "Ranking of top" %} {% if category == "hair-transplant" %}{% trans "Hair Transplant" %}{% else %}{{ category | capfirst }}{% endif %} {% trans "clinics and doctors" %} {% if not city and country %}{% trans "on" %} {{ country }}{% elif city and country %}{% trans "at" %} {{city}} {% trans "on" %} {{country}}{% endif %}
+        </h2>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="table-top fs-4">
+
+                    <a href="{% url 'clinics:clinics_rankings' 'dentals' %}" type="button" class="btn btn{% if category == "dentals" %}-top{% else %}-bottom{% endif %} fs-2 text-600 {% if category == "dentals" %}active{% endif %}">
+                        <i class="thead{% if category == "dentals" %}-icon{% endif %}" data-feather="smile"></i>
+                        {% trans "Dentals" %}</a>
+
+                    <a href="{% url 'clinics:clinics_rankings' 'aesthetic' %}" type="button" class="btn btn{% if category == "aesthetic" %}-top{% else %}-bottom{% endif %} fs-2 text-600 {% if category == "aesthetic" %}active{% endif %}">
+                        <i class="thead{% if category == "aesthetic" %}-icon{% endif %}" data-feather="heart"></i>
+                        {% trans "Aesthetic" %}</a>
+
+                    <a href="{% url 'clinics:clinics_rankings' 'hair-transplant' %}" type="button" class="btn btn{% if category == "hair-transplant" %}-top{% else %}-bottom{% endif %} fs-2 text-600 {% if category == "hair-transplant" %}active{% endif %}">
+                        <i class="thead{% if category == "hair-transplant" %}-icon{% endif %}" data-feather="globe"></i>
+                        {% trans "Hair Transplant" %}</a>
+
+                </div>
+
+                <div class="table-bottom fs-4">
+                    {% if not country %}
+                        {% for i in filter_destinations %}
+                        <a type="button" class="btn btn-2 fs-4 text-400" href="{% url 'clinics:clinics_rankings' category i.country %}">
+                            {{ i.country }}
+                            <img src="https://flagicons.lipis.dev/flags/4x3/{{ i.country_flag }}.svg" alt="" class="flag">
+                        </a>
+                        {% endfor %}
+                    {% else %}
+                        {% for i in filter_destinations %}
+                        <a type="button" class="btn btn-2 fs-4 text-400" href="{% url 'clinics:clinics_rankings' category country i %}">
+                            {{ i }}
+                        </a>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+                <table class="table table fs-3 mt-sm-4 text-center">
+                    <thead>
+                        <tr>
+                            <th class="text-purple text-600" scope="col">{% trans "Rank" %}
+                                <a class="text-purple text-600" href=""><i class="thead-icon" data-feather="chevron-up"></i></a>
+                            </th>
+                            <th scope="col">{% trans "Doctors & Clinic" %}
+                            </th>
+                            <th scope="col">{% trans "Regions" %}
+                            </th>
+                            <th scope="col">{% trans "Reviews scores" %}
+                                <i class="thead-icon" data-feather="chevron-down"></i>
+                            </th>
+                            <th scope="col">{% trans "Quality scores" %}
+                                <i class="thead-icon" data-feather="chevron-down"></i>
+                            </th>
+                            <th class="text-purple text-600" scope="col">{% trans "Points" %}
+                                <i class="thead-icon" data-feather="chevron-down"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for clinic in ranking_clinics %}
+                        <tr>
+                            <th class="text-purple text-800" scope="row mt-5 mb-4">{{ clinic.rank }}
+                                {% if clinic.old_rank %}
+                                {% if clinic.old_rank > clinic.rank %}
+
+                                <span class="text-success"><i data-feather="chevron-up"></i>
+                                    <sup>{{ clinic.old_rank|sub:clinic.rank }}</sup>
+                                </span>
+                                {% else %}
+                                <span class="text-danger"><i data-feather="chevron-down"></i>
+                                    <sub>{{ clinic.rank|sub:clinic.old_rank }}</sub>
+                                </span>
+                                {% endif %}
+                                {% endif %}
+
+                            </th>
+                            <td>
+                                {% if clinic.clinic_available %}
+                                <a href="{% url 'clinics:clinics_each_detail' clinic.slug %}" target="_blank" class="text-purple text-600">
+
+                                    {% if clinic.logo %}
+
+                                    <img src="{{ clinic.logo.url }}" alt="" class="company">
+                                </td>
+                                {% else %}
+                                {{ clinic.name }}
+                                {% endif %}
+                                
+                            </a>
+                            {% else %}
+                            {% if clinic.logo %}
+                            <img src="{{ clinic.logo.url }}" alt="" class="company">
+                            {% else %}
+                            <span class="text-400">
+                                {{ clinic.name }}
+                            </span>
+                            {% endif %}
+                            {% endif %}
+                        </td>
+
+                            <td>
+                                {% if clinic.country_flag %}
+                                <img src="https://flagicons.lipis.dev/flags/4x3/{{ clinic.country_flag }}.svg" alt="" class="region">
+                                {% endif %}
+                                {{ clinic.table_country_name }}
+                            </td>
+                            <td>{{ clinic.feedback_score }}</td>
+                            <td>{{ clinic.quality_score }}</td>
+                            <td class="text-purple text-800">{{ clinic.final_score }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="d-grid gap-1 col-sm-2 mx-sm-auto pt-5">
+        {% if next_page_exist %}
+        <a href="?page={{next_page}}" class="btn btn-primary" type="button">{% trans "Show More" %}</a>
+        {% endif %}
+    </div>
+
+</section>
+
+
+{% endblock body %}

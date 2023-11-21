@@ -1,0 +1,52 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%; //10px
+    overflow-x: hidden;
+
+
+    @include res(md){
+        font-size: 50%; // 9px
+    }
+
+    @include res(sm){
+        font-size: 50%; // 8px
+    }
+
+    @include res(xxs){
+       font-size: 43.75%; //7px
+    }
+
+}
+
+a{
+    transition: $transition-primary;
+}
+
+button{
+    border: none;
+    outline: none;
+}
+
+body{
+    box-sizing: border-box;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+img {
+    width: 100%;
+}
+
+section{
+    padding: 3rem 0; //30px 
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}

@@ -1,0 +1,75 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}MyTripMed - {% trans "Terms and Conditions" %}{% endblock title %}
+{% block description %}{% trans "Find our general conditions which govern the terms of use of our site and our services and frame our commitment." %}{% endblock description %}
+{% block body %}
+
+<section class="top-section pb-0">
+  <div class="container heading-border">
+    <h1 class="mb-3">{% trans "Terms and Conditions" %}</h1>
+  </div>
+</section>
+
+<div class="contact-top">
+</div>
+
+<div class="container mb-5 pb-5">
+  <div class="row">
+    <div class="col-md-12 container-border ">
+        <div class="card card-sm">
+<p>&nbsp;</p>
+<h2>{% trans "1. Presentation" %}</h2>
+<p>{% trans "These general conditions allow you to know the clauses that you must accept before using our online services. Once you use our contact or quote form, this implies your full acceptance of our conditions." %}</p>
+<p>{% trans "MyTripMed is an intermediary site between patients and clinics and doctors around the world. It allows you to compare the different offers from a wide range of treatments in cosmetic, dental and hair surgery. So our tool facilitates the process of finding and booking appointments remotely. In addition, it allows you to quickly find the cheapest practitioners with savings of up to 70% on prices." %}</p>
+<h2>{% trans "2. Use of the site" %}</h2>
+<p>{% trans "Our platform allows patients from all countries to find the cheapest price of the desired treatment. This could be in hair transplant, cosmetic dentistry as well as cosmetic surgery. MyTripMed selects internationally renowned clinics and doctors and provides all the information needed to make the right choice. This includes, years of experience, specialties, real patient reviews and before-after pictures." %}</p>
+<p>{% trans "At the request of the Internet user who types in the type of treatment and the desired destination, several proposals with a wide price range are displayed. Once the selection of the healthcare provider is made, and upon request, we send the patient a free quote on the price and process of the treatment. Also, we accompany him to make an appointment or schedule a consultation directly on our site." %}</p>
+<p>{% trans "Our services, as defined above, are intended for persons over the age of 18 and are completely free for the patient." %}</p>
+<h2>{% trans "3. Limitation of Liability" %}</h2>
+<p>{% trans "MyTripMed does not perform any medical or surgical intervention and gives you no guarantee on the final result. Our role is essentially based on intermediation and the transfer of information between the patient and the clinic or the chosen doctor. Although we strive to present you the best health providers that we sort according to strict criteria and through a rigorous opinion barometer." %}</p>
+<h2>{% trans "4. User obligations" %}</h2>
+<p>{% trans "As a user of our platform, you must agree to provide us with accurate and correct information that we will then pass on to our partner clinics and doctors. In the event that you have any changes in your medical situation or state of health, you must inform us by e-mail or telephone. This will allow us to update your data, for us and for the clinic or doctor concerned." %}</p>
+<h2>{% trans "5. Terms and payment methods" %}</h2>
+<p>{% trans "After booking a treatment and confirming the appointment with a practitioner or clinic via our website, the following payment terms apply. These terms represent a legal contract between you (patient) and us (MyTripMed):" %}</p>
+<ul>
+<li>{% trans "Once you have accepted the date of the appointment with one of our partner clinics or doctors, you must pay a deposit of &euro;250 (two hundred and fifty euros). These costs are due immediately and payable within 48 hours (forty-eight hours) following the date of receipt of our confirmation." %}</li>
+</ul>
+<p>{% trans "(With or without VAT)&nbsp;&nbsp;&nbsp;" %}</p>
+<ul>
+<li>{% trans "These costs will be deducted by our clinics or doctors from the total price of your treatment, indicated in the quote and booking confirmation you receive from us." %}</li>
+<li>{% trans "This first payment represents a booking guarantee recognized by our partner clinics and doctors. It is valid for a period of 12 (twelve) months, from the date of confirmation of the transfer." %}</li>
+<li>{% trans "Payment is made by bank transfer, credit card or PayPal. The single payment currency is the euro." %}</li>
+<li>{% trans "In order to maintain the appointment and treatment date booked through MyTipMed, you must absolutely comply with these payment conditions." %}</li>
+<li>{% trans "MyTripMed does not make any money transfers or transactions to the clinics and doctors with whom we operate." %}</li>
+</ul>
+<h2>{% trans "6. Right to reimbursement" %}</h2>
+<p>{% trans "You will be entitled to reimbursement of the costs of our services in the sole case where your state of health no longer allows you to travel and carry out the planned treatment. You must prove this impediment by a written letter from a doctor, 7 (seven) days before the date of the planned treatment." %}</p>
+<h2>{% trans "7. Right of withdrawal" %}</h2>
+<p>{% trans "You have the right to withdraw, 15 (fifteen) days from the date of conclusion of this legal contract, as indicated above. Termination within the stipulated period is made without giving reasons. You must send us a written declaration confirming your decision by post, e-mail or fax to the following address:" %}</p>
+<ul>
+<li>{% trans "If you meet the notice period, we will refund any fees we have received from you. The refund period is 15 (fifteen) days from the date of receipt of your decision to withdraw." %}</li>
+<li>{% trans "We use the same payment method you chose to pay us the service fee." %}</li>
+<li>{% trans "Also, you have the right to cancel your appointment with a cancellation fee of 50% of the amount of the treatment, and this, 14 days before the date of the appointment, without explanation of reasons." %}</li>
+</ul>
+<h2>{% trans "8. Protection of personal data" %}</h2>
+<p>{% trans "MyTripMed may ask you for personal and medical information to develop your quote. Also, we will have access to your bank identifiers during the money transactions you carry out for us. We may also ask you for photos or information to better understand your needs. This data is not only collected by our platform, but also transmitted to the clinic or doctor you have chosen" %}</p>
+<p>{% trans "For this, we are committed by a confidentiality charter to preserve the total discretion of this information. This means that we can never disclose them to unauthorized third parties." %}</p>
+<h2>{% trans "9. Intellectual property" %}</h2>
+<p>{% trans "The content and all data appearing on mytripmed.com, including text, images, graphics and logos are the exclusive property of the site editor. That's why, you have no right to reproduce, represent or distribute this information without the prior consent of MyTripMed." %}</p>
+<h2>{% trans "10. Cookies and external links" %}</h2>
+<p>{% trans "During your browsing on our platform, the cookies we use are not automatically installed on your smartphone, tablet or computer. We first ask for your consent to use these small files. Then, you will have the free choice to accept or refuse our access to information concerning your navigation. Also, you can cancel your consent at any time by simply adjusting your browser settings." %}</p>
+<p>{% trans "Our website includes links to external sites such as those of the clinics and doctors with whom we operate, their promotional offers and prices. This gives you easier access to additional information and products that you can use to choose the best provider. However, we are not responsible for the content of those websites or the information that may be displayed to you." %}</p>
+          </div>
+      
+    </div>
+
+    
+  </div>
+</div>
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,76 @@
+{% extends 'main/base.html' %} {% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Blog on medical tourism: Dental, hair transplant and plastic surgery" %} - MyTripMed{% endblock title %} 
+{% block description %}{% trans "Find the best deals for your medical abroad journey and the Top destinations." %} - MyTripMed{% endblock description %}
+
+{% block body %}
+<section class="top-section blog-header">
+  <div class="container">
+    <h1>{% trans "The latest news on medical tourism and our advice for your next treatment." %}</h1>
+    <div class="blog-bg"></div>
+  </div>
+</section>
+<div class="container">
+  <h3 class="text-dark heading-border">{% trans "Recent Posts" %}</h3>
+  <div class="row my-5">
+    {% for post in posts %}
+    <div class="col-sm-6">
+      <div class="blog-card">
+        <a href="{% url 'blog:blog_post' post.slug %}"><img src="{{ post.cover_img.url }}" alt="blog-1" class="blog-image"></a>
+        <div class="blog-content">
+          <h5><a href="{% url 'blog:blog_post' post.slug %}" style="color: #473198 !important; font-size: 1.9rem; letter-spacing: normal !important;">{{ post.title }}</a></h5>
+          <p class="p-sm">
+            {{ post.about }}
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-end pt-5">
+            <a class="btn btn-sm btn-primary" href="{% url 'blog:blog_post' post.slug %}" type="button">{% trans "See More" %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+        
+  <div class="pagination">
+    <nav aria-label="Results Navigation" class="w-100">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                {% if current_page.has_previous %}
+                <a class="btn-icon" href="{% url 'blog:blog' %}?page={{page_no|add:"-1"}}" tabindex="-1" aria-disabled="true">
+                    <i class="text-dark" data-feather="chevron-{% if LANGUAGE_BIDI %}right{% else %}left{% endif %}"></i>
+                </a>
+                {% else %}
+                <a class="btn-icon disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <i class="text-dark" data-feather="chevron-{% if LANGUAGE_BIDI %}right{% else %}left{% endif %}"></i>
+                </a>
+                {% endif %}
+            </li>
+            <li class="page-item active">
+
+                <h5 class="pagination-text">
+                    {% trans "Page" %} {{page_no}} {% trans "of" %} {{ paginator.num_pages }}
+                </h5>
+
+            </li>
+            <li class="page-item">
+                {% if current_page.has_next %}
+                <a class="btn-icon" href="{% url 'blog:blog' %}?page={{page_no|add:"+1"}}">
+                    <i class="text-dark" data-feather="chevron-{% if LANGUAGE_BIDI %}left{% else %}right{% endif %}"></i>
+                </a>
+                {% else %}
+                <a class="btn-icon disabled" href="#">
+                    <i class="text-dark" data-feather="chevron-{% if LANGUAGE_BIDI %}left{% else %}right{% endif %}"></i>
+                </a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+</div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock body %}
+</div>

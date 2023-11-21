@@ -1,0 +1,195 @@
+{% extends 'main/base.html' %} {% load static %}
+{% load i18n %}
+{% load mathfilters %}
+{% load custom_tags %}
+
+
+{% block title %}{% if not country %}{% trans "The top 20" %} {% if category == "hair-transplant" %}{% trans "hair transplant clinics" %}{% elif category == "dentals" %}{% trans "dentists" %}{% elif category == "aesthetic" %}{% trans "aesthetic surgery specialists" %}{% endif %} {% trans "abroad - Mytripmed" %} {% elif not city and country %}{% trans "The top 20" %} {% if category == "hair-transplant" %}{% trans "hair transplant clinics" %}{% elif category == "dentals" %}{% trans "dentists" %}{% elif category == "aesthetic" %}{% trans "aesthetic surgery specialists" %}{% endif %} {% trans "in" %} {{ country }}{% else %}{% trans "The top 20" %} {% if category == "hair-transplant" %}{% trans "hair transplant clinics" %}{% elif category == "dentals" %}{% trans "dentists" %}{% elif category == "aesthetic" %}{% trans "aesthetic surgery specialists" %}{% endif %} {% trans "at" %} {{ city }} {% trans "in" %} {{ country }}{% endif %}{% endblock title %}
+{% block description %}{% if not country %}{% trans "List of the best" %} {% if category == "hair-transplant" %}{% trans "hair transplant clinics" %}{% elif category == "dentals" %}{% trans "dentists" %}{% elif category == "aesthetic" %}{% trans "aesthetic surgeons" %}{% endif %} {% trans "classified by customer reviews and quality of services" %} {% elif not city and country %}{% trans "List of the best" %} {% if category == "hair-transplant" %}{% trans "hair transplant clinics" %}{% elif category == "dentals" %}{% trans "dentists" %}{% elif category == "aesthetic" %}{% trans "aesthetic surgeons" %}{% endif %} {% trans "classified by customer reviews and quality of services" %} {% trans "in" %} {{ country }}{% else %}{% trans "List of the best" %} {% if category == "hair-transplant" %}{% trans "hair transplant clinics" %}{% elif category == "dentals" %}{% trans "dentists" %}{% elif category == "aesthetic" %}{% trans "aesthetic surgeons" %}{% endif %} {% trans "classified by customer reviews and quality of services" %} {% trans "at" %} {{ city }} {% trans "in" %} {{ country }}{% endif %}{% endblock description %}
+
+
+{% block body %}    
+
+<section class="dental-clinic-section top-section">
+    <div class="container">
+      <h1 class="text-dark mb-5 text-center pb-2">
+        {% trans "Ranking of top" %} {% if category == "hair-transplant" %}{% trans "hair transplant specialists" %}{% elif category == "dentals" %}{% trans "dentists" %}{% elif category == "aesthetic" %}{% trans "aesthetic surgery specialists" %}{% endif %} {% if not city and country %}{% trans "in" %} {{ country }}{% elif city and country %}{% trans "at" %} {{city}} {% trans "in" %} {{country}}{% endif %}
+      </h1>
+
+      <div class="card p-0">
+        <div class="card-header bg-white">
+          <div class="filters-categories">
+
+            <div class="category-filter" onclick="window.location='{% url 'clinics:clinics_rankings' 'dentals' %}';">
+              <a href="{% url 'clinics:clinics_rankings' 'dentals' %}" style="display: hidden;"></a>
+              <input class="category-input" type="radio" name="category" id="category-1"  style="cursor: pointer !important;" {% if category == "dentals" %}checked{% endif %}>
+              <label class="category-label" for="category-1"  style="cursor: pointer !important;">
+                <img src="{% static 'img/tooth.png' %}" alt="tooth" class="type-icon">
+                {% trans "Dentals" %}
+              </label>
+            </div>
+
+            <div class="category-filter" onclick="window.location='{% url 'clinics:clinics_rankings' 'aesthetic' %}';">
+              <a href="{% url 'clinics:clinics_rankings' 'aesthetic' %}" style="display: hidden;"></a>
+              <input class="category-input" type="radio" name="category" id="category-2"  style="cursor: pointer !important;" {% if category == "aesthetic" %}checked{% endif %}>
+              <label class="category-label" for="category-2"  style="cursor: pointer !important;">
+                <img src="{% static 'img/Aesthetic.png' %}" alt="tooth" class="type-icon">
+                {% trans "Aesthetic" %}
+              </label>
+            </div>
+
+            <div class="category-filter" onclick="window.location='{% url 'clinics:clinics_rankings' 'hair-transplant' %}';">
+              <a href="{% url 'clinics:clinics_rankings' 'hair-transplant' %}" style="display: hidden;"></a>
+              <input class="category-input" type="radio" name="category" id="category-3"  style="cursor: pointer !important;" {% if category == "hair-transplant" %}checked{% endif %}>
+              <label class="category-label" for="category-3"  style="cursor: pointer !important;">
+                <img src="{% static 'img/hair.png' %}" alt="tooth" class="type-icon">
+                {% trans "Hair Transplant" %}
+              </label>
+            </div>
+
+
+          </div>
+
+          <div class="filters-countries">
+
+            {% if not country %}
+                        {% for i in filter_destinations %}
+                        <a href="{% url 'clinics:clinics_rankings' category i.country %}" style="display: hidden;"></a>
+                        <div class="flag-filter" onclick="window.location='{% url 'clinics:clinics_rankings' category i.country %}';">
+                            <input type="radio" hidden name="country" id="{{ i.country }}" class="radio-btn" style="cursor: pointer !important;" {% if i.country == country %}checked{% endif %}>
+                            <label for="{{ i.country }}" style="cursor: pointer !important;">
+                              {{ i.country }}<img src="https://flagicons.lipis.dev/flags/4x3/{{ i.country_flag }}.svg" alt="{{ i.country }}" class="flag">
+                            </label>
+                          </div>
+                        {% endfor %}
+                    {% else %}
+                        {% for i in filter_destinations %}
+                        <a href="{% url 'clinics:clinics_rankings' category country i %}" style="display: hidden;"></a>
+                        <div class="flag-filter" onclick="window.location='{% url 'clinics:clinics_rankings' category country i %}';">
+                            <input type="radio" hidden name="city" id="{{ i }}" class="radio-btn" style="cursor: pointer !important;" {% if i == city %}checked{% endif %}>
+                            <label for="{{ i }}" style="cursor: pointer !important;">
+                              {{ i }}
+                            </label>
+                          </div>
+                        {% endfor %}
+                    {% endif %}
+          </div>
+
+        </div>
+
+
+        <div class="card-body">
+          <table class="table table-sm fs-3 text-center text-400 pt-0 mt-0">
+            <thead>
+              <tr>
+                <th class="text-purple text-400 first-col" scope="col" style="min-width: 11rem">{% trans "Rank" %}
+                  <i class="thead-icon" data-feather="chevron-up"></i>
+                </th>
+                <th scope="col" style="min-width: 20rem;" id="doctors_and_clinic_logo">{% trans "Doctors & Clinic" %}
+                </th>
+                <th scope="col" style="min-width: 15rem;">{% trans "Regions" %}
+                </th>
+                <th scope="col" style="min-width: 20rem;">{% trans "Review score" %}
+                  <i class="thead-icon" data-feather="chevron-down"></i>
+                  <i class="info-icon" data-feather="info"></i>
+
+                  <div class="info-dialog">
+                    {% trans "<b>The average score of reviews</b> on Google and other platforms recalculate to get more accurate value." %}
+                  </div>
+                </th>
+                <th scope="col" style="min-width: 20rem;">{% trans "Quality score" %}
+                  <i class="thead-icon" data-feather="chevron-down"></i>
+                   <i class="info-icon" data-feather="info"></i>
+                   <div class="info-dialog">
+                    {% trans "<b>Quality score:</b> refers to the quality of the services offered and the transparency of the clinic. In order to calculate the score, different factors are collected such as: accreditations, certifications, price transparency, expertise in the domain, years of experience, quality of the clinic, languages spoken, etc." %}
+                  </div>
+                </th>
+                <th class="text-purple text-400 last-col" scope="col" style="min-width: 15rem;">{% trans "Points" %}
+                  <i class="thead-icon" data-feather="chevron-down"></i>
+                  <i class="info-icon" data-feather="info"></i>
+                  <div class="info-dialog">
+                    {% trans "The sum of reviews score plus quality score." %}
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for clinic in ranking_clinics %}
+
+              <tr>
+                <th class="text-purple text-600 first-col" scope="row mt-5 mb-4">{{ clinic.rank }}
+                  <span class="text-purple text-700 ranking">
+                    {% if clinic.old_rank %}
+                                {% if clinic.old_rank > clinic.rank %}
+
+                                <span class="text-success"><i style="font-family: 'FontAwesome' !important;" class="fa fa-sort-asc" aria-hidden="true"></i>
+                                    <sup>{{ clinic.old_rank|sub:clinic.rank }}</sup>
+                                </span>
+                                {% elif clinic.old_rank < clinic.rank  %}
+                                <span class="text-danger"><i style="font-family: 'FontAwesome' !important;" class="fa fa-sort-desc" aria-hidden="true"></i>
+                                    <sub>{{ clinic.rank|sub:clinic.old_rank }}</sub>
+                                </span>
+                                {% else %}
+                                <i class="pointer" data-feather="minus"></i></span>
+                                {% endif %}
+                                {% endif %}
+                </th>
+                <td class="company-logo">
+                    {% if clinic.clinic_available %}
+                                <a href="{% url 'clinics:clinics_each_detail' clinic.slug %}" target="_blank" class="text-purple text-600">
+
+                                    {% if clinic.logo %}
+
+                                    <img src="{{ clinic.logo.url }}" alt="{{ clinic.name }}" class="company">
+                                {% else %}
+                                {{ clinic.name }}
+                                {% endif %}
+                                
+                            </a>
+                            {% else %}
+                            {% if clinic.logo %}
+                            <img src="{{ clinic.logo.url }}" alt="{{ clinic.name }}" class="company">
+                            {% else %}
+                            <span class="text-400">
+                                {{ clinic.name }}
+                            </span>
+                            {% endif %}
+                            {% endif %}
+                </td>
+                <td class="region-text">
+                    {% if clinic.country_flag %}
+                    <img src="https://flagicons.lipis.dev/flags/4x3/{{ clinic.country_flag }}.svg" alt="" class="region">
+                    {% endif %}
+                    {{ clinic.table_country_name }}
+                </td>
+                <td>{{ clinic.feedback_score }}</td>
+                <td>{{ clinic.quality_score }}</td>
+                <td class="text-purple text-700 last-col">{{ clinic.final_score }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+
+      <div class="d-grid gap-1 col-sm-2 mx-sm-auto pt-5">
+        {% if next_page_exist %}
+        <!-- <a href="?page={{next_page}}" class="btn btn-primary" type="button">{% trans "Show More" %}</a> -->
+        <button class="btn btn-primary" type="button" onclick="nextPage()">{% trans "Show More" %}</button>
+        {% endif %}
+      </div>
+    </div>
+
+    
+
+  </section>
+<script>
+  function nextPage() {
+    const url = window.location.pathname + "?page={{next_page}}";
+    // window.history.pushState({}, '', url);
+    $("#doc").load(url);
+  }
+</script>
+  {% endblock body %}

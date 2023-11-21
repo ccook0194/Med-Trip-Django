@@ -1,0 +1,115 @@
+.footer {
+    background-color: $brand-purple;
+    padding: 3rem 0 2rem;
+
+    &-logo{
+        width: 22rem;
+
+        &-wrapper{
+            padding-right: 3rem;
+        }
+    }
+
+    &-menu{
+        margin-bottom: 2rem;
+        &-heading{
+            color:$color-white;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+       
+        &-link{
+            color: $brand-purple-light;
+            text-decoration: none;
+            transition:$transition-primary ;
+            display:block;
+            margin-bottom: 1rem;
+            &:hover{
+                color:$color-white;
+            }
+        }
+    }
+    &-logo-text{
+        font-weight: 300;
+        font-size: 1.38rem;
+        margin-top: 0.4rem;
+        font-family: Karla, sans-serif;
+        display: inline-block;
+
+    }
+}
+
+
+.social-icons{
+    display: flex;
+    margin-left: 1rem;
+    a{
+        &:not(:last-child){
+            margin-right: 2rem;
+        }
+    }
+
+    svg{
+        color: $color-white;
+       stroke-width: 1.5px;
+    }
+    &-wrapper{
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+
+        h5{
+            margin: 0;
+        }
+    }
+}
+
+.treatment{
+    &-list{
+        padding:7rem 0 3rem;
+        background-color: $color-cream;
+        border-top: 1px solid $border-grey;
+        border-top: 1px solid $border-grey;
+    }
+
+    &-heading{
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        font-size: 1.7rem;
+        letter-spacing: 0;
+        img{
+            height: 1.8rem;
+            width: auto;
+            margin-right: 1rem;
+        }
+        .text{
+            color: $brand-dark;
+        }
+        .number{
+            color: $text-grey;
+            opacity: 0.6;
+            font-weight: 400;
+        }
+    }
+    &-body{
+        ul{
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+
+        li{
+            margin-bottom: 0.5rem;
+
+            a{
+                font-weight: 500;
+                color: $brand-purple;
+            }
+        }
+        margin-bottom: 4rem;
+    }
+}

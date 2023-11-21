@@ -1,0 +1,40 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+{% block object-tools-items %}
+{% load custom_tags %}
+{% if opts.model_name == "clinic" %}
+    <li>
+        {% for l in original|get_languages %}
+            {% if l.code == original.language.code %}
+                <li><a style="background: green;" href="/admin/clinics/clinic/{{original|get_clinic_id:l.code }}/change">{{l.code}}</a></li>
+            {% else %}
+                <li><a href="/admin/clinics/clinic/{{original|get_clinic_id:l.code }}/change">{{l.code}}</a></li>
+            {% endif %}
+        {% endfor %}
+    </li>
+    {% endif %}
+
+    {% if opts.model_name == "populartreatmentproxy" %}
+    <li>
+        {% for l in original|get_popular_treatments_languages %}
+            {% if l.code == original.language.code %}
+                <li><a style="background: green;" href="/admin/treatment/populartreatmentproxy/{{original|get_popular_treatment_id:l.code }}/change">{{l.code}}</a></li>
+            {% else %}
+                <li><a href="/admin/treatment/populartreatmentproxy/{{original|get_popular_treatment_id:l.code }}/change">{{l.code}}</a></li>
+            {% endif %} 
+        {% endfor %}
+    </li>
+    {% endif %}
+
+    {% if opts.model_name == "popularfootertreatmentproxy" %}
+    <li>
+        {% for l in original|get_popular_footer_treatments_languages %}
+            {% if l.code == original.language.code %}
+                <li><a style="background: green;" href="/admin/treatment/popularfootertreatmentproxy/{{original|get_popular_footer_treatment_id:l.code }}/change">{{l.code}}</a></li>
+            {% else %}
+                <li><a href="/admin/treatment/popularfootertreatmentproxy/{{original|get_popular_footer_treatment_id:l.code }}/change">{{l.code}}</a></li>
+            {% endif %} 
+        {% endfor %}
+    </li>
+    {% endif %}
+{% endblock %}

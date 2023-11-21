@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}{% trans "All treatments: cosmetic surgery, dental, hair transplant" %} - MyTripMed{% endblock title %}
+{% block description %}{% trans "Mytripmed: Find and compare prices for dental care, cosmetic surgery or hair transplantation." %}{% endblock description %}
+{% block body %}
+
+<section class="top-section pb-0">
+  <div class="container heading-border">
+    <h1 class="mb-3">{% trans "All Treatments" %}</h1>
+  </div>
+</section>
+
+<div class="contact-top">
+</div>
+
+<div class="container mb-5 pb-5">
+  <div class="row">
+    <div class="col-md-12 container-border ">
+      <div class="card card-sm">
+        {% for treatment in treatments %}
+        <p><a href='{% url "clinics:clinics_search" %}/{{treatment.slug}}' style="color: black" >{{ treatment.searched_treatment }}</a></p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+{% endblock body %}

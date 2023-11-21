@@ -1,0 +1,638 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}{{ clinic_data.name }} {% trans "in" %} {{ clinic_data.country }} – Mytripmed{% endblock title %}
+
+{% block description %}{{ clinic_data.name }}{% if language == 'fr' %} à {% else %} {% trans "in" %} {% endif %}{{ clinic_data.city }}{% if language == 'fr' %} en{% else %},{% endif %} {{ clinic_data.country }}, {% trans "offers a wide range of medical treatments" %}, {{two_random_treatments}}{% endblock description %}
+
+{% block body %}
+
+<section class="top-section clinic-hero-section">
+  <div class="clinic-bg"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 hero-section-left">
+        <h1 class="text-dark">{{clinic_data.name}}</h1>
+        <div class="icon-text icon-text-big">
+          <img src="{% static 'img/location-icon.png' %}" alt="clinic location">
+          <span>{{clinic_data.city}}, {{clinic_data.country}}</span>
+        </div>
+
+        <form class="clinic-free-quote-btn" action="{% url 'clinics:free_quote_without_clinic' %}" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="from_search" value="yes">
+          <input type="hidden" name="clinic_slug", value="{{clinic_data.slug}}">
+
+              <button class="btn btn-outline btn-md">
+                {% trans "Get a free quote" %}
+              </button>
+          </form>
+
+        <div class="row clinic-stats">
+          <div class="col-4">
+            <div class="clinic-single-stat">
+              <img src="{% static 'img/rating-icon.png' %}" alt="clinic location">
+              <h4>{{clinic_data.get_avg_rating}}</h4>
+              <p class="text-grey">{% trans "Average Rating" %}</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="clinic-single-stat">
+              <img src="{% static 'img/review-icon.png' %}" alt="clinic location">
+              <h4>{{clinic_data.count_reviews}} {% trans "Review(s)" %}</h4>
+              <p class="text-grey">{% trans "Given" %}</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="clinic-single-stat">
+              <img src="{% static 'img/doctor-icon.png' %}" alt="clinic location">
+              <h4>{{ clinic_data.count_doctors }} {% trans "Doctor(s)" %}</h4>
+              <p class="text-grey">{% trans "Available" %}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-6 d-flex justify-content-center">
+        <img src="{{ clinic_data.get_cover_image.image.url }}" alt="#" class="clinic-img" style="max-height: 40rem !important; width: auto !important;"
+        {% comment %} style="object-position: center !important;" {% endcomment %}
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="clinic-page-container">
+
+
+  <section class="clinic-about-section">
+    <div class="container">
+      <h2 class="text-dark heading-border">
+        {% trans "About" %}
+      </h2>
+
+      <div class="row">
+        <div class="col-lg-8 col-md-10">
+          <p>
+            {{clinic_data.description}}
+          </p>
+          <p>
+            {{clinic_data.about|safe}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="clinic-photos-section">
+    <div class="container">
+      <h2 class="text-dark heading-border">
+        {% trans "Photos" %}
+      </h2>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="photo-container">
+            <h5 class="subheading text-grey">
+              {% trans "facilities photos" %}
+            </h5>
+
+            <div class="gallery-1" dir="ltr">
+              <div id="inline-gallery-facilities" class="inline-gallery-container"></div>
+            </div>
+          </div>
+
+        </div>
+        {% if clinic_data.allimagesafter.all %}
+        <div class="col-lg-6">
+          <div class="photo-container">
+            <h5 class="subheading text-grey">
+              {% trans "before/after photos" %}
+            </h5>
+
+            <div class="gallery-2">
+              <!-- <div id="inline-gallery-beforeafter" class="inline-gallery-container"></div> -->
+
+              <div class="owl-carousel" id="owl-carousel-image">
+                {% for image in clinic_data.allimagesafter.all %}
+                <div class="item">
+                  <div class="before-after-container">
+                    <div class="before-img">
+                      <img src="{{ image.beforeImage.url }}" alt="before img">
+                    </div>
+                    <div class="after-img">
+                      <img src="{{ image.afterImage.url }}" alt="after img">
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </section>
+
+  {% if clinic_data.count_doctors > 0 %}
+  <section class="clinic-doctors-section">
+    <div class="container">
+      <h2 class="text-dark heading-border">
+        {{clinic_data.count_doctors}} {% trans "Doctors Available" %}
+      </h2>
+
+      <div class="row">
+        {% for doctor in clinic_data.get_doctors %}
+        <div class="col-xl-4 col-lg-6 col-md-6">
+          <div class="doctor-card">
+            {% if doctor.image %}
+            <img src="{{ doctor.image.url }}" alt="doctor image" class="doctor-card-img">
+            {% endif %}
+
+            <div class="doctor-card-content">
+              <h5>{{doctor.name}} </h5>
+
+              <p class="text-dark">
+                <span class="text-600">
+                  {{doctor.description|safe}}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  <section class="clinic-doctors-section">
+    <div class="container">
+  <div class="footer-menu-list mt-5">
+    <h2 class="text-dark heading-border">
+
+      {% trans "Spoken languages" %}
+    </h2>
+    <hr class="bg-white">
+    <div class="doctor-card" style="display: flex; align-items: center; justify-content: space-evenly; padding: 1rem !important;">
+
+      {% for i in clinic_data.clinic_languages.all %}
+        {% if i.flag %}
+        <img style="width: 50px;"
+        src="{{ i.flag.url }}">
+        {% endif %}
+        {% endfor %}
+      </div>
+  </div>
+</div>
+</section>
+
+
+  {% if clinic_data.allcertificatesforclinic.all %}
+  <section class="clinic-certification-section">
+    <div class="container">
+      <h2 class="text-dark heading-border">
+        {% trans "Certifications" %}
+      </h2>
+
+      <div class="row">
+        {% for certificate in clinic_data.allcertificatesforclinic.all %}
+        <div class="col-sm-6">
+          <div class="certificate-box">
+            <h6 class="text-dark">
+              {{certificate.certificates.name}}
+            </h6>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if clinic_packages %}
+  <section class="clinic-packages-section">
+    <div class="container">
+      <h2 class="text-dark text-center heading-border">
+        {% trans "Clinic Packages" %}
+    </h2>
+  
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
+
+        {% for clinic_package in clinic_packages %}
+        <div class="card card-border clinic-package-card">
+          <h4 class="text-center text-dark">
+            {{ clinic_package.package_name }}
+          </h4>
+  
+  
+          <ul class="custom-list heading-border">
+            {% for point in clinic_package.allbulletpointsforpackage.all %}
+            <li>
+              <img src="{% static 'img/tick.png' %}" alt="list item">
+              <p>
+                {{ point.bullet_point }}
+              </p>
+            </li>
+            {% endfor %}
+
+          </ul>
+  
+  
+          <h1 class="text-center price">
+            {{current_symbol}}{{ clinic_package.package_price }}
+          </h1>
+  
+  
+          <a href="{% url 'clinics:free_quote_without_clinic' %}" class="btn btn-primary btn-lg mt-4">
+            {% trans "Book" %}
+          </a>
+  
+        </div>
+        {% endfor %}
+
+      </div>
+  
+    </div>
+    </div>
+  </section>
+  {% endif %}
+
+  
+
+  <section class="clinic-review-section bg-light">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between;" class="heading-border">
+
+      <h2 class="text-dark">
+        {% trans "Reviews" %} 
+      </h2>
+      <div class="text-center" style="margin-bottom: 1.8rem;">
+        {% comment %} <a href="{% url 'clinics:clinics_reviews' clinic_data.slug %}" class="btn btn-md btn-primary"> {% endcomment %}
+          <a class="btn btn-md btn-primary" data-bs-toggle="modal" data-bs-target="#addReviewModal">
+          {% trans "Write a Review" %}
+        </a>
+      </div>
+      </div>
+
+
+      <div class="row mt-4">
+        <div class="col-md-8">
+          {% for review in clinic_data.get_reviews %}
+          <div class="review-card">
+            <div class="review-card-top">
+              <div>
+                <h5 class="text-dark mb-2">
+                  {{review.name}}
+                </h5>
+                <p class="p-sm text-grey">
+                  {{review.created}}
+                </p>
+              </div>
+
+              <div class="review-card-top-right">
+                <p class="text-purple p-sm text-right">
+                  {{review.avg_review_rating}} {% trans "stars" %}
+                </p>
+                <div class="Stars" style="--rating: {{review.avg_review_rating}};" aria-label="Rating of this product is {{review.avg_review_rating}} out of 5."></div>
+              </div>
+            </div>
+            <div class="review-card-bottom">
+              <p>
+                {{review.review}}
+              </p>
+            </div>
+
+
+          </div>
+          {% endfor %}
+        </div>
+        <!-- <div class="col-md-4">
+          <div class="card card-sm card-border mt-4">
+            <p class="text-grey">
+              {% trans "Read real reviews from real patients of" %} {{clinic_data.name}}, {% trans "in" %} {{clinic_data.city}}, {{clinic_data.country.name}}. {{clinic_data.name}}
+              {% trans "has achieved a star rating of" %} {{clinic_data.get_avg_rating}} {% trans "based on" %} {{clinic_data.count_reviews}} {% trans "reviews" %}.
+            </p>
+            <p class="text-grey mt-4">
+              {% trans "If you are a past patient of" %} {{clinic_data.name}} {% trans "please click the 'write review' button to provide your review for others to read. Writing a review will only take 2 minutes to complete" %}.
+
+            </p>
+
+            <p class="text-grey mt-4 heading-border">
+              {% trans "If you have any other questions, you can" %} <a href="{% url 'contact' %}" target="_blank" class="link link-primary">{% trans "contact us" %}</a> 
+              {% trans "free of charge." %}
+            </p>
+
+            <div class="text-center mt-4">
+              {% comment %} <a href="{% url 'clinics:clinics_reviews' clinic_data.slug %}" class="btn btn-md btn-primary"> {% endcomment %}
+                <a class="btn btn-md btn-primary" data-bs-toggle="modal" data-bs-target="#addReviewModal">
+                {% trans "Write a Review" %}
+              </a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+</div>
+
+ <!--ADD REVIEW MODAL-->
+  <!-- Modal -->
+  <div class="modal fade px-0" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content card card-sm py-3">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="addReviewModalLabel">{% trans "Fill this form to submit your review" %}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-left">
+            <form method="POST" action="{% url 'clinics:clinics_reviews' clinic_data.slug %}">
+
+              {% csrf_token %}
+    
+              <div class="row">
+    
+    
+    
+                <div class="col-12">
+    
+                  <h6 class="mt-2 mb-4">
+    
+                    {% trans "Give your review:" %}
+    
+                  </h6>
+    
+    
+    
+                  <div class="row">
+    
+                    <div class="col-md-4 col-sm-6">
+    
+                      <p class="text-grey text-700 p-sm">
+    
+                        {% trans "For Quality" %}
+    
+                      </p>
+    
+    
+    
+                      <div class="star-container">
+    
+                        <input type="radio" id="Qualitystar-1" value="5" name="QualityStar" required/>
+    
+                        <label for="Qualitystar-1"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Qualitystar-2" value="4" name="QualityStar" checked/>
+    
+                        <label for="Qualitystar-2"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Qualitystar-3" value="3" name="QualityStar" />
+    
+                        <label for="Qualitystar-3"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Qualitystar-4" value="2" name="QualityStar" />
+    
+                        <label for="Qualitystar-4"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Qualitystar-5" value="1" name="QualityStar" />
+    
+                        <label for="Qualitystar-5"><i data-feather="star"></i></label>
+    
+                      </div>
+    
+                    </div>
+    
+    
+    
+                    <div class="col-md-4 col-sm-6">
+    
+                      <p class="text-grey text-700 p-sm">
+    
+                        {% trans "For Service" %}
+    
+                      </p>
+    
+    
+    
+                      <div class="star-container">
+    
+                        <input type="radio" id="Servicestar-1" value="5" name="ServiceStar" required/>
+    
+                        <label for="Servicestar-1"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Servicestar-2" value="4" name="ServiceStar" checked/>
+    
+                        <label for="Servicestar-2"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Servicestar-3" value="3" name="ServiceStar" />
+    
+                        <label for="Servicestar-3"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Servicestar-4" value="2" name="ServiceStar" />
+    
+                        <label for="Servicestar-4"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Servicestar-5" value="1" name="ServiceStar" />
+    
+                        <label for="Servicestar-5"><i data-feather="star"></i></label>
+    
+                      </div>
+    
+                    </div>
+    
+    
+    
+                    <div class="col-md-4 col-sm-6">
+    
+                      <p class="text-grey text-700 p-sm">
+    
+                        {% trans "For Cleanliness" %}
+    
+                      </p>
+    
+    
+    
+                      <div class="star-container">
+    
+                        <input type="radio" id="Cleanlinessstars-1" value="5" name="CleanlinessStar" required/>
+    
+                        <label for="Cleanlinessstars-1"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Cleanlinessstars-2" value="4" name="CleanlinessStar" checked/>
+    
+                        <label for="Cleanlinessstars-2"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Cleanlinessstars-3" value="3" name="CleanlinessStar" />
+    
+                        <label for="Cleanlinessstars-3"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Cleanlinessstars-4" value="2" name="CleanlinessStar" />
+    
+                        <label for="Cleanlinessstars-4"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Cleanlinessstars-5" value="1" name="CleanlinessStar" />
+    
+                        <label for="Cleanlinessstars-5"><i data-feather="star"></i></label>
+    
+                      </div>
+    
+                    </div>
+    
+    
+    
+                    <div class="col-md-4 col-sm-6">
+    
+                      <p class="text-grey text-700 p-sm">
+    
+                        {% trans "For Comfort" %}
+    
+                      </p>
+    
+    
+    
+                      <div class="star-container">
+    
+                        <input type="radio" id="Comfortstar-1" value="5" name="ComfortStar" required/>
+    
+                        <label for="Comfortstar-1"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Comfortstar-2" value="4" name="ComfortStar" checked/>
+    
+                        <label for="Comfortstar-2"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Comfortstar-3" value="3" name="ComfortStar" />
+    
+                        <label for="Comfortstar-3"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Comfortstar-4" value="2" name="ComfortStar" />
+    
+                        <label for="Comfortstar-4"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Comfortstar-5" value="1" name="ComfortStar" />
+    
+                        <label for="Comfortstar-5"><i data-feather="star"></i></label>
+    
+                      </div>
+    
+                    </div>
+    
+    
+    
+                    <div class="col-md-4 col-sm-6">
+    
+                      <p class="text-grey text-700 p-sm">
+    
+                        {% trans "For Communication" %}
+    
+                      </p>
+    
+    
+    
+                      <div class="star-container">
+    
+                        <input type="radio" id="Communicationstar-1" value="5" name="CommunicationStar" required/>
+    
+                        <label for="Communicationstar-1"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Communicationstar-2" value="4" name="CommunicationStar" checked />
+    
+                        <label for="Communicationstar-2"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Communicationstar-3" value="3" name="CommunicationStar" />
+    
+                        <label for="Communicationstar-3"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Communicationstar-4" value="2" name="CommunicationStar" />
+    
+                        <label for="Communicationstar-4"><i data-feather="star"></i></label>
+    
+                        <input type="radio" id="Communicationstar-5" value="1" name="CommunicationStar"  />
+    
+                        <label for="Communicationstar-5"><i data-feather="star"></i></label>
+    
+                      </div>
+    
+                    </div>
+    
+                  </div>
+    
+    
+    
+                </div>
+    
+    
+    
+                <div class="col-md-12">
+    
+                  <label for="nameInput" class="form-label">{% trans "Name" %}*</label>
+    
+                  <input type="text" class="form-input" placeholder="{% trans "Enter your name" %}" aria-label="First Name" id="nameInput"
+    
+                    name="name" required>
+    
+                </div>
+    
+    
+    
+    
+    
+                <div class="col-md-12 mt-4">
+    
+                  <label for="email" class="form-label">{% trans "Email" %}*</label>
+    
+                  <input type="email" class="form-input" placeholder="{% trans "Email" %}" aria-label="Email" id="email" name="email"
+    
+                    required>
+    
+                </div>
+    
+    
+    
+                <div class="col-12 mt-4">
+    
+                  <label for="review">{% trans "Review" %}*</label>
+    
+                  <textarea class="form-input" rows="4" placeholder="{% trans "Enter your review" %}" id="review"
+    
+                    name="review" required></textarea>
+    
+                </div>
+    
+    
+    
+                <div class="col-12 mt-5 pb-3">
+    
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    
+                    <button class="btn btn-primary" type="submit">{% trans "Submit" %}</button>
+    
+                  </div>
+    
+                </div>
+    
+              </div>
+    
+    
+    
+            </form>
+      </div>  
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock body %}

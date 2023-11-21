@@ -1,0 +1,17 @@
+.review-card{
+    @extend .card;
+    @extend .card-sm;
+    margin-top: 1.6rem;
+
+    &-top{
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        &-right{
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            text-align: right;
+        }
+    }
+}

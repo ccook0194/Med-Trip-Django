@@ -1,0 +1,34 @@
+.container{
+    &-border{
+        padding-top: 2rem;
+
+        &-left{
+            padding-right: 2rem;
+            border-right: 1px solid $border-grey;
+
+            @include res(sm){
+                border:none;
+            }
+
+        }
+        &-right{
+            padding-left: 2rem;
+            @include res(sm){
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+//bootstrap overrides
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    padding-right: var(--bs-gutter-x,1.25rem);
+    padding-left: var(--bs-gutter-x,1.25rem);
+
+    @include res(sm){
+        padding-right: var(--bs-gutter-x,1.75rem);
+    padding-left: var(--bs-gutter-x,1.75rem);
+
+    }
+}

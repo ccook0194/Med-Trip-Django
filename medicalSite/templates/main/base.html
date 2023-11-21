@@ -1,0 +1,696 @@
+{% load static %}
+{% load i18n %}
+{% load columns %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+<!DOCTYPE html>
+<html id="doc" lang="en" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--seo tags start-->
+    <meta content="MyTripMed" name="author" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{% block description %}{% endblock description %}" />
+    <meta content="MyTripMed.com" name="image" />
+    <meta content="800" name="image:width" />
+    <meta content="400" name="image:height" />
+    <meta name="robots" content="index, follow" />
+    <title>{% block title %}{% endblock title %}</title>
+
+    {% comment %} GOOGLE FONTS {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap" rel="stylesheet">
+
+    {% comment %} Styling based on LANGUAGE_BIDI {% endcomment %}
+    <style>
+        p {
+            text-align: {% if LANGUAGE_BIDI %}right {% else %}left {% endif %}!important;
+        }
+
+        html * {
+            font-family: {% if LANGUAGE_BIDI %}'Tajawal',sans-serif {% else %}default {% endif %}!important;
+
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/css/lg-zoom.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/css/lg-autoplay.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/css/lg-zoom.min.css">
+    <link rel="stylesheet" href="{% static 'vendors/owl-carousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/owl-carousel/assets/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png'%}" type="image/x-icon" />
+
+    <style>
+        .ui-menu-item-wrapper {
+            font-size: 2rem !important;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DS8H5J5D2C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DS8H5J5D2C');
+    </script>
+</head>
+
+<body>
+    <div class="loading">Loading&#8230;</div>
+
+    <nav class="navbar navbar-expand-xl navbar-light" id="websiteNavbar">
+
+        <div class="navbar-primary">
+            <div class="container container-custom align-items-center">
+                <div class="navbar-logo-box">
+                    <a class="navbar-brand-1 text-decoration-none nav-left" href="{% url 'home' %}">
+                        <img src="{% static 'img/logo-color.png'%}">
+                        <span class="p-sm nav-text text-purple">{% trans "Your medical stay at the best price" %}</span>
+                    </a>
+                    <img src="{% static 'img/search.svg' %}" class="search-toggle" id="search-open" alt="open search"
+                        onclick="openSearch()" {% if LANGUAGE_BIDI %} style="margin-right: 20px;" {% endif %}>
+                    <img src="{% static 'img/x.svg' %}" class="search-toggle" id="search-close" alt="close search"
+                        onclick="closeSearch()">
+                    <div class="search-box-1 pt-3">
+                        <form onsubmit="triggerSearch(document.getElementById('search-header').value)"
+                            autocomplete="off">
+                            <input type="text" placeholder="{% trans "What treatment are you looking for?" %}"
+                                id="search-header" name="search-header">
+                            <p style="color: red; display: none;" id="search-header-error">{% trans "Please select from
+                                available options." %}</p>
+
+                        </form>
+                    </div>
+
+
+
+                {% comment %} </div> {% endcomment %}
+                   <!--search/cross icon and search bar ends-->
+
+
+                   <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNavbarInMobile()">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+
+                <!--hameburger menu button ends-->
+        </div>
+        <div class="collapse navbar-collapse show navbar-primary-menu">
+                    <ul class="navbar-nav align-items-xl-center">
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="toggleNavbar('destinations')" href="{% url 'clinics:clinic_destinations' %}">{% trans "Destinations" %}<i style="font-family: 'FontAwesome' !important; font-style: normal !important; margin: 0 8px;" class="fa-1x fa-chevron-down" id="destinations" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="toggleNavbar('treatments')" href="{% url 'clinics:clinic_treatments' %}">{% trans "Treatments" %}<i style="font-family: 'FontAwesome' !important; font-style: normal !important; margin: 0 8px;" class="fa-1x fa-chevron-down" id="treatments" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog:blog' %}">{% trans "Blogs" %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'clinics:clinics_rankings' 'dentals' %}">{% trans "Ranking" %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a type="button" href="{% url 'clinics:free_quote_without_clinic' %}" class="req-free-quote-btn btn btn-outline btn-sm text-600 font-karla">{% trans "Request Free Quote" %}</a>
+                        </li>
+                    </ul>
+
+                    <script>
+                        const toggleNavbar = (name) => {
+                            event.preventDefault()
+                            const navbar = $('.navbar-secondary')
+                            const parent_navbar = $("#websiteNavbar")
+
+                            const treatments = document.getElementById('treatments')
+                            const destinations = document.getElementById('destinations')
+
+                            if (localStorage.getItem('navbar') === name && !navbar.hasClass('display-none')) {
+                                navbar.addClass('display-none')
+                                // check if the display is mobile
+                                if (parent_navbar.hasClass('navbar-open')) {
+                                    parent_navbar.removeClass('full-height')
+                                }
+                                if (name === 'destinations') {
+                                    destinations.classList.toggle('fa-chevron-up')
+                                    destinations.classList.toggle('fa-chevron-down')
+                                } else if (name === 'treatments') {
+                                    treatments.classList.toggle('fa-chevron-up')
+                                    treatments.classList.toggle('fa-chevron-down')
+                                }
+                                return
+                            }
+                            
+                            localStorage.setItem('navbar', name)
+                                
+
+                            if (navbar.hasClass('display-none')) {
+                                 navbar.removeClass('display-none')
+                                if (parent_navbar.hasClass('navbar-open')) {
+                                parent_navbar.addClass('full-height')
+                                }
+                                if (name === 'destinations') {
+                                    destinations.classList.toggle('fa-chevron-up')
+                                    destinations.classList.toggle('fa-chevron-down')
+                                } else if (name === 'treatments') {
+                                    treatments.classList.toggle('fa-chevron-up')
+                                    treatments.classList.toggle('fa-chevron-down')
+                                }
+                                
+                            }
+                            refreshNavbar()
+                        }
+                    </script>
+
+                    <div class="nav-right">
+                        <div class="d-flex align-items-center justify-content-between justify-content-xl-end gap-4">
+                            <div class="d-flex align-items-center">
+                                <i class="header-icon" data-feather="globe"></i>
+                                <p class="language">{% trans "language" %}</p>
+<!-- 
+                                <div class="select">
+                                    <div class="selectWrapper">
+                                        <div class="selectCustom js-selectCustom">
+                                            <div class="selectCustom-trigger">{{ language }}</div>
+                                            <div class="selectCustom-options">
+                                                {% for l in all_available_language %}
+                                                <div class="selectCustom-option" onclick='changeLanguage("{{ l.code }}")' data-value="{{ l.code }}">{{ l.code }}</div>
+                                                {% endfor %}
+                                            </div>
+                                        </div> -->
+
+
+                                        <div class="header-select">
+                                            <div class="header-select-text">
+                                              {{ language }}
+                                            </div>
+                                            <div class="header-dropdown">
+                                              <ul class="header-dropdown-options">
+                                                {% for l in all_available_language reversed %}
+                                                <li>
+                                                  <a href="#" onclick='changeLanguage("{{ l.code }}")' data-value="{{ l.code }}">{{ l.code }}</a>
+                                                </li>
+                                              {% endfor %}
+                                              </ul>
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center">
+                                <i class="header-icon" data-feather="dollar-sign"></i>
+                                <p class="currency">{% trans "currency" %}</p>
+
+                                <!-- <div class="select">
+                                    <div class="selectWrapper">
+                                        <div class="selectCustom js-selectCustom">
+                                            <div class="selectCustom-trigger">{{ request.session.currency }}</div>
+                                            <div class="selectCustom-options">
+                                            {% for currency in currencies %}
+                                                <div class="selectCustom-option" onclick='changeCurrency("{{ currency.name }}")' data-value="{{ currency.name }}">{{ currency.name }}</div>
+                                            {% endfor %}
+
+                                            </div>
+                                        </div> -->
+
+
+                                        <div class="header-select">
+                                            <div class="header-select-text">
+                                              {{ request.session.currency }}
+                                            </div>
+                                            <div class="header-dropdown header-dropdown-right">
+                                              <ul class="header-dropdown-options">
+                                                {% for currency in currencies reversed %}
+                                                <li>
+                                                  <a data-value="{{ currency.name }}" onclick='changeCurrency("{{ currency.name }}")' href="#">{{ currency.name }}</a>
+                                                </li>
+                                              {% endfor %}
+                                              </ul>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="navbar-secondary display-none">
+            <div class="menu container container-fluid">
+                <div class="menu-header">
+                    <ul class="nav nav-pills">
+                        
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const refreshNavbar = () => {
+            const navbar = localStorage.getItem('navbar')
+            const nav_pills = $('.nav-pills')
+
+
+            if (navbar == "destinations") {
+                nav_pills.html(`
+                {% comment %} {% if popular_header_destinations|length == 0 %}
+                <div class="container">
+                    <div class="row">
+                <h4>{% trans "Nothing found for Destinations" %}</h4>
+                    </div>
+                </div>
+                {% else %} {% endcomment %}
+                 {% for country in popular_header_destinations %}
+                            <div class="dropdown">
+                                <button class="dropbtn">{{ country.country.name }}</button>
+                                <div class="dropdown-content">
+                                    <div class="container">
+                                        <div class="row">
+                                            {% for col in country.allpopulardestinations.all|columns:4  %}
+                                            <div class="col-md-3 col-6">
+                                                {% for item in col %}
+                                                <a href='{% url "clinics:clinic_destinations" country.country.name item.slug %}'>{{ item.city }}</a>
+                                                {% endfor %}
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                {% comment %} {% endif %} {% endcomment %}
+
+                            `)
+                
+            } else {
+                nav_pills.html(`
+                {% comment %} {% if popular_header_treatments|length == 0 %}
+                <div class="container">
+                    <div class="row">
+                <h4>{% trans "Nothing found for Treatments" %}</h4>
+                    </div>
+                </div>
+                {% else %} {% endcomment %}
+                {% for treatment in popular_header_treatments %}
+                            <div class="dropdown">
+                                <button class="dropbtn">{{ treatment.headline }}</button>
+                                <div class="dropdown-content">
+                                    <div class="container">
+                                        <div class="row">
+                                            {% for col in treatment.allpopularnames.all|columns:4  %}
+                                            <div class="col-md-3 col-6">
+                                                {% for item in col %}
+                                                <a href='{% url "clinics:clinics_search" %}/{{ item.treatment_name.slug }}'>{{ item.treatment_name }}</a>
+                                                {% endfor %}
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                             {% comment %} {% endif %} {% endcomment %}
+                            `)
+            }
+            
+        }
+        </script>
+
+
+    </nav>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="custom-alert alert alert-success alert-dismissible fade show" role="alert">
+        <p>
+            {{message}}
+        </p>
+        <button type="button" class="close bg-transparent" data-dismiss="alert" aria-label="Close"
+            onclick="closeAlert()">
+            <i data-feather="x"></i>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% block body %}{% endblock body %}
+
+    <section class="treatment-list">
+        <div class="container">
+            <div class="row">
+                {% for i in popular_footer_treatments %}
+                <div class="col-md-3 col-sm-6">
+                    <div class="treatment-box">
+                        <h4 class="treatment-heading">
+                            <!-- <img src="./img/flags/germany.png" alt="flag image"> -->
+                            <span class="text">{{ i.headline }} {% if i.country_flag %}<img
+                                    src="{{ i.country_flag.url }}" alt=""
+                                    style="width: 40px; height: auto !important; margin-left: 10px;"> {% endif %}
+                            </span>
+                        </h4>
+                        <div class="treatment-body">
+                            <ul>
+                                {% for treatment in i.allpopularfooternames.all %}
+                                <li>
+                                    <a href="{% url "clinics:clinics_search" %}/{{ treatment.treatment_name.slug }}/{{ i.country.name }}">{{ treatment.treatment_name }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section bg-dark">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col text-center pt-1 pb-5">
+                    <h2 class="text-bottom">{% trans "Start your medical experience now!" %}</h2>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-sm-9">
+                        <div class="row justify-content-between">
+                            <div class="col-sm-4 col-6 d-flex width-36">
+                                <a class="btn btn-primary btn-text-icon w-100" type="button" href="{% url 'home' %}">{% trans "Find a clinic" %}
+                                    <i data-feather="search"></i>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-6 d-flex width-36">
+                                <a class="btn btn-outline-purple btn-text-icon w-100" type="button"
+                                    href="{% url 'clinics:free_quote_without_clinic' %}">{% trans "Ask for a quote" %}<i
+                                        data-feather="message-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-left">
+                    <img src="{% static 'img/bottom-left.png'%}">
+                </div>
+
+                <div class="bottom-right">
+                    <img src="{% static 'img/bottom-right.png'%}" />
+                </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="footer-logo-wrapper">
+                        <div class="footer-logo">
+                            <img src="{% static 'img/logo-white.png'%}" alt="logo">
+                            <span class="footer-logo-text text-white">
+                                {% trans "Your medical stay at the best price" %}
+                            </span>
+                        </div>
+
+                        <p class="mt-4 text-purple-light">
+                            {% trans "MyTripMed offers the best prices for dental care, cosmetic surgeries and hair transplants thanks to its comparator." %}</p>
+
+                        <a href="{% url 'clinics:free_quote_without_clinic' %}"
+                            class="btn btn-white btn-icon-text mt-5 mb-3">
+                            {% trans "Request a Quote" %}
+                            <i data-feather="message-square"></i>
+                        </a>
+
+                        <div class="social-icons-wrapper">
+
+                            <h5 class="subheading text-white">{% trans "find us on" %}</h5>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/Mytripmed" target="_blank"><i
+                                        data-feather="facebook"></i></a>
+                                <a href="#" target="_blank"><i data-feather="twitter"></i></a>
+                                <a href="https://www.instagram.com/mytripmed/" target="_blank"><i
+                                        data-feather="instagram"></i></a>
+                                <a href="#" target="_blank"><i data-feather="linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-4">
+                    <div class="footer-menu">
+                        <h5 class="footer-menu-heading">
+                            {% trans "MENU" %}
+                        </h5>
+
+                        <div class="footer-menu-list">
+
+                            <a class="footer-menu-link" href="{% url 'clinics:clinic_treatments' %}">{% trans "Treatments" %}</a>
+                            <a class="footer-menu-link" href="{% url 'clinics:clinic_destinations' %}">{% trans "Destinations" %}</a>
+                            <a href="{% url 'blog:blog' %}" class="footer-menu-link">{% trans "Blog" %}</a>
+                            <a href="{% url 'contact' %}" class="footer-menu-link">{% trans "Contact" %}</a>
+                            <a href="{% url 'clinics:clinics_add_clinic' %}" class="footer-menu-link">{% trans "Add Clinic" %}</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-4">
+                    <div class="footer-menu">
+                        <h5 class="footer-menu-heading">
+                            {% trans "ABOUT COMPANY" %}
+                        </h5>
+                        <div class="footer-menu-list">
+
+                            <a href="{% url 'about' %}" class="footer-menu-link">{% trans "About Us" %}</a>
+                            <a href="{% url 'terms_and_conditions' %}" class="footer-menu-link">{% trans "Terms and Conditions" %}</a>
+                            <div class="footer-menu-list mt-5">
+                                <h5 class="text-400 text-purple-light">
+                                    {% trans "LANGUAGES" %}
+                                </h5>
+                                <hr class="bg-white">
+                                <a href="https://www.mytripmed.com/"><img style="width: 40px;padding-right: 5px;"
+                                        src="/media/country_img/United-Kingdom.png"></a>
+                                <a href="https://www.mytripmed.com/fr/"><img style="width: 40px;padding-right: 5px;"
+                                        src="/media/country_img/France.png"></a>
+                                <a href="https://www.mytripmed.com/ar/"><img style="width: 40px;padding-right: 5px;"
+                                        src="/media/country_img/Saudi-Arabia.png"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-4">
+                    <div class="footer-menu">
+                        <h5 class="footer-menu-heading">
+                            {% trans "CONTACT US" %}
+                        </h5>
+                        <div class="footer-menu-list">
+                            <h5 class="text-400 text-purple-light">
+                                {% trans "Phone" %}
+                            </h5>
+                            <hr class="bg-white">
+                            <a href="tel:33974338233" class="footer-menu-link">
+                                <span class="text-300">{% trans "French" %} - </span>
+                                <span class="text-600 text-white" dir="ltr">33 (0)9 74 33 82 33</span>
+                            </a>
+                            <a href="tel:33974338233" class="footer-menu-link">
+                                <span class="text-300">{% trans "English" %} - </span>
+                                <span class="text-600 text-white" dir="ltr">33 (0)9 74 33 82 33</span>
+                            </a>
+                            <a href="tel:+21672421388" class="footer-menu-link">
+                                <span class="text-300">{% trans "Arabic" %} - </span>
+                                <span class="text-600 text-white" dir="ltr">+216 72 421 388</span>
+                            </a>
+                        </div>
+
+                        <div class="footer-menu-list mt-5">
+                            <h5 class="text-400 text-purple-light">
+                            {% trans "Email" %}
+                            </h5>
+                            <hr class="bg-white">
+                            <a href="mailto:contact@mytripmed.com" class="footer-menu-link">
+                                <span class="text-300">{% trans "Mail ID" %} - </span>
+                                <span class="text-600 text-white">contact@mytripmed.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="bg-white mb-4">
+
+            <p class="text-center text-purple-light">
+                © {% trans "Copyright" %} MyTripMed 2022
+            </p>
+
+        </div>
+    </footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/lightgallery.min.js"
+    integrity="sha512-76iVPLEHY5kfZFCmHBQHLkcE4I2r+gK/I/HLYcm3iCuRO/hopAtyO3AFPCZy5B4347wQ7NftStUBVk/cR21MSw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/css/lg-zoom.min.css"
+    integrity="sha512-SGo05yQXwPFKXE+GtWCn7J4OZQBaQIakZSxQSqUyVWqO0TAv3gaF/Vox1FmG4IyXJWDwu/lXzXqPOnfX1va0+A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/plugins/thumbnail/lg-thumbnail.min.js" integrity="sha512-U/q9/jQoBhMYdo/0oa7Dlb7gntvk0+ASatl5Yxu7gcUUoKs+L8+xROxmrCzgIdGFKS/nB2RiXOxzNfDy18xwXg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/plugins/autoplay/lg-autoplay.min.js"
+    integrity="sha512-SF3rg51HmmpWMxmo/CE+926rTTxVInz6h8rCm0UqKhz+SzPb4DTT4I5IY5docFh60CYehPBOH1F6FtfoEgTHmA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/plugins/zoom/lg-zoom.min.js"
+    integrity="sha512-CFy+xT+nDI3oEsnu6zLgBYr1ECW3cfnaFw6k3zkc1qpOG71BvulPWMrPNksGgIQq8WaMZIotttJkmSmNJdC4eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+<script>
+    function slugify_query(query) {
+        $.post('/create-slug/', {
+            slug: query
+        }, function (data) {
+
+        })
+    }
+    async function triggerSearch(query) {
+        event.preventDefault()
+        let url;
+
+        $.get(`/exists-in-treatments/?term=${query}&language={{language}}`,
+            function (data) {
+                if (data === "True") {
+                    $.post('/create-slug/', {
+                        slug: query
+                    }, function (data) {
+                        url = '{% url "clinics:clinics_search" %}' + '/' + data
+
+                        document.getElementById('search-header-error').style.display = 'none';
+                        window.location.href = url
+                    })
+
+                } else {
+                    document.getElementById('search-header-error').style.display = 'block';
+                }
+            }
+        );
+
+
+
+
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $("#search-header").autocomplete({
+            source: "/ajax_calls/search/?language={{language}}",
+            open: function () {
+                setTimeout(function () {
+                    $('.ui-autocomplete').css('z-index', 99000);
+                }, 0);
+            },
+            select: function (event, ui) {
+                // get the selected item's value
+                let selectedVal = ui.item.value;
+                triggerSearch(selectedVal)
+
+
+            }
+
+        });
+    });
+
+</script>
+
+<script>
+    function changeCurrency(currency, reload = true) {
+        $.post('/change-currency/', {
+            currency: currency
+        }, function (data) {
+            if (reload) {
+                location.reload();
+            }
+        })
+    }
+
+    function changeLanguage(lang) {
+        // get current path
+        let path;
+        let treatment;
+        path = window.location.pathname;
+
+        if (lang === 'en-us') {
+            path = path.replace(path.split('/')[1] + '/', ''); // convert "fr"/"ar" to ENGLISH
+        } else {
+            if ("{{language}}" === "en-us") {
+                path = path.replace('/', '/' + lang + '/'); // converting ENGLISH to "fr"/"ar"
+
+            } else {
+
+                path = path.replace('/{{language}}/', '/' + lang + '/'); // converting ENGLISH to "fr"/"ar"
+            }
+        }
+
+        if (lang === 'fr') {
+            changeCurrency('EUR', false);
+        } else {
+            changeCurrency('USD', false)
+        }
+
+        window.location.href = path;
+    }
+</script>
+<script>
+    const lgContainer1 = document.getElementById('inline-gallery-facilities');
+
+    const inlineGallery1 = lightGallery(lgContainer1, {
+        container: lgContainer1,
+        dynamic: true,
+        // Turn off hash plugin in case if you are using it
+        // as we don't want to change the url on slide change
+        hash: false,
+        // Do not allow users to close the gallery
+        closable: false,
+        // Add maximize icon to enlarge the gallery
+        showMaximizeIcon: true,
+        // Append caption inside the slide item
+        // to apply some animation for the captions (Optional)
+        appendSubHtmlTo: '.lg-item',
+        // Delay slide transition to complete captions animations
+        // before navigating to different slides (Optional)
+        // You can find caption animation demo on the captions demo page
+        slideDelay: 100,
+        allowMediaOverlap: false,
+        download: false,
+        toggleThumb: false,
+        plugins: [lgZoom],
+        dynamicEl: {{ clinic_images|safe }},
+});
+
+
+    inlineGallery1.openGallery();
+
+
+</script>
+
+</html>
